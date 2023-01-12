@@ -1,0 +1,65 @@
+@import url(fonts.css);
+
+html , body {
+  font-family: 'VazirThin', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  scroll-behavior: smooth;
+}
+
+.font-x-s{
+  font-size: .75rem !important;
+}
+
+.nav-hover:hover{
+  background-color: #e8ecef;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; 
+}
+
+.dropdown-toggle::after{
+  content: none;
+}
+
+.b-drop{
+  width: 35px;
+}
+
+.b-drop:hover{
+    background: #e8ecef;
+}
+
+.b-drop .dropdown-menu{
+  width: 250px;
+  background: #e8ecef;
+  transform: translateX(215px);
+}
+
+.b-animate a:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0px;
+  background: transparent;
+  transition: width .2s;
+}
+
+.b-dark a:hover:after {
+  width: 100%;
+  background: #1a1a1a;
+}
+
+.b-light:hover:after {
+  width: 100%;
+  background: #fff;
+}
+
+
+
+
+
