@@ -12,6 +12,10 @@ html , body {
   font-size: .75rem !important;
 }
 
+.orange{
+  background-color: #ff5d00;
+}
+
 .nav-hover:hover{
   background-color: #e8ecef;
 }
@@ -40,26 +44,54 @@ html , body {
 }
 
 .b-animate a:after {
-  content: '';
   display: block;
   margin: auto;
   height: 2px;
-  width: 0px;
-  background: transparent;
-  transition: width .2s;
+    content: "";
+    transition: border .15s ease-in-out;
 }
 
 .b-dark a:hover:after {
-  width: 100%;
   background: #1a1a1a;
 }
 
-.b-light:hover:after {
+.b-light a:hover:after {
   width: 100%;
   background: #fff;
 }
 
+.cat a{
+  width: fit-content;
+margin-bottom: 8px;
+text-decoration: none;
+color: #202529;
+}
 
 
+.menu .megamenu{ padding: 1rem; }
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
 
+  .menu .has-megamenu{position:static!important;}
+  .menu .megamenu{left:0; right:0; width:100%; margin-top:0;  }
+
+
+  .menu .dropdown-menu-end{ right:0; left: auto;  }
+	.menu .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.menu .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.menu .dropdown-menu.fade-up{ top:180%;  }
+	.menu .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+  .menu.fixed-top .menu-collapse, .menu.sticky-top .menu-collapse{
+    overflow-y: auto;
+      max-height: 90vh;
+      margin-top:10px;
+  }
+}
+/* ============ mobile view .end// ============ */
 
