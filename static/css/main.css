@@ -85,13 +85,10 @@ color: #202529;
 }	
 /* ============ desktop view .end// ============ */
 
-/* ============ mobile view ============ */
-@media(max-width: 991px){
-  .menu.fixed-top .menu-collapse, .menu.sticky-top .menu-collapse{
-    overflow-y: auto;
-      max-height: 90vh;
-      margin-top:10px;
-  }
+.cat-offcanvas .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: var(--bs-dark-text) !important;
+  background-color: var(--bs-body-bg);
+  font-weight: bold;
+  border-bottom: 2px solid;
 }
-/* ============ mobile view .end// ============ */
 
