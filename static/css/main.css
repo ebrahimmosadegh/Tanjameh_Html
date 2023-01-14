@@ -12,8 +12,20 @@ html , body {
   font-size: .75rem !important;
 }
 
-.orange{
+.bg-orange{
   background-color: #ff5d00;
+}
+
+.bg-pink{
+  background-color: #d1438d;
+}
+
+.bg-steelblue{
+  background-color: #007db2;
+}
+
+.bg-olive{
+  background-color: #9da523;
 }
 
 .nav-hover:hover{
@@ -97,10 +109,9 @@ color: #202529;
   background: #888;
 }
  .owl-nav {
-  width: 100%;
-position: absolute;
-top: 40%;
-
+top: 50%!important;
+  position: absolute!important;
+  transform: translateY(-50%)!important;
  }
  .owl-nav button.owl-next{
   float:left;
@@ -138,3 +149,37 @@ top: 40%;
   cursor: no-drop !important;
   opacity: .1;
 }
+
+
+
+.index-owl-nav button , .index-owl-nav .button{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border-color: #fff;
+  border-style: solid;
+  font-size: 20px;
+  line-height: inherit;
+  opacity: .9;
+  transition: background-color 300ms ease-out;
+  top: 50%!important;
+  position: absolute!important;
+  transform: translateY(-50%)!important;
+}
+.index-owl-nav button:hover{
+  opacity: 1;
+}
+
+.index-owl-nav button.disabled, .index-owl-nav .button[disabled] {
+  cursor: default !important;
+  opacity: .1;
+}
+
+.index-owl-nav button.owl-next{
+  left: 0;
+}
+.index-owl-nav button.owl-prev{
+  right: 0;
+  z-index: 1;
+}
+
