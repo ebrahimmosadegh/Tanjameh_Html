@@ -9,10 +9,13 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- main & other CSS, js in local -->
+    <script src="static/js/jquery.min.js"></script>
     <link rel="stylesheet" href="static/css/bootstrap.rtl.min.css">
     <script src="static/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="static/owl/owl.carousel.css">
+    <script src="static/owl/owl.carousel.js"></script>
     <link rel="stylesheet" href="static/css/main.css">
     <title>تن جامه</title>
   </head>
@@ -563,13 +566,10 @@
           </ul>
         </div>
         <div class="navbar-nav ms-auto">
-          <!-- <li class="nav-item d-none d-lg-flex"> -->
               <div class="input-group">
                 <input type="text" class="form-control bg-body-secondary" placeholder="جستجو" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-inline-secondary bg-body-secondary" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
-        <!-- </li> -->
-          <!-- <div class="nav-item d-lg-none"><a class="nav-link fs-2" href="#"><i class="fa-solid fa-magnifying-glass"></i></a></div> -->
         </div>
       </div>
       </nav>
@@ -734,6 +734,88 @@
         </div>
       </div>
       
+      <script>
+        jQuery(document).ready(function($) {
+        
+          $('.nonloop').owlCarousel({
+            center: true,
+            items: 2,
+            loop: false,
+            nav:true,
+            rtl:true,
+            dots:false,
+            // autoplay:true,
+            // autoplayTimeout:1000,
+            // autoplayHoverPause:true,
+            margin: 10,
+            responsive:{
+    0:{
+        items:2,
+    },
+    600:{
+        items:3,
+    },
+    1000:{
+        items:5
+    }
+}
+          });
+
+
+//               var owl = $('.owl-carousel');
+// function random_bg_color() {
+//     var bgColor = ["#0099cc","#c0c0c0","#587b2e","#990000","#1C8200","#987baa","#981890","#AA8971","#1987FC"];
+//  var bodybgarrayno = Math.floor(Math.random() * bgColor.length);
+//                 var selectedcolor = bgColor[bodybgarrayno];
+//  document.getElementById("myDIV").style.backgroundColor = selectedcolor;
+//     }
+// // Listen to owl events:
+// owl.on('changed.owl.carousel', function(event) {
+//     random_bg_color();      
+// })
+
+        });
+      </script>
+      <!-- carousel index -->
+      <div class="nonloop owl-carousel">
+        <div class="item">
+          <h4>1</h4>
+        </div>
+        <div class="item">
+          <h4>2</h4>
+        </div>
+        <div class="item">
+          <h4>3</h4>
+        </div>
+        <div class="item">
+          <h4>4</h4>
+        </div>
+        <div class="item">
+          <h4>5</h4>
+        </div>
+        <div class="item">
+          <h4>6</h4>
+        </div>
+        <div class="item">
+          <h4>7</h4>
+        </div>
+        <div class="item">
+          <h4>8</h4>
+        </div>
+        <div class="item">
+          <h4>9</h4>
+        </div>
+        <div class="item">
+          <h4>10</h4>
+        </div>
+        <div class="item">
+          <h4>11</h4>
+        </div>
+        <div class="item">
+          <h4>12</h4>
+        </div>
+        
+      </div>
       
      
 

@@ -92,3 +92,49 @@ color: #202529;
   border-bottom: 2px solid;
 }
 
+/* owl carousel */
+.owl-carousel.owl-rtl .owl-item {
+  background: #888;
+}
+ .owl-nav {
+  width: 100%;
+position: absolute;
+top: 40%;
+
+ }
+ .owl-nav button.owl-next{
+  float:left;
+ }
+ .owl-nav button, .owl-nav .button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-color: #d0d1d3;
+  opacity: .9;
+  transition: background-color 300ms ease-out;
+}
+.owl-nav button:hover, .owl-nav .button:hover {
+  opacity: 1;
+}
+ .owl-nav button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #fff;
+  border-color: #d0d1d3;
+  box-shadow: none;
+  cursor: no-drop !important;
+  opacity: .1;
+}
