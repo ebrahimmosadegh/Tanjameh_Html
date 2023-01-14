@@ -8,8 +8,6 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            // "url": "http://localhost:8080",
-            // "webRoot": "${workspaceFolder}"
             "file": "D:\\Programing\\Project\\Tanjameh_Html\\index.html"
         }
     ]
