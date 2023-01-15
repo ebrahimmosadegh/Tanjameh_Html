@@ -60,7 +60,10 @@ html , body {
   margin: auto;
   height: 2px;
     content: "";
-    transition: border .15s ease-in-out;
+    transition: border .15s ease-in-out; 
+}
+.b-animate a{
+  width: fit-content;
 }
 
 .b-dark a:hover:after {
@@ -68,12 +71,10 @@ html , body {
 }
 
 .b-light a:hover:after {
-  width: 100%;
   background: #fff;
 }
 
 .cat a{
-  width: fit-content;
 margin-bottom: 8px;
 text-decoration: none;
 color: #202529;
