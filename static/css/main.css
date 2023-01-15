@@ -12,6 +12,42 @@ html , body {
   font-size: .75rem !important;
 }
 
+.form-check-input{
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #1a1a1a;
+}
+.form-check-label{
+  margin-right: 0.5em;
+}
+.form-check-input:checked{
+  background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  /* border-color: rgba(126, 239, 104, 0.8); */
+  box-shadow: none;
+  outline: 0 none;
+}
+
 .bg-orange{
   background-color: #ff5d00;
 }
@@ -26,6 +62,16 @@ html , body {
 
 .bg-olive{
   background-color: #9da523;
+}
+
+.bg-darkmpurple{
+  background-color: #3e128a;
+}
+.bg-mediumpurple{
+  background-color: #6925de;
+}
+.text-mediumpurple{
+  color: #6925de;
 }
 
 .nav-hover:hover{
