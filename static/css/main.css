@@ -197,8 +197,6 @@ top: 50%!important;
   opacity: .1;
 }
 
-
-
 .index-owl-nav button , .index-owl-nav .button{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -230,3 +228,18 @@ top: 50%!important;
   z-index: 1;
 }
 
+.footer-two a{ 
+color: #fff !important;
+text-decoration: none;
+}
+
+@media (max-width: 767.98px){
+.footer-one , .footer-two {
+  background-color: #e8ecef !important;
+  color: #202529 !important;
+}
+.footer-two a{ 
+  color: #202529 !important;
+
+}
+}
