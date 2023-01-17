@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "D:\\Programing\\Project\\Tanjameh_Html\\index.html"
+            "name": "Open women-home.html",
+            "file": "D:\\Programing\\Project\\Tanjameh_Html\\women-home.html"
         }
     ]
 }
