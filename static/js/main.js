@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
       autoplayTimeout:4000,
       autoplayHoverPause:true,
       margin: 10,
-      navText : ['<i class="fa-solid fa-arrow-right-long"></i>','<i class="fa-solid fa-arrow-left-long"></i>'],
+      navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
       navContainer: '.index-owl-nav',
     });
 var btn_play=$('.btn-play')
@@ -30,6 +30,29 @@ owl_animIndex.trigger('stop.owl.autoplay');
 btn_stop.hide();
 btn_play.fadeIn(500);
 })
+// owl center nonloop
+$('.owl-center-nonloop').owlCarousel({
+  // center: true,
+  // stageOuter:'.owl-center-stage',
+  loop: false,
+  nav:true,
+  rtl:true,
+  dots:false,
+  navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+      navContainer: '.index-owl-nav',
+  margin: 10,
+            responsive:{
+    0:{
+        items:2,
+    },
+    700:{
+        items:4,
+    },
+    1000:{
+        items:5
+    }
+}
+});
   });
 
 // validate for disabling form submissions if there are invalid fields
@@ -66,3 +89,18 @@ $(document).ready(function() {
     return false;
   });
 });
+
+// heart button like and dislike
+$(".btn-heart").click(function() {
+  if ( $(this).hasClass( "dislike" ) ) {
+    $(this).removeClass("dislike")
+    $(this).html('<i class="fa-solid fa-heart text-orange" aria-hidden="true"></i>');
+  }
+  if ( $(this).hasClass( "like" ) ) {
+    $(this).addClass("dislike")
+    $(this).html('<i class="fa-regular fa-heart" aria-hidden="true"></i>');
+  }
+  $(this).toggleClass("like");
+});
+
+
