@@ -32,14 +32,12 @@ btn_play.fadeIn(500);
 })
 // owl center nonloop
 $('.owl-center-nonloop').owlCarousel({
-  // center: true,
-  // stageOuter:'.owl-center-stage',
   loop: false,
   nav:true,
   rtl:true,
+  lazyLoad:true,
   dots:false,
   navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
-      navContainer: '.index-owl-nav',
   margin: 10,
             responsive:{
     0:{
