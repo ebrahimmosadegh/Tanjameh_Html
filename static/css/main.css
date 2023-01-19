@@ -52,14 +52,14 @@ input[type="color"]:focus,
   background-color: #D2451E;
 }
 .bg-orange-700{
-  background: hsl(13,75%,28.26%);
+  background-color: hsl(13,75%,28.26%);
 }
 .text-orange{
   color: #D2451E;
 }
 
 .bg-gold{
-  background: rgb(242, 170, 14);
+  background-color: rgb(242, 170, 14);
 }
 .bg-gold-light{
   background-color: rgb(247, 204, 111);
@@ -70,27 +70,31 @@ input[type="color"]:focus,
 }
 
 .bg-steelblue{
-  background: rgb(62, 112, 178);
+  background-color: rgb(62, 112, 178);
 }
 .bg-steelblue-700{
   background-color: rgb(37, 67, 107);
 }
 
 .bg-olive{
-  background: rgb(174, 194, 87);
+  background-color: rgb(174, 194, 87);
 }
 .bg-olive-light{
   background-color: rgb(214, 224, 169);
 }
 .bg-olive-700{
-  background: rgb(120, 165, 24);
+  background-color: rgb(120, 165, 24);
 }
 
 .bg-green{
-  background: rgb(32, 157, 84);
+  background-color: rgb(32, 157, 84);
 }
-.bg-green-light{
-  background: rgb(0, 165, 138);
+
+.bg-aqua{
+  background-color: #39A597;
+}
+.bg-aqua-light{
+  background-color: hsl(172,48.6%,60.900000000000006%);
 }
 
 .bg-darkmpurple{
@@ -101,6 +105,14 @@ input[type="color"]:focus,
 }
 .text-mediumpurple{
   color: #6925de;
+}
+
+.bg-zyton{
+  background: rgb(165, 158, 11);
+}
+
+.bg-lemon{
+  background-color: rgb(231, 220, 15);
 }
 
 .text-white{
