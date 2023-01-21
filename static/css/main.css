@@ -132,6 +132,10 @@ input[type="color"]:focus,
   background-color: rgb(231, 220, 15);
 }
 
+.bg-dark-900{
+  background-color: hsl(0,0%,6.119999999999999%);
+}
+
 .text-white{
   color: #fff !important;
 }
