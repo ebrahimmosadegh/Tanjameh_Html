@@ -51,6 +51,27 @@ $('.owl-center-nonloop').owlCarousel({
     }
 }
 });
+$('.owl-autowidth').owlCarousel({
+  autoWidth:true,
+  loop: false,
+  nav:true,
+  rtl:true,
+  lazyLoad:true,
+  dots:false,
+  navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+  margin: 10,
+            responsive:{
+    0:{
+        items:2,
+    },
+    700:{
+        items:4,
+    },
+    1000:{
+        items:5
+    }
+}
+});
   });
 
 // validate for disabling form submissions if there are invalid fields
@@ -101,4 +122,64 @@ $(".btn-heart").click(function() {
   $(this).toggleClass("like");
 });
 
+// change button click brand follow
+$(document).on('click', '.clike-follow', function() {
+  if ( $(this).hasClass( "notfollow" ) ) {
+    $(this).removeClass("notfollow")
+    $(this).html('<i class="fa-solid fa-check me-2"></i><span>دنبال شده</span>');
+    const toastLiveExample = document.getElementById('brandFollowToast')
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+  }
+  if ( $(this).hasClass( "follow" ) ) {
+    $(this).addClass("notfollow")
+    $(this).html('<i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span>');
+  }
+  $(this).toggleClass("follow");
+});
 
+// brand search autocomplete
+function brand_search(){
+  const search = document.getElementById('brand_search')
+const matchList = document.getElementById('brand_match_list')
+// Search and filter
+const searchBrand = async searchText => {
+    const brands = ["adidas","puma","nike","boss","jean","ALDO","ASICS"];
+    // Get matches to current text input
+    let matchs = brands.filter(user => {
+        const regex = new RegExp(`^${searchText}`, 'gi')
+        return user.match(regex)
+    })
+    if (searchText.length === 0) {
+        matchs = []
+        matchList.innerHTML = ''
+    }
+    // Output
+    outputHtml(matchs);
+}
+const outputHtml = matchs => {
+    if (matchs.length > 0) {
+        const html = matchs.map(match => `
+            <div class="ms-3 py-2 d-flex border-bottom align-items-center">
+              <span class="">${match}</span>
+              <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
+          </div>
+        `).join('')
+        matchList.innerHTML = html
+    }
+}
+search.addEventListener('input', () => searchBrand(search.value))
+}
+
+// clear icon in input
+$(".clearable").each(function() {
+  const $inp = $(this).find("input:text"),
+      $cle = $(this).find(".clearable__clear");
+  $inp.on("input", function(){
+    $cle.toggle(!!this.value);
+  });
+  $cle.on("touchstart click", function(e) {
+    e.preventDefault();
+    $inp.val("").trigger("input");
+  });
+});
