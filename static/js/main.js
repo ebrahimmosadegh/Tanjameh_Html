@@ -173,13 +173,15 @@ search.addEventListener('input', () => searchBrand(search.value))
 
 // clear icon in input
 $(".clearable").each(function() {
+  const matchList = document.getElementById('brand_match_list')
   const $inp = $(this).find("input:text"),
-      $cle = $(this).find(".clearable__clear");
+  $cle = $(this).find(".clearable__clear");
   $inp.on("input", function(){
-    $cle.toggle(!!this.value);
-  });
-  $cle.on("touchstart click", function(e) {
-    e.preventDefault();
-    $inp.val("").trigger("input");
+  $cle.toggle(!!this.value);
+});
+$cle.on("touchstart click", function(e) {
+  e.preventDefault();
+  $inp.val("").trigger("input");
+  matchList.innerHTML = ''
   });
 });
