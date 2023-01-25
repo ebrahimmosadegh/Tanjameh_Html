@@ -185,3 +185,66 @@ $cle.on("touchstart click", function(e) {
   matchList.innerHTML = ''
   });
 });
+
+// select all checkbox
+function eventCheckBox() {
+  let checkboxs = document.getElementsByTagName("input");
+  for(let i = 0; i < checkboxs.length ; i++) { //zero-based array
+    checkboxs[i].checked = !checkboxs[i].checked;
+  }
+}
+
+// search whith filter items
+ function searchFilter() {
+  var input, filter, ul, li, label, i, txtValue;
+  input = document.getElementById('search_filter');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("ul_search_filter");
+  li = ul.getElementsByTagName('li');
+
+  for (i = 0; i < li.length; i++) {
+    label = li[i].getElementsByTagName("label")[0];
+    console.log(label.textContent)
+    txtValue = label.textContent || label.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+// Range Price Slider
+function getVals(){
+  // Get slider values
+  let parent = this.parentNode;
+  let slides = parent.getElementsByTagName("input");
+    let slide1 = parseFloat( slides[0].value );
+    let slide2 = parseFloat( slides[1].value );
+  // Neither slider will clip the other, so make sure we determine which is larger
+  if( slide1 > slide2 ){ let tmp = slide2; slide2 = slide1; slide1 = tmp; }
+  
+  let displayElement = parent.getElementsByClassName("rangeValues")[0];
+      displayElement.innerHTML = slide1 + " تومان  -- " + slide2 + " تومان ";
+}
+window.onload = function(){
+  // Initialize Sliders
+  let sliderSections = document.getElementsByClassName("range-slider");
+      for( let x = 0; x < sliderSections.length; x++ ){
+        let sliders = sliderSections[x].getElementsByTagName("input");
+        for( let y = 0; y < sliders.length; y++ ){
+          if( sliders[y].type ==="range" ){
+            sliders[y].oninput = getVals;
+            // Manually trigger event first time to display values
+            sliders[y].oninput();
+          }
+        }
+      }
+}
+
+// show div
+function showDiv(){
+$('#btn_showDiv').hide();
+$('#show_div').fadeIn(100);
+$('#show_div').addClass("d-inline-block")
+}

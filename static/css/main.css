@@ -200,20 +200,15 @@ color: #202529;
 .menu .megamenu{ padding: 1rem; }
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
-
   .menu .has-megamenu{position:static!important;}
   .menu .megamenu{left:0; right:0; width:100%; margin-top:0;  }
-
-
   .menu .dropdown-menu-end{ right:0; left: auto;  }
 	.menu .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
 	.menu .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
 	.menu .dropdown-menu.fade-up{ top:180%;  }
 	.menu .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-
 }	
 /* ============ desktop view .end// ============ */
-
 .cat-offcanvas .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   color: var(--bs-dark-text) !important;
   background-color: var(--bs-body-bg);
@@ -308,24 +303,42 @@ text-decoration: none;
 }
 /* end */
 /* start brand */
-.brand-filter form{
+.div-filter form{
   border: 2px solid;
   width: 312px;
   max-height:480px
 }
-.brand-filter ul{
-  max-height: 215px;
+.div-filter .content-filter{
+  max-height: 329px;
 }
-.brand-filter .form-check label{
+.div-filter #search_filter{
+  height: 55px;
+}
+.div-filter .form-check label{
+  line-height: 2.8rem;
   cursor: pointer;
 }
-.brand-filter .form-check label:hover{
-  background-color: #d3d4d5;
+.div-filter .form-check:hover{
+  background-color: #f0f0f0;
 }
-.brand-filter .form-check .form-check-input{
+.div-filter .form-check .form-check-input{
   border: 0 !important;
+  background-color: transparent;
 }
+.div-filter .form-check-input:checked {
+  background-color: #1a1a1a !important;
+}
+.div-filter .form-switch .form-check-input {
+  border: 2px solid black !important;
+    width: 3em !important;
+}
+
 @media (max-width: 990.98px){
+  .div-filter{
+    white-space: nowrap!important;
+  overflow-y: hidden!important;
+  overflow-x: scroll!important;
+  }
   .brand-cat a{
     padding: .8rem .9rem;
     font-weight: bold;
@@ -333,3 +346,49 @@ text-decoration: none;
     background-color: #efeff0;
   }
 }
+
+/* start range price slider */
+.range-slider {
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+  }
+  
+  .range-slider .rangeValues {
+  display: block;
+  padding: 20px;
+  margin-bottom: 35px;
+  border: 1px solid #1a1a1a;
+  
+  }
+  
+  .range-slider input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  }
+  
+  .range-slider input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  background: #1a1a1a;
+  border: none;
+  }
+  
+  .range-slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  margin-top: -8px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  }
+  /* end */
+  #show_div{
+    display: none;
+  }
