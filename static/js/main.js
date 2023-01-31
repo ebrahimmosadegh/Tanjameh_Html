@@ -78,7 +78,7 @@ $('.owl-autowidth').owlCarousel({
 function validateForm() {
   'use strict'
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.newsletter-validation')
+  const forms = document.querySelectorAll('.form-validation')
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
@@ -248,3 +248,52 @@ $('#btn_showDiv').hide();
 $('#show_div').fadeIn(100);
 $('#show_div').addClass("d-inline-block")
 }
+
+// product box change when hover
+$(".product-box a").hover(function(){
+  var parents = $(this).parents(".product")
+  var img = $(this).attr("data-img");
+  var price = $(this).attr("data-price");
+  var detail = $(this).attr("data-detail");
+  var size = [$(this).attr("data-size")];
+parents.find(".product-img img").attr("src", img);
+
+// var array = ["New li 1", "New li 2", "New li 3"];
+// size.forEach(element => console.log(element));
+parents.find('.product-size').empty();
+  $.each(size, function( key, value ) {
+    parents.find('.product-size').append('<li>' + value + '</li>');
+  });
+
+parents.find(".product-price").text(price);
+parents.find(".product-detail").text(detail);
+});
+
+// feedback 
+$("input[name$='feedback']").click(function() {
+  $("div#feedback_two").show();
+  $("div#feedback_one").hide();
+});
+$("#feedback_send").click(function(){
+  $("div#feedback_three").show();
+  $("div#feedback_two").hide();
+});
+$("#feedback_submit").click(function(){
+  $("div#feedback_end").show();
+  $("div#feedback_three").hide();
+});
+$("#feedback_form").submit(function(e) {
+  e.preventDefault(); // avoid to execute the actual submit of the form.
+  var form = $(this);
+  var actionUrl = form.attr('action');
+  $.ajax({
+      type: "POST",
+      url: actionUrl,
+      data: form.serialize(), // serializes the form's elements.
+      success: function(data)
+      {
+        console.log(data); 
+      }
+  });
+});
+
