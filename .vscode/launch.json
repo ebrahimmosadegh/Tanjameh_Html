@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open women-home.html",
-            "file": "D:\\Programing\\Project\\Tanjameh_Html\\brand.html"
+            "file": "D:\\Programing\\Project\\Tanjameh_Html\\mens-clothing.html"
         }
     ]
 }

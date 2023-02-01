@@ -12,6 +12,9 @@ html , body {
   font-size: .75rem !important;
 }
 
+.width-42{
+  width: 42px;
+}
 .form-check-input{
   width: 1.5em;
   height: 1.5em;
@@ -334,11 +337,14 @@ text-decoration: none;
 }
 
 @media (max-width: 990.98px){
-  .brand-cat a{
+  .brand-cat .list-active a{
     padding: .8rem .9rem;
     font-weight: bold;
     margin-left: 5px;
     background-color: #efeff0;
+  }
+  .brand-cat .list-deactive{
+    display: none;
   }
 }
 
@@ -420,4 +426,10 @@ opacity: 1;
 }
 .feedback .form-check-label {
   margin-right: 0;
+}
+
+/* breadcrumb */
+.breadcrumb-item::before {
+  font-family: 'FontAwesome';
+  --bs-breadcrumb-divider: '\f104';
 }
