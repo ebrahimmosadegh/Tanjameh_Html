@@ -15,6 +15,7 @@ html , body {
 .width-42{
   width: 42px;
 }
+
 .form-check-input{
   width: 1.5em;
   height: 1.5em;
@@ -259,6 +260,11 @@ color: #202529;
     height: 174px;
     align-items: center;
     padding: 0 42px;
+}
+
+.carousel-product-item{
+  width: 200px;
+  height: 288.6px;
 }
 
 .footer-two a{ 
