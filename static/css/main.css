@@ -200,7 +200,6 @@ text-decoration: none;
 color: #202529;
 }
 
-
 .menu .megamenu{ padding: 1rem; }
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
@@ -265,6 +264,14 @@ color: #202529;
 .carousel-product-item{
   width: 200px;
   height: 288.6px;
+}
+
+.carousel-product-item-b header{
+  height: 68px;
+}
+.carousel-product-item-b figure{
+  width: 212px;
+  height: 305px;
 }
 
 .footer-two a{ 
