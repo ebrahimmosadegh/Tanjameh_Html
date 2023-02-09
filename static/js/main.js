@@ -297,3 +297,136 @@ $("#feedback_form").submit(function(e) {
   });
 });
 
+// dropdown size box in product page
+function myDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show"); //adding a class show
+}
+ // Close the dropdown if the user clicks outside of it
+ window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+     var dropdowns = document.getElementsByClassName("mydropdown-content");
+     var i;
+     for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+           openDropdown.classList.remove('show');
+        }
+     }
+  }
+}
+$("#myDropdown").on('click',function(event){
+    event.stopPropagation();
+  });
+
+$(".list-size button").click(function(){
+  var available = $(this).find(".available").text();
+  var btn = $(this).parents(".size-box").find(".dropbtn");
+  if (available !== ''){
+    btn.text(available);
+    btn.val(true);
+    document.getElementById("myDropdown").classList.remove("show");
+  }else{
+    btn.text('انتخاب اندازه');
+    btn.val(false);
+  }
+});
+
+  $(".formNotifyMe").submit(function(e) {
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+      if($(this).parent().find(".was-validated").length !== 0){
+        $(this).parent().find('.resultNotify').show(200);
+    $(this).hide();
+    }
+  });
+
+// add to cart
+  $(function(){
+    var total_Price = $("#total-price").text();
+    var bag_empty = $("#bag-empty");
+    var total_text = $("#total-text");
+    if(total_Price == ''){
+      bag_empty.addClass("d-block");
+    }else{
+      bag_empty.removeClass("d-block");
+    }
+		$("#cart-items").hide();
+
+		$(".cart").mouseenter(function () {
+		$("#cart-items").slideDown(100);
+		});
+    $(".cart").mouseleave(function () {
+      $("#cart-items").slideUp(500);
+      });
+
+		$("#items-basket").text(($("#list-item-product").children().length));
+
+		
+		$("#addToCart").on("click", function () {
+      if($(".dropbtn").val() == 'true'){
+        console.log('value true')
+        bag_empty.removeClass("d-block");
+      total_text.addClass("d-flex p-3 border-2 border-top"); 
+
+      $("#cart-items").slideDown();
+     setTimeout(function(){
+        $("#cart-items").slideUp();
+     }, 3000)
+			//add items to basket
+			$('.item-detail-product').each(function () {
+				var name = $(this).children(".product-title").text();
+				var remove = "<button class='remove btn'><i class='fa-regular fa-circle-xmark'></i></button>";
+        var size = $("#btnSize").text();
+				var cena = "<span class='eachPrice'>" + (parseFloat($(this).children(".prices").children(".product-price").text())) + "</span>";
+				$("#list-item-product").append("<li class='p-2'>" + name + "- (اندازه: " + size + ") " + "&#09; - &#09;" + cena + "تومان" + remove + "</li>");
+
+				//number of items in basket
+				$("#items-basket").text(($("#list-item-product").children().length));
+				$("#items-basket").text();
+        
+	        //calculate total price
+	        var totalPrice = 0;
+		        $(".eachPrice").each(function (){       
+		          var cenaEach = parseFloat($(this).text());
+		          totalPrice+=cenaEach;
+		        });
+		        $("#total-price").text(totalPrice + " تومان");
+
+			});
+
+			//remove items from basket
+			$(".remove").on("click", function () {
+				$(this).parent().remove();
+
+		        var totalPrice = 0;
+		        $(".eachPrice").each(function (){ 
+		          var cenaEach = parseFloat($(this).text());
+		          totalPrice+=cenaEach;
+		        });
+		        $("#total-price").text(totalPrice + "تومان ");
+				$("#items-basket").text(($("#list-item-product").children().length));
+        if(totalPrice == 0){
+          bag_empty.addClass("d-block");
+          total_text.removeClass("d-flex p-3 border-2 border-top"); 
+        }
+			});
+      }// end if
+      else{
+        console.log('value false');
+      $(this).addClass("dropbtn");
+      myDropdown(); 
+      }
+      
+		});
+})
+
+
+
+
+// effect megamenu
+$('.has-megamenu').on('show.bs.dropdown', function(e){
+  $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
+});
+
+$('.has-megamenu').on('hide.bs.dropdown', function(e){
+  $(this).find('.dropdown-menu').first().stop(true, true).slideUp(300);
+});
