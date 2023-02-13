@@ -470,15 +470,10 @@ $(".list-size button").click(function(){
 })
 
 // rate for product
-$(".my-rating").starRating({
-  useGradient: false,
-  minRating: 1,
-});
-$(".my-rating-readOnly").starRating({
-  useGradient: false,
-  minRating: 1,
-  readOnly: true
-});
+  // $(".my-rating").starRating({
+  //   useGradient: false,
+  //   minRating: 1,
+  // });
 
 // effect megamenu
 $('.has-megamenu').on('show.bs.dropdown', function(e){
@@ -502,3 +497,21 @@ $(".btn-helpfull").click(function() {
   }
   $(this).toggleClass("helpfull");
 });
+
+// image lazy load
+let lazyImages = [...document.querySelectorAll(".lazy-image")];
+let inAdvance = 300;
+function lazyLoad() {
+  lazyImages.forEach((image) => {
+    if (image.offsetTop < window.innerHeight + window.pageYOffset + inAdvance) {
+      image.src = image.dataset.src;
+      image.onload = () => image.classList.add("loaded");
+    }
+    image.parentElement.classList.remove("placeholder");
+  });
+  // if all loaded removeEventListener
+}
+lazyLoad();
+// window.addEventListener("scroll", _.throttle(lazyLoad, 16));
+// window.addEventListener("resize", _.throttle(lazyLoad, 16));
+

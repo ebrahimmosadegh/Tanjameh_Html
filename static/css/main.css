@@ -20,6 +20,14 @@ html , body {
   box-shadow: inset 0 0 0 2px #1a1a1a;
 }
 
+.pt-144{
+  padding-top: 144.30014% !important;
+}
+
+.pt-96{
+  padding-top: 96.15385% !important;
+}
+
 .form-check-input{
   width: 1.5em;
   height: 1.5em;
@@ -488,4 +496,14 @@ opacity: 1;
   #accountDrop , #cart-items{
     display: none !important;
   }
+}
+
+ /* image lazy loading */
+ img.lazy-image {
+  opacity: 0.1;
+  will-change: opacity;
+  transition: all 0.3s;
+}
+ img.lazy-image.loaded {
+  opacity: 1;
 }

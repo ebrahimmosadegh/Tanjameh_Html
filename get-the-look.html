@@ -8,10 +8,13 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- main & other CSS in local -->
+    <link rel="stylesheet" href="static/star-rating-svg/star-rating-svg.css">
+    <link rel="stylesheet" href="static/product-zoom/product.css">
     <link rel="stylesheet" href="static/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="static/owl/owl.carousel.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <title>تن جامه-بچگانه</title>
+    
+    <title>تن جامه-look</title>
   </head>
   <body>
 <!-- scroll back to top -->
@@ -47,14 +50,14 @@
       <div class="container-lg">
           <div class="flex-fill d-none d-lg-flex">
             <ul class="navbar-nav fw-bold">
-              <li class="nav-item">
-                <a class="nav-link nav-hover" href="women-home.html">زنانه</a>
+              <li class="nav-item bg-dark">
+                <a class="nav-link text-white" href="#">زنانه</a>
               </li>
               <li class="nav-item mx-1">
                 <a class="nav-link nav-hover" href="men-home.html">مردانه</a>
               </li>
-              <li class="nav-item bg-dark">
-                <a class="nav-link text-white" href="#">بچگانه</a>
+              <li class="nav-item">
+                <a class="nav-link nav-hover" href="kids-home.html">بچگانه</a>
               </li>
             </ul>
           </div>
@@ -70,7 +73,7 @@
                 <a class="nav-link" href="#">
                 <svg class="" height="1.3em" width="1.3em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="your-account-8883409" role="img" aria-hidden="false"><title id="your-account-8883409">پروفایل</title><path d="M21.645 22.866a28.717 28.717 0 0 0-6.46-7.817c-2.322-1.892-4.048-1.892-6.37 0a28.74 28.74 0 0 0-6.46 7.817.75.75 0 0 0 1.294.76 27.264 27.264 0 0 1 6.113-7.413A3.98 3.98 0 0 1 12 15.125a3.81 3.81 0 0 1 2.236 1.088 27.252 27.252 0 0 1 6.115 7.412.75.75 0 1 0 1.294-.76zM12 12.002A6.01 6.01 0 0 0 18.003 6 6.003 6.003 0 1 0 12 12.002zm0-10.505a4.502 4.502 0 1 1 0 9.005 4.502 4.502 0 0 1 0-9.005z"></path></svg>
               </a>
-                <ul class="dropdown-menu b-animate b-dark border-0 rounded-0 position-absolute">
+                <ul id="accountDrop" class="dropdown-menu b-animate b-dark border-0 rounded-0 position-absolute">
                   <!-- show li when user is not login -->
                   <li class="px-3 mt-2"><a class="btn btn-dark w-100 rounded-0" href="#">ورود</a></li>
                   <li class="b-animate b-purple px-3 pt-2">
@@ -115,19 +118,28 @@
                   <a href="#" class="btn box-shadow w-100 btn-outline-light rounded-0">جدیدترین ها را ببین</a>
                 </div>
               </div>
-                  <ol id="list-item-product">
-                  </ol>
-                  <div id="total-text">
-                    <span class="me-2">جمع کل:</span><p id="total-price"></p>
-                  </div>
+              <h5 id="cartTitle" class="text-center my-3 fw-semibold">سبد خرید شما</h5>
+              <ol id="list-item-product">
+              </ol>
+              <div id="total-text">
+                <div class="hstack align-items-start mb-2">
+                  <small>تحویل</small>
+                  <small class="ms-auto"><span id="delivery-price">125000</span> تومان</small>
                 </div>
+                <div class="hstack align-items-start">
+                  <h6>جمع <span class="font-x-s text-body-tertiary">(شامل مالیات بر ارزش افزوده)</span></h6>
+                  <h6 class="ms-auto fw-semibold"><span id="total-price"></span> تومان</h6>
+                </div>
+                <a href="#" class="btn btn-dark w-100 my-3">ورود به سبد خرید</a>
+              </div>
+                </div>                               
             </li>
           </ul>
         </div>
       </div>
     </nav>
    <!-- menu bar -->
-   <nav class="navbar navbar-expand-lg menu">
+   <nav class="navbar navbar-expand-lg menu pb-0">
     <div class="container-lg">
       <a class="btn border-dark-subtle d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasHome" role="button" aria-controls="offcanvasHome">
         <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ pVrzNP H3jvU7" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="menu-6594495" role="img" aria-hidden="false"><title id="menu-6594495">Menu</title><path d="M.75 2.25h22.5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5zM23.25 21.75H.75a.75.75 0 0 0 0 1.5h22.5a.75.75 0 0 0 0-1.5zM.75 12.75h12a.75.75 0 0 0 0-1.5h-12a.75.75 0 0 0 0 1.5z"></path></svg>
@@ -762,1469 +774,315 @@
           </div>
         </div>
       </div>
-<!-- start section -->
-<!-- baner -->
-<div class="bg-blue text-dark">
-    <div class="container-md">
-      <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-        <div class="col-12 col-md-6 py-3">
-                            <h3 class="fw-semibold">همه چیز بسته شد!</h3>
-                            <h4 class="mb-4">آخرین فرصت برای علاقه مندی های لباس های بیرونی</h4>
-                <a href="#" class="text-decoration-none text-dark fw-semibold stretched-link">اکنون کشف کنید <i class="fa-solid fa-arrow-left"></i></a>
-        </div>
-        <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-            <img class="lazy-image" data-src="media/kids/kids-a.webp" alt="">
-        </div>
-      </div>
+      <hr class="border-secondary m-0">
+      <!-- start section -->
+      <div class="container-md">
+        <h3 class="fw-bold my-4">نگاه را دریافت کنید</h3>
+        <h6>سازندگان را کشف کنید و سبک های جدید را مرور کنید</h6>
+        <!-- option menu -->
+    <div class="hstack gap-2 scroll-y-nowrap my-5">
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg fw-bold box-shadow">همه سبک ها</a>
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg">کلاسیک</a>
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg">کژوال</a>
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg">لباس خیابانی</a>
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg">مهمانی</a>
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg">پررنگ</a>
+      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none lh-lg">ورزشی</a>
     </div>
-  </div>
-  <!-- carousel center nonloop -->
-  <div class="container-fluid py-5 bg-blue-light">
-  <div class="row">
-  <div class="col-0 col-md-1"></div>
-  <div class="col-12 col-md-11 position-relative overflow-hidden">
-    <div class="container position-absolute bottom-50 z-2">
-      <div class="position-relative index-owl-nav"></div>
-    </div>
-      <div class="owl-center-nonloop owl-carousel">
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-a1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="position-absolute bottom-0 end-0 hstack gap-1">
-                      <div class="text-bg-light p-1 mb-2"><small>بچگانه</small></div>
-                      <div class="text-bg-danger p-1 mb-2"><small>تا ۳۰٪ تخفیف</small></div>
-                    </div>
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">Vintage Supply</h6>
-                    <h6 class="m-0 text-truncate">MONET ARTS - Sweatshirt - شن و ماسه</h6>
-                  </div>
-                  <section>
-                    <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                  </section>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-a2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                    <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>بچگانه</small></div>
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">YAS</h6>
-                    <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                  </div>
-                  <section>
-                    <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                  </section>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-a3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-a4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
-                  <section class="hstack gap-1">
-                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                    <h6 class="m-0">تحویل از راه دور</h6>
-                  </section>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-a5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-a6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
-                </div>
-               </a>
-              </div>
-      </div>
-  </div>
-  </div>
-  </div>
- <!-- baner -->
- <div class="bg-aqua text-dark mt-5">
-  <div class="container-md">
-    <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-      <div class="col-12 col-md-6 py-3">
-                          <h3 class="fw-semibold">Reima ski</h3>
-                          <h4 class="mb-4">لباس اسکی برای مهاجمان شیب دار</h4>
-                          <h6 class="mb-4">با این قطعات مورد علاقه، کودک شما در هر شیب ستاره ای خواهد بود.</h6>
-              <a href="#" class="text-decoration-none text-dark fw-semibold stretched-link">اکنون کشف کنید <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-      <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-          <img class="lazy-image" data-src="media/kids/kids-b.webp" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5 bg-aqua-light">
-<div class="row">
-<div class="col-0 col-md-1"></div>
-<div class="col-12 col-md-11 position-relative overflow-hidden">
-  <div class="container position-absolute bottom-50 z-2">
-    <div class="position-relative index-owl-nav"></div>
-  </div>
-    <div class="owl-center-nonloop owl-carousel">
-            <div class="item position-relative">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+          <div class="col">
+            <div class="position-relative">
               <div class="position-absolute top-0 z-1 mt-2">
                 <!-- add class like or dislike -->
                 <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
               </div>
              <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-b1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-2.webp' alt="">
                 </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">KnowledgeCotton Apparel</h6>
-                  <h6 class="m-0 text-truncate">آستین بلند - بلوز دکمه دار - چند رنگ</h6>
-                </div>
-                <section>
-                  <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-b2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">YAS</h6>
-                  <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                </div>
-                <section>
-                  <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-b3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-b4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-                <section class="hstack gap-1">
-                  <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                  <h6 class="m-0">تحویل از راه دور</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-b5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-b6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-    </div>
-<!-- folow div -->
-<div class="mt-2">
-    <a href="#" class="btn p-3 btn-outline-dark rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-    <span>Reima</span>
-    </div>
-</div>
-</div>
-</div>
-<!-- end carousel -->
- <!-- baner -->
- <div class="bg-green text-dark mt-5">
-  <div class="container-md">
-    <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-      <div class="col-12 col-md-6 py-3">
-                          <h3 class="fw-semibold">FALKE</h3>
-                          <h4 class="mb-4">بازگشت به مدرسه</h4>
-                          <h6 class="mb-4">سال تحصیلی جدید را با جوراب های راحت FALKE شروع کنید.</h6>
-              <a href="#" class="text-decoration-none text-dark fw-semibold stretched-link">اکنون خرید کنید <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-      <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-          <img class="lazy-image" data-src="media/kids/kids-c.webp" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5 bg-green-light">
-<div class="row">
-<div class="col-0 col-md-1"></div>
-<div class="col-12 col-md-11 position-relative overflow-hidden">
-  <div class="container position-absolute bottom-50 z-2">
-    <div class="position-relative index-owl-nav"></div>
-  </div>
-    <div class="owl-center-nonloop owl-carousel">
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-c1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">KnowledgeCotton Apparel</h6>
-                  <h6 class="m-0 text-truncate">آستین بلند - بلوز دکمه دار - چند رنگ</h6>
-                </div>
-                <section>
-                  <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-c2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">YAS</h6>
-                  <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                </div>
-                <section>
-                  <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-c3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-c4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-                <section class="hstack gap-1">
-                  <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                  <h6 class="m-0">تحویل از راه دور</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-c5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-c6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-    </div>
-    <!-- folow div -->
-<div class="mt-2">
-    <a href="#" class="btn p-3 btn-outline-dark rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-    <span>FALKE</span>
-    </div>
-</div>
-</div>
-</div>
-<!-- end carousel -->
-
-<!-- New collections -->
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5">
-  <div class="row">
-  <div class="col-0 col-md-1"></div>
-  <div class="col-12 col-md-11 position-relative overflow-hidden">
-    <h3 class="fw-semibold">مجموعه های جدید</h3>
-<h4>همه درموردش حرف میزنن</h4>
-    <div class="container position-absolute bottom-50 z-2">
-      <div class="position-relative index-owl-nav"></div>
-    </div>
-      <div class="owl-center-nonloop owl-carousel">
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-2-box.webp' alt="">
                   </div>
-                  <div class="card-body p-2 py-2 bg-green">
-                    <h6 class="m-0 text-truncate fw-semibold">خیلی رویایی</h6>
-                    <h6 class="m-0 text-truncate">لباس خواب راحت برای کوچولوهای شما</h6>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
                   </div>
                 </div>
-               </a>
               </div>
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-2 py-2 bg-orange">
-                    <h6 class="m-0 text-truncate fw-semibold">فقط در تن جامه</h6>
-                    <h6 class="m-0 text-truncate">استایل های انحصاری برای کوچولوهای شما</h6>
-                  </div>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-2 py-2 bg-aqua">
-                    <h6 class="m-0 text-truncate fw-semibold">راحتی عالی</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-2 py-2 bg-gold">
-                    <h6 class="m-0 text-truncate fw-semibold">راحتی عالی</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-2 py-2 bg-steelblue">
-                    <h6 class="m-0 text-truncate fw-semibold">راحتی عالی</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-2 py-2 bg-orange-700">
-                    <h6 class="m-0 text-truncate fw-semibold">راحتی عالی</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                </div>
-               </a>
-              </div>
-              <div class="item position-relative">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-d6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-2 py-2 bg-olive-700">
-                    <h6 class="m-0 text-truncate fw-semibold">راحتی عالی</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                </div>
-               </a>
-              </div>
-      </div>
-  </div>
-  </div>
-  </div>
-<!-- end carousel -->
- <!-- baner -->
- <div class="bg-orange-light text-dark mt-5">
-  <div class="container-md">
-    <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-      <div class="col-12 col-md-6 py-3">
-                          <h3 class="fw-semibold">Molo Holiday</h3>
-                          <h4 class="mb-4">درود فصل</h4>
-              <a href="#" class="text-decoration-none text-dark fw-semibold stretched-link">اکنون خرید کنید <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-      <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-          <img class="lazy-image" data-src="media/kids/kids-g.webp" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5 bg-bisque">
-<div class="row">
-<div class="col-0 col-md-1"></div>
-<div class="col-12 col-md-11 position-relative overflow-hidden">
-  <div class="container position-absolute bottom-50 z-2">
-    <div class="position-relative index-owl-nav"></div>
-  </div>
-    <div class="owl-center-nonloop owl-carousel">
-            <div class="item position-relative">
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
               <div class="position-absolute top-0 z-1 mt-2">
                 <!-- add class like or dislike -->
                 <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
               </div>
              <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-g1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-5.webp' alt="">
                 </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">adidas Originals</h6>
-                  <h6 class="m-0 text-truncate">ADIDAS ASTIR W - مربیان - خاکستری یک / سفید / خدمه نیروی دریایی</h6>
-                </div>
-                <section>
-                  <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-g2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">YAS</h6>
-                  <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                </div>
-                <section>
-                  <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-g3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-g4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-                <section class="hstack gap-1">
-                  <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                  <h6 class="m-0">تحویل از راه دور</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-g5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-dark rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-g6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-    </div>
-<!-- folow div -->
-<div class="mt-2">
-    <a href="#" class="btn p-3 btn-outline-dark rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-    <span>Molo</span>
-    </div>
-</div>
-</div>
-</div>
-<!-- end carousel -->
- <!-- baner -->
- <div class="bg-steelblue text-white mt-5">
-  <div class="container-md">
-    <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-      <div class="col-12 col-md-6 py-3">
-                          <h3 class="fw-semibold">Roxy  دختر برفی</h3>
-                          <h4 class="mb-4">دامنه ها منتظر دختران هستند</h4>
-              <a href="#" class="text-decoration-none text-white fw-semibold stretched-link">اکنون خرید کنید <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-      <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-          <img class="lazy-image" data-src="media/kids/kids-h.webp" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5 bg-steelblue-700">
-<div class="row">
-<div class="col-0 col-md-1"></div>
-<div class="col-12 col-md-11 position-relative overflow-hidden">
-  <div class="container position-absolute bottom-50 z-2">
-    <div class="position-relative index-owl-nav"></div>
-  </div>
-    <div class="owl-center-nonloop owl-carousel">
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-h1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">Calvin Klein</h6>
-                  <h6 class="m-0 text-truncate">ژاکت بالش دار - کاپشن پایین - ریحانی جدید</h6>
-                </div>
-                <section>
-                  <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-h2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">YAS</h6>
-                  <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                </div>
-                <section>
-                  <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-h3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-h4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-                <section class="hstack gap-1">
-                  <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                  <h6 class="m-0">تحویل از راه دور</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-h5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-h6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-    </div>
-    <!-- folow div -->
-<div class="mt-2 text-white">
-    <a href="#" class="btn p-3 btn-outline-light rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-    <span>Roxy</span>
-    </div>
-</div>
-</div>
-</div>
-<!-- end carousel -->
-<!-- baner -->
-<div class="bg-steelblue text-white mt-5">
-  <div class="container-md">
-    <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-      <div class="col-12 col-md-6 py-3">
-                          <h3 class="fw-semibold">Name it</h3>
-                          <h4 class="mb-4">برای شیرین ترین رویاها</h4>
-              <a href="#" class="text-decoration-none text-white fw-semibold stretched-link">اکنون کشف کنید <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-      <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-          <img class="lazy-image" data-src="media/kids/kids-i.webp" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5 bg-steelblue-700">
-<div class="row">
-<div class="col-0 col-md-1"></div>
-<div class="col-12 col-md-11 position-relative overflow-hidden">
-  <div class="container position-absolute bottom-50 z-2">
-    <div class="position-relative index-owl-nav"></div>
-  </div>
-    <div class="owl-center-nonloop owl-carousel">
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-i1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">Marco Tozzi</h6>
-                  <h6 class="m-0 text-truncate">نیم بوت بند دار - کرم</h6>
-                </div>
-                <section>
-                  <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-i2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="bg-body-secondary text-body-secondary rounded-pill p-1 mt-2 position-absolute top-0 end-0"><i class="fa-brands fa-pagelines"></i></div>
-                  <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">YAS</h6>
-                  <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                </div>
-                <section>
-                  <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                </section>
-              </div>
-             </a>
-            </div>
-    </div>
-    <!-- folow div -->
-<div class="mt-2 text-white">
-  <a href="#" class="btn p-3 btn-outline-light rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-  <span>Name it</span>
-  </div>
-</div>
-</div>
-</div>
-<!-- end carousel -->
-<!-- baner -->
-<div class="bg-steelblue text-white mt-5">
-  <div class="container-md">
-    <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-      <div class="col-12 col-md-6 py-3">
-                          <h3 class="fw-semibold">Alpha Industries</h3>
-                          <h4 class="mb-4">برای بهترین دوست همه</h4>
-                          <h6 class="mb-4">لوازم جانبی ما را برای سگ ها کشف کنید</h6>
-              <a href="#" class="text-decoration-none text-white fw-semibold stretched-link">خرید همین الان <i class="fa-solid fa-arrow-left"></i></a>
-      </div>
-      <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-          <img class="lazy-image" data-src="media/kids/kids-j.webp" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- carousel center nonloop -->
-<div class="container-fluid py-5 bg-steelblue-700">
-<div class="row">
-<div class="col-0 col-md-1"></div>
-<div class="col-12 col-md-11 position-relative overflow-hidden">
-  <div class="container position-absolute bottom-50 z-2">
-    <div class="position-relative index-owl-nav"></div>
-  </div>
-    <div class="owl-center-nonloop owl-carousel">
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-j1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">Alpha Industries</h6>
-                  <h6 class="m-0 text-truncate">BASIC DOG LEASH UNISEX - سایر لوازم جانبی - نارنجی</h6>
-                </div>
-                <section>
-                  <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-j2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">YAS</h6>
-                  <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                </div>
-                <section>
-                  <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-j3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-j4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-                <section class="hstack gap-1">
-                  <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                  <h6 class="m-0">تحویل از راه دور</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-j5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-            <div class="item position-relative">
-              <div class="position-absolute top-0 z-1 mt-2">
-                <!-- add class like or dislike -->
-                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-              </div>
-             <a href="#" class="text-decoration-none">
-              <div class="card text-white rounded-0 border-0 bg-transparent">
-                <div class="position-relative">
-                <img data-src="media/kids/kids-j6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                </div>
-                <div class="card-body p-0 py-2">
-                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                </div>
-                <section>
-                  <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                </section>
-              </div>
-             </a>
-            </div>
-    </div>
-    <!-- folow div -->
-<div class="mt-2 text-white">
-    <a href="#" class="btn p-3 btn-outline-light rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-    <span>Alpha Industries</span>
-    </div>
-</div>
-</div>
-</div>
-<!-- end carousel -->
-  <!-- baner -->
-<div class="bg-mediumpurple text-white mt-5">
-    <div class="container-md">
-      <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
-        <div class="col-12 col-md-6 py-3">
-                            <h3 class="fw-semibold">Pieces Kids</h3>
-                            <h4 class="mb-4">رویای لباس</h4>
-                <a href="#" class="text-decoration-none text-white fw-semibold stretched-link">اکنون خرید کنید <i class="fa-solid fa-arrow-left"></i></a>
-        </div>
-        <div class="col-12 col-md-6 card p-0 rounded-0 border-0 bg-dark-subtle placeholder">
-            <img class="lazy-image" data-src="media/kids/kids-k.webp" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- carousel center nonloop -->
-  <div class="container-fluid py-5 bg-darkmpurple">
-  <div class="row">
-  <div class="col-0 col-md-1"></div>
-  <div class="col-12 col-md-11 position-relative overflow-hidden">
-    <div class="container position-absolute bottom-50 z-2">
-      <div class="position-relative index-owl-nav"></div>
-    </div>
-      <div class="owl-center-nonloop owl-carousel">
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-white rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-k1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                    <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-5-box.webp' alt="">
                   </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">Marco Tozzi</h6>
-                    <h6 class="m-0 text-truncate">نیم بوت بند دار - کرم</h6>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
                   </div>
-                  <section>
-                    <h6>۵،۴۰۰،۰۰۰ تومان</h6>
-                  </section>
                 </div>
-               </a>
               </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-white rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-k2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                    <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">YAS</h6>
-                    <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
-                  </div>
-                  <section>
-                    <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
-                  </section>
-                </div>
-               </a>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
               </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-6.webp' alt="">
                 </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-white rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-k3.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-6-box.webp' alt="">
                   </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
                   </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
                 </div>
-               </a>
               </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-white rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-k4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
-                  <section class="hstack gap-1">
-                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
-                    <h6 class="m-0">تحویل از راه دور</h6>
-                  </section>
-                </div>
-               </a>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
               </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-7.webp' alt="">
                 </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-white rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-k5.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-7-box.webp' alt="">
                   </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
                   </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
                 </div>
-               </a>
               </div>
-              <div class="item position-relative">
-                <div class="position-absolute top-0 z-1 mt-2">
-                  <!-- add class like or dislike -->
-                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
-                </div>
-               <a href="#" class="text-decoration-none">
-                <div class="card text-white rounded-0 border-0 bg-transparent">
-                  <div class="position-relative">
-                  <img data-src="media/kids/kids-k6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
-                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
-                  </div>
-                  <section>
-                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
-                  </section>
-                </div>
-               </a>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
               </div>
-      </div>
-      <!-- folow div -->
-  <div class="mt-2 text-white">
-    <a href="#" class="btn p-3 btn-outline-light rounded-0 me-2"><i class="fa-solid fa-plus"></i>   دنبال کنید</a>
-    <span>Pieces</span>
-    </div>
-  </div>
-  </div>
-  </div>
-   
-<!-- brand box -->
-<div class="container-md my-5">
-  <h4 class="h4 fw-semibold">برندهای بچگانه مورد علاقه ما</h4>
-  <div class="row row-cols-md-4 row-cols-2 mt-4 lh-lg text-truncate b-animate b-dark">
-<div class="col">
-    <a class="nav-link" href="#">ادیداس</a>
-    <a class="nav-link" href="#">نایک</a>
-    <a class="nav-link" href="#">ریبوک</a>
-    <a class="nav-link" href="#">آندرآمور</a>
-</div>
-<div class="col">
-  <a class="nav-link" href="#">جیب</a>
-    <a class="nav-link" href="#">جین</a>
-    <a class="nav-link" href="#">کاترپیلار</a>
-    <a class="nav-link" href="#">وست</a>
-</div>
-<div class="col">
-  <a class="nav-link" href="#">بادی اسپینرز</a>
-    <a class="nav-link" href="#">پوما</a>
-    <a class="nav-link" href="#">۳۶۱درجه</a>
-    <a class="nav-link" href="#">کتان</a>
-</div>
-<div class="col">
-  <a class="nav-link" href="#">بادی اسپینرز</a>
-    <a class="nav-link" href="#">پوما</a>
-    <a class="nav-link" href="#">۳۶۱درجه</a>
-    <a class="nav-link" href="#">کتان</a>
-</div>
-  </div>
-</div>
-     <!-- trend categories box -->
-<div class="container-md my-5">
-  <h4 class="h4 fw-semibold">دسته بندی بچگانه مورد علاقه ما</h4>
-  <div class="row row-cols-md-4 row-cols-2 mt-4 lh-lg text-truncate b-animate b-dark">
-<div class="col">
-    <a class="nav-link" href="#">لباس نوزاد</a>
-    <a class="nav-link" href="#">کت های بچه گانه</a>
-    <a class="nav-link" href="#">کلاه بچه</a>
-    <a class="nav-link" href="#">لباس خواب نوزاد</a>
-</div>
-<div class="col">
-  <a class="nav-link" href="#">لباس برفی نوزاد</a>
-    <a class="nav-link" href="#">جوراب بچه</a>
-    <a class="nav-link" href="#">لباس بچه گانه</a>
-    <a class="nav-link" href="#">کفش بچه گانه</a>
-</div>
-<div class="col">
-  <a class="nav-link" href="#">کفش بسکتبال بچه گانه</a>
-    <a class="nav-link" href="#">لباس مجلسی بچه گانه</a>
-    <a class="nav-link" href="#">کفش فوتبال بچه گانه</a>
-    <a class="nav-link" href="#">کاپشن بچه گانه</a>
-</div>
-<div class="col">
-  <a class="nav-link" href="#">دمپایی بچه گانه</a>
-    <a class="nav-link" href="#">چکمه های برفی بچه گانه</a>
-    <a class="nav-link" href="#">جوراب شلواری بچه گانه</a>
-    <a class="nav-link" href="#">لباس ورزشی بچه گانه</a>
-</div>
-  </div>
-</div>
-<!-- newsletter box -->
-<div class="bg-body-secondary pt-3">
-<div class="container-md">
-  <div class="row">
-  <div class="col-12 col-md-5">
-<h5 class="fw-bold">اینباکس شما</h5>
-<h5 class="mb-3">خالی از مد هست</h5>
-<h6>برای دریافت آخرین استایل هایی که تن جامه میسازد، ایمیلتان را ثبت کنید</h6>
-  </div>
-  <div class="col-12 col-md-7">
-    <div class="card px-md-5 py-md-2 rounded-0 border-0">
-      <form class="form-validation card-body" role="form" data-toggle="validator" novalidate>
-        <div class="col">
-          <label for="validationEmail" class="form-label m-0 p-1 border border-bottom-0 border-dark">ایمیل شما:</label>
-          <div class="input-group has-validation">
-            <input type="email" class="form-control rounded-0 border-dark" placeholder="example@email.com" id="validationEmail" required>
-            <div class="invalid-feedback">
-              لطفا ایمیل خود را وارد نمایید
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-2.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-2-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-5.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-5-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-6.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-6-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-7.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-7-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-2.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-2-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-5.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-5-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-6.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-6-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative pt-144 bg-dark-subtle w-100 placeholder">
+                  <img class="card-img rounded-0 position-absolute top-0 lazy-image" data-src='media/product/product-outfit-7.webp' alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2 placeholder-glow">
+                  <div class="width-42 bg-dark-subtle placeholder">
+                    <img class="rounded-0 w-100 lazy-image" data-src='media/product/product-outfit-7-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
             </div>
           </div>
         </div>
-        <fieldset class="row my-4">
-          <legend class="col-form-label col-md-6 pt-0">
-            <h6 class="fw-bold">ترجیحات خود را مدیریت کنید</h6>
-            <h6>بیشتر به چه چیزی علاقه دارید؟</h6>
-          </legend>
-          <div class="col-md-6">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" required>
-              <label class="form-check-label fs-5" for="gridRadios1">
-                مد زنانه
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" required>
-              <label class="form-check-label fs-5" for="gridRadios2">
-                مد مردانه
-              </label>
-              <div class="invalid-feedback">
-                لطفا ترجیهات خود را انتخاب نمایید
-              </div>
-            </div>
-          </div>
-        </fieldset>
-    <div class="accordion" id="accordionNewsletter">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            گزینه بیشتر
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionNewsletter">
-          <div class="accordion-body">
-            <div class="row row-cols-1 row-cols-md-2">
-              <div class="col">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                  <label class="form-check-label" for="flexCheckDefault">
-                    هشدارهای مورد شما
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                  <label class="form-check-label" for="flexCheckChecked">
-                    اصلاح مد شما
-                  </label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                  <label class="form-check-label" for="flexCheckDefault">
-                    برندهایی که دنبال می کنید
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                  <label class="form-check-label" for="flexCheckChecked">
-                    نظرسنجی ها
-                  </label>
-                </div>
-              </div>
-            </div>
-            <a href="#" class="text-decoration-none font-x-s text-mediumpurple">مشاهده بیشتر (باید وارد سیستم شوید)</a>
-          </div>
-        </div>
+      
+        
+      
       </div>
-    </div>
-          <button class="btn w-100 my-3 text-bg-dark rounded-0" type="submit" onclick="validateForm()">Submit form</button>
-          <small class="text-muted">برای آشنایی با نحوه پردازش داده های شما، از اعلامیه <a href="#" class="text-dark text-decoration-none">حریم خصوصی</a> ما دیدن کنید. شما می توانید در هر زمان و بدون هزینه <a href="#" class="text-dark text-decoration-none">اشتراک</a> خود را لغو کنید.</small>
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-</div>
 <!-- footer -->
 <div class="bg-mediumpurple footer-two py-1 py-md-5 mt-5">
   <div class="container-md">
@@ -2418,6 +1276,9 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="static/js/jquery.min.js"></script>
+<script src="static/star-rating-svg/jquery.star-rating-svg.js"></script>
+<script src="static/product-zoom/product.js"></script>
+<script>$('#glasscase').glassCase();</script>
 <script src="static/js/bootstrap.bundle.min.js"></script>
 <script src="static/owl/owl.carousel.js"></script>
 <script src="static/js/main.js"></script>
