@@ -16,6 +16,10 @@ html , body {
   width: 42px;
 }
 
+.width-57{
+  width: 57px;
+}
+
 .box-shadow{
   box-shadow: inset 0 0 0 2px #1a1a1a;
 }
@@ -26,6 +30,16 @@ html , body {
 
 .pt-96{
   padding-top: 96.15385% !important;
+}
+
+.z-1020{
+  z-index: 1020 !important;
+}
+.z-1030{
+  z-index: 1030 !important;
+}
+.z-1040{
+  z-index: 1040 !important;
 }
 
 .form-check-input{
@@ -177,6 +191,7 @@ input[type="color"]:focus,
 }
 
 .b-drop .dropdown-menu , .b-drop #cart-items{
+  z-index: 1040;
   width: 300px;
   background: #e8ecef;
   transform: translateX(265px);
@@ -211,6 +226,7 @@ text-decoration: none;
 color: #202529;
 }
 
+.nav-menu{z-index: 1030;}
 .menu .megamenu{ padding: 1rem; }
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
