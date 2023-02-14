@@ -514,4 +514,3 @@ function lazyLoad() {
 lazyLoad();
 // window.addEventListener("scroll", _.throttle(lazyLoad, 16));
 // window.addEventListener("resize", _.throttle(lazyLoad, 16));
-

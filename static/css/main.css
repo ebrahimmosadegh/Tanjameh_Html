@@ -13,13 +13,24 @@ html , body {
 }
 
 .width-42{
-  width: 42px;
+  width: 42px !important;
 }
 
 .width-57{
-  width: 57px;
+  width: 57px !important;
 }
 
+.width-70{
+  width: 70px !important;
+}
+
+.width-87{
+  width: 87px !important;
+}
+
+.height-70{
+  height: 70px !important;
+}
 .box-shadow{
   box-shadow: inset 0 0 0 2px #1a1a1a;
 }
@@ -100,6 +111,9 @@ input[type="color"]:focus,
 
 .bg-gold{
   background-color: rgb(242, 170, 14);
+}
+.bg-gold-700{
+  background-color: #F29D3C;
 }
 .bg-gold-light{
   background-color: rgb(247, 204, 111);
@@ -522,4 +536,12 @@ opacity: 1;
 }
  img.lazy-image.loaded {
   opacity: 1;
+}
+
+/* creator */
+.creator-cover{
+background-color: transparent;
+background-size: cover;
+background-position: 50%;
+background-repeat: no-repeat;
 }
