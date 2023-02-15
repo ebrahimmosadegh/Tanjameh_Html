@@ -31,6 +31,16 @@ btn_stop.hide();
 btn_play.fadeIn(500);
 })
 // owl center nonloop
+$(".owl-item-2").owlCarousel({
+  loop: false,
+  items:2,
+  nav:true,
+  rtl:true,
+  lazyLoad:true,
+  dots:false,
+  navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+  margin: 10,
+});
 $('.owl-center-nonloop').owlCarousel({
   loop: false,
   nav:true,
@@ -51,6 +61,7 @@ $('.owl-center-nonloop').owlCarousel({
     }
 }
 });
+
 $('.owl-autowidth').owlCarousel({
   autoWidth:true,
   loop: false,
