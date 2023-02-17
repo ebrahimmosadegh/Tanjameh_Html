@@ -39,6 +39,10 @@ html , body {
   padding-top: 144.30014% !important;
 }
 
+.pt-72{
+  padding-top: 72.15007%;
+}
+
 .pt-48{
   padding-top: 48.102% !important;
 }
@@ -105,6 +109,10 @@ input[type="color"]:focus,
   color: #D2451E;
 }
 
+.bg-zereshk{
+  background: #6C1C30;
+}
+
 .bg-bisque{
   background-color: rgb(234, 177, 144);
 }
@@ -114,6 +122,9 @@ input[type="color"]:focus,
 
 .bg-gold{
   background-color: rgb(242, 170, 14);
+}
+.bg-gold-500{
+  background: #F2B53C;
 }
 .bg-gold-700{
   background-color: #F29D3C;
@@ -558,3 +569,37 @@ background-size: cover;
 background-position: 50%;
 background-repeat: no-repeat;
 }
+
+/* scroll text */
+.scroll-text article {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  height: 2.6em;
+}
+.scroll-left {
+  white-space: nowrap;
+  position: absolute;
+  text-transform: uppercase;
+  -webkit-animation: mymove 8s linear infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 8s linear infinite alternate;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  from {
+    left: 0;
+  }
+  to {
+    left: -140px;
+  }
+}
+@keyframes mymove {
+  from {
+    left: 0;
+  }
+  to {
+    left: -140px;
+  }
+}
+
+
