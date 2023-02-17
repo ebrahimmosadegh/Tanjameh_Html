@@ -102,6 +102,9 @@ input[type="color"]:focus,
 .bg-orange-light{
   background: rgb(216, 113, 54);
 }
+.bg-orange-500{
+  background: rgb(228, 107, 22);
+}
 .bg-orange-700{
   background-color: hsl(13,75%,28.26%);
 }
