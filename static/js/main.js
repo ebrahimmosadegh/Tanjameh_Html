@@ -526,3 +526,10 @@ lazyLoad();
 // window.addEventListener("scroll", _.throttle(lazyLoad, 16));
 // window.addEventListener("resize", _.throttle(lazyLoad, 16));
 
+// releases
+$(".btn-pluse").click(function(){
+  console.log("hiden")
+$(this).parents().find(".modal-body").hide();
+$(this).parents().find(".modal-footer").hide();
+$(this).parents().find(".pluse-form").addClass("d-inline-block");
+});

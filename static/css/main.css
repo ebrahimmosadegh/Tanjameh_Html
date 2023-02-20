@@ -96,6 +96,16 @@ input[type="color"]:focus,
   outline: 0 none;
 }
 
+.nav-item .badge{
+  height: 16px;
+  min-width: 16px;
+  letter-spacing: 0;
+  line-height: 0.6rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  border-radius: 10px !important;
+}
+
 .bg-orange{
   background-color: #D2451E;
 }
@@ -114,6 +124,9 @@ input[type="color"]:focus,
 
 .bg-zereshk{
   background: #6C1C30;
+}
+.bg-zereshk-700{
+  background: #561626;
 }
 
 .bg-bisque{
@@ -210,6 +223,11 @@ input[type="color"]:focus,
 .text-dark-900{
   color: #1a1a1a !important;
 }
+
+.bg-gainsboro-light{
+  background: rgb(239, 239, 240);
+}
+
 .text-white{
   color: #fff !important;
 }
@@ -537,7 +555,7 @@ opacity: 1;
 }
 
 /* cart */
-#bag-empty , #total-text, #cartTitle , .cartSm{
+#bag-empty , #total-text, #cartTitle , .cartSm , .pluse-form{
   display: none;
 }
 
@@ -605,4 +623,12 @@ background-repeat: no-repeat;
   }
 }
 
-
+/* releases page */
+.releases-img{
+  width: 500px;
+}
+@media (max-width: 767.98px){
+  .releases-img{
+    width: 266px;
+  }
+}
