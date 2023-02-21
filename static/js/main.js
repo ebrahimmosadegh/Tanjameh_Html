@@ -280,6 +280,14 @@ parents.find(".product-price").text(price);
 parents.find(".product-detail").text(detail);
 });
 
+$(".product-box a").mouseleave(function(){
+  var parents = $(this).parents(".product")
+  var img = $(".product-box a:first").attr("data-img");
+  var detail = $(".product-box a:first").attr("data-detail");
+  parents.find(".product-img img").attr("src", img);
+  parents.find(".product-detail").text(detail);
+});
+
 // feedback 
 $("input[name$='feedback']").click(function() {
   $("div#feedback_two").show();

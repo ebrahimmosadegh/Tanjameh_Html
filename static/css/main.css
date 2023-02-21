@@ -1,12 +1,5 @@
-@import url(fonts.css);
+@import url(font-load.css);
 
-html , body {
-  font-family: 'VazirThin', sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  word-wrap: break-word;
-  scroll-behavior: smooth;
-}
 
 .font-x-s{
   font-size: .75rem !important;
@@ -167,6 +160,9 @@ input[type="color"]:focus,
   background: hsl(200,71.4%,72.8%);
 }
 
+.bg-steelblue-light{
+  background: #519DEA;
+}
 .bg-steelblue{
   background-color: rgb(62, 112, 178);
 }
