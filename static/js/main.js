@@ -359,133 +359,133 @@ $(".list-size button").click(function(){
   });
 
 // add to cart
-  $(function(){
-    var total_Price = $("#total-price").text();
-    var bag_empty = $("#bag-empty");
-    var total_text = $("#total-text");
-    var cartTitle = $("#cartTitle")
-    if(total_Price == ''){
-      bag_empty.addClass("d-block");
-    }else{
+$(function(){
+  var total_Price = $("#total-price").text();
+  var bag_empty = $("#bag-empty");
+  var total_text = $("#total-text");
+  var cartTitle = $("#cartTitle")
+  if(total_Price == ''){
+    bag_empty.addClass("d-block");
+  }else{
+    bag_empty.removeClass("d-block");
+  }
+  $("#cart-items").hide();
+
+  $(".cart").mouseenter(function () {
+  $("#cart-items").slideDown(100);
+  });
+  $(".cart").mouseleave(function () {
+    $("#cart-items").slideUp(500);
+    });
+
+  $(".items-basket").text(($("#list-item-product").children().length));
+  
+  $("#addToCart").on("click", function () {
+    if($(".dropbtn").val() == 'true'){        
       bag_empty.removeClass("d-block");
-    }
-		$("#cart-items").hide();
-
-		$(".cart").mouseenter(function () {
-		$("#cart-items").slideDown(100);
-		});
-    $(".cart").mouseleave(function () {
-      $("#cart-items").slideUp(500);
-      });
-
-		$(".items-basket").text(($("#list-item-product").children().length));
-		
-		$("#addToCart").on("click", function () {
-      if($(".dropbtn").val() == 'true'){        
-        bag_empty.removeClass("d-block");
-      total_text.addClass("d-block p-2");
-      cartTitle.addClass("d-block") ;
-      var deliveryPrice = parseFloat($("#delivery-price").text());
-        // add spinner to button cart
-        var addToCart = $("#addToCart");
-        addToCart.attr('disabled', true);
-          addToCart.html(`
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          افزودن به سبد ...
-          `);
-        setTimeout(function(){
-          addToCart.removeClass('btn-dark');
-          addToCart.addClass('btn-success');
-          addToCart.html('<i class="fa-solid fa-check"></i>');
-        }, 1000)
-        setTimeout(function(){
-          addToCart.prop('disabled', false);
-          addToCart.removeClass('btn-success');
-          addToCart.addClass('btn-dark');
-          addToCart.text('افزودن به سبد خرید');
-        }, 3000)
-
-      $("#cart-items").slideDown();
-      $(".cartSm").slideToggle(500);
-      setTimeout(function(){
-       $(".cartSm").slideUp();
-        $("#cart-items").slideUp();        
-     }, 4000)
-			//add items to basket
-			$('.item-detail-product').each(function () {
-				var brand = $(this).find(".product-brand").text();
-				var brandHref = $(this).find(".product-brand").attr('href');
-				var name = $(this).find(".product-title").text();
-				var firstColorImg = $(this).find("#firstColorImg").attr('src');
-				var remove = "<a href='#' class='remove-cart text-decoration-none text-body-tertiary d-inline-block'>حذف مورد</a>";
-        var wishList = "<a href='#' class='wishList text-decoration-none text-body-tertiary d-inline-block'>انتقال به علاقمندی</a>";
-        var size = $(this).find("#btnSize").text();
-				var cena = (parseFloat($(this).find(".prices").children(".product-price").text()));
-          $("#list-item-product").addClass("p-2")
-        $("#list-item-product").append(`
-        <li class="hstack gap-1 align-items-start mb-5 li-item">
-        <img src='${firstColorImg}' class="width-42" alt=""> 
-        <div class="b-animate b-dark font-x-s w-100">
-          <div class="hstack">
-          <a href="${brandHref}" class="d-inline-block text-decoration-none text-dark mb-2">${brand}</a>
-          <h6 class="fw-semibold ms-auto"><span class='eachPrice'>${cena}</span> تومان</h6>
-          </div>
-          <a class="d-block text-decoration-none text-dark fs-6">${name}</a>
-          <p class="text-body-secondary m-0">اندازه: <span class="sizeItem">${size}</span></p>
-          <p class="text-body-secondary">تعداد: <span>1</span></p>
-          ${remove}
-          <div class="vr mx-1"></div>
-          ${wishList}
-        </div>
-      </li>
+    total_text.addClass("d-block p-2");
+    cartTitle.addClass("d-block") ;
+    var deliveryPrice = parseFloat($("#delivery-price").text());
+      // add spinner to button cart
+      var addToCart = $("#addToCart");
+      addToCart.attr('disabled', true);
+        addToCart.html(`
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        افزودن به سبد ...
         `);
+      setTimeout(function(){
+        addToCart.removeClass('btn-dark');
+        addToCart.addClass('btn-success');
+        addToCart.html('<i class="fa-solid fa-check"></i>');
+      }, 1000)
+      setTimeout(function(){
+        addToCart.prop('disabled', false);
+        addToCart.removeClass('btn-success');
+        addToCart.addClass('btn-dark');
+        addToCart.text('افزودن به سبد خرید');
+      }, 3000)
 
-				//number of items in basket
-				$(".items-basket").text(($("#list-item-product").children().length));
-				$(".items-basket").text();
-        
-	        //calculate total price
-	        var totalPrice = 0;
-		        $(".eachPrice").each(function (){       
-		          var cenaEach = parseFloat($(this).text());
-		          totalPrice+=cenaEach;
-		        });
-		        $("#total-price").text(totalPrice + deliveryPrice);
+    $("#cart-items").slideDown();
+    $(".cartSm").slideToggle(500);
+    setTimeout(function(){
+     $(".cartSm").slideUp();
+      $("#cart-items").slideUp();        
+   }, 4000)
+    //add items to basket
+    $('.item-detail-product').each(function () {
+      var brand = $(this).find(".product-brand").text();
+      var brandHref = $(this).find(".product-brand").attr('href');
+      var name = $(this).find(".product-title").text();
+      var firstColorImg = $(this).find("#firstColorImg").attr('src');
+      var remove = "<a href='#' class='remove-cart text-decoration-none text-body-tertiary d-inline-block'>حذف مورد</a>";
+      var wishList = "<a href='#' class='wishList text-decoration-none text-body-tertiary d-inline-block'>انتقال به علاقمندی</a>";
+      var size = $(this).find("#btnSize").text();
+      var cena = (parseFloat($(this).find(".prices").children(".product-price").text()));
+        $("#list-item-product").addClass("p-2")
+      $("#list-item-product").append(`
+      <li class="hstack gap-1 align-items-start mb-5 li-item">
+      <img src='${firstColorImg}' class="width-42" alt=""> 
+      <div class="b-animate b-dark font-x-s w-100">
+        <div class="hstack">
+        <a href="${brandHref}" class="d-inline-block text-decoration-none text-dark mb-2">${brand}</a>
+        <h6 class="fw-semibold ms-auto"><span class='eachPrice'>${cena}</span> تومان</h6>
+        </div>
+        <a class="d-block text-decoration-none text-dark fs-6">${name}</a>
+        <p class="text-body-secondary m-0">اندازه: <span class="sizeItem">${size}</span></p>
+        <p class="text-body-secondary">تعداد: <span>1</span></p>
+        ${remove}
+        <div class="vr mx-1"></div>
+        ${wishList}
+      </div>
+    </li>
+      `);
 
-			});
-
-      function removeWish(){
-        var totalPrice = 0;
-        $(".eachPrice").each(function (){ 
-          var cenaEach = parseFloat($(this).text());
-          totalPrice+=cenaEach;
-        });
-        $("#total-price").text(totalPrice + deliveryPrice);
-        $(".items-basket").text(($("#list-item-product").children().length));
-
-        if(totalPrice == 0){
-          bag_empty.addClass("d-block");
-          total_text.removeClass("d-block p-2"); 
-          cartTitle.removeClass("d-block"); 
-            };
-      }
-			//remove & wish items from basket
-      $(".wishList").on('click', function(){
-        $(this).parents(".li-item").html('<small class="text-body-secondary m-auto">به لیست علاقمندی، اضافه شد</small>');
-        $(this).parents(".li-item").remove();
-        removeWish();
-      });
-			$(".remove-cart").on('click', function(){
-        $(this).parents(".li-item").remove();
-        removeWish();
-      });
-      }// end if
-      else{
-      $(this).addClass("dropbtn");
-      myDropdown(); 
-      }
+      //number of items in basket
+      $(".items-basket").text(($("#list-item-product").children().length));
+      $(".items-basket").text();
       
-		});
+        //calculate total price
+        var totalPrice = 0;
+          $(".eachPrice").each(function (){       
+            var cenaEach = parseFloat($(this).text());
+            totalPrice+=cenaEach;
+          });
+          $("#total-price").text(totalPrice + deliveryPrice);
+
+    });
+
+    function removeWish(){
+      var totalPrice = 0;
+      $(".eachPrice").each(function (){ 
+        var cenaEach = parseFloat($(this).text());
+        totalPrice+=cenaEach;
+      });
+      $("#total-price").text(totalPrice + deliveryPrice);
+      $(".items-basket").text(($("#list-item-product").children().length));
+
+      if(totalPrice == 0){
+        bag_empty.addClass("d-block");
+        total_text.removeClass("d-block p-2"); 
+        cartTitle.removeClass("d-block"); 
+          };
+    }
+    //remove & wish items from basket
+    $(".wishList").on('click', function(){
+      $(this).parents(".li-item").html('<small class="text-body-secondary m-auto">به لیست علاقمندی، اضافه شد</small>');
+      $(this).parents(".li-item").remove();
+      removeWish();
+    });
+    $(".remove-cart").on('click', function(){
+      $(this).parents(".li-item").remove();
+      removeWish();
+    });
+    }// end if
+    else{
+    $(this).addClass("dropbtn");
+    myDropdown(); 
+    }
+    
+  });
 })
 
 // rate for product
@@ -541,3 +541,43 @@ $(this).parents().find(".modal-body").hide();
 $(this).parents().find(".modal-footer").hide();
 $(this).parents().find(".pluse-form").addClass("d-inline-block");
 });
+
+// search all website
+$(".icon-search").on("click", function(){
+    $(".search-form").fadeToggle();
+    $(".search-form input").focus();
+    $(".fa-search").toggleClass("fa-times").css("transform", "rotate(0deg)");
+  $(".fa-times").css("transform", "rotate(180deg)");
+});
+// search autocomplete
+function all_search(){
+  const search = document.getElementById('all_search')
+const matchList = document.getElementById('all_match_list')
+// Search and filter
+const allSearch = async searchText => {
+    const items = ["adidas","puma","nike","boss","jean","ALDO","ASICS"];
+    // Get matches to current text input
+    let matchs = items.filter(user => {
+        const regex = new RegExp(`^${searchText}`, 'gi')
+        return user.match(regex)
+    })
+    if (searchText.length === 0) {
+        matchs = []
+        matchList.innerHTML = ''
+    }
+    // Output
+    outputHtml(matchs);
+}
+const outputHtml = matchs => {
+    if (matchs.length > 0) {
+        const html = matchs.map(match => `
+            <a href="#" class="nav-link nav-hover py-2 px-4 d-flex border-bottom align-items-center">
+              <span class="">${match}</span>
+              <i class="fa fa-search ms-auto" aria-hidden="trues"></i>
+          </a>
+        `).join('')
+        matchList.innerHTML = html
+    }
+}
+search.addEventListener('input', () => allSearch(search.value))
+}

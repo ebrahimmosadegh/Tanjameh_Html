@@ -595,11 +595,19 @@
           </li>
         </ul>
       </div>
-      <div class="navbar-nav ms-auto">
-            <div class="input-group">
-              <input type="text" class="form-control bg-body-secondary rounded-0" placeholder="جستجو" aria-label="Recipient's username" aria-describedby="button-addon2">
-              <button class="btn btn-inline-secondary bg-body-secondary rounded-0 z-0" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+      <!-- search all website -->
+      <div>
+        <div class="icon-search bg-gainsboro-light d-flex align-items-center justify-content-between p-1" style="width: 288px;">
+          <span class="fs-6 text-dark-emphasis">جستجو</span>
+          <i class="fa fa-search p-2" aria-hidden="trues"></i>
+        </div>
+    <div class="search-form">
+        <input type="text" id="all_search" class="" placeholder="جستجو را اینجا بنویس" onfocus="all_search()">
+         <div class="result-search position-relative p-0">
+          <div id="all_match_list" class="position-absolute bg-light-subtle w-100 overflow-y-scroll border-dark border border-top-0" style="max-height: 18rem;">
+          </div>
+        </div>
+      </div>
       </div>
     </div>
     </nav>
@@ -610,7 +618,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <hr class="m-0">
-        <div class="offcanvas-body p-0 overflow-hidden">
+        <div class="offcanvas-body p-0 overflow-y-scroll overflow-x-hidden">
           <nav>
             <div class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
               <button class="nav-link active text-black-50 rounded-0" id="nav-women-tab" data-bs-toggle="tab" data-bs-target="#nav-women" type="button" role="tab" aria-controls="nav-women" aria-selected="true">زنانه</button>
