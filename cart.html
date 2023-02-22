@@ -4,14 +4,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap CSS & font-awesome CSS cdn -->
+    <!-- Bootstrap CSS & font-awesome CSS cdn -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- main & other CSS in local -->
+    <link rel="stylesheet" href="static/star-rating-svg/star-rating-svg.css">
+    <link rel="stylesheet" href="static/product-zoom/product.css">
     <link rel="stylesheet" href="static/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="static/owl/owl.carousel.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <title>تن جامه - برند</title>
+    
+    <title>تن جامه-سبد خرید</title>
   </head>
   <body>
 <!-- scroll back to top -->
@@ -47,8 +50,8 @@
       <div class="container-lg">
           <div class="flex-fill d-none d-lg-flex">
             <ul class="navbar-nav fw-bold">
-              <li class="nav-item">
-                <a class="nav-link nav-hover" href="women-home.html">زنانه</a>
+              <li class="nav-item bg-dark">
+                <a class="nav-link text-white" href="#">زنانه</a>
               </li>
               <li class="nav-item mx-1">
                 <a class="nav-link nav-hover" href="men-home.html">مردانه</a>
@@ -106,7 +109,7 @@
               <a class="nav-link" href="#">
                 <svg height="1.3em" width="1.3em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="your-bag-8883411" role="img" aria-hidden="false"><title id="your-bag-8883411">سبد خرید</title><path d="M20.677 13.654a5.23 5.23 0 0 0 1.073-3.194c-.01-2.632-1.968-4.78-4.5-5.137V5.25a5.25 5.25 0 0 0-10.5 0v.059a5.224 5.224 0 0 0-2.444 1.014 5.23 5.23 0 0 0-.983 7.33A5.623 5.623 0 0 0 6.375 24h11.25a5.623 5.623 0 0 0 3.052-10.346zM12 1.5a3.75 3.75 0 0 1 3.75 3.75h-7.5A3.75 3.75 0 0 1 12 1.5zm5.625 21H6.375a4.122 4.122 0 0 1-1.554-7.942.75.75 0 0 0 .214-1.256A3.697 3.697 0 0 1 3.75 10.5a3.755 3.755 0 0 1 3-3.674V9a.75.75 0 0 0 1.5 0V6.75h7.5V9a.75.75 0 1 0 1.5 0V6.826a3.755 3.755 0 0 1 3 3.674c0 1.076-.47 2.1-1.285 2.802a.75.75 0 0 0 .213 1.256 4.122 4.122 0 0 1-1.553 7.942z"></path></svg>
               </a>
-              <div id="cart-items" class="position-absolute z-3">
+              <div id="cart-items" class="position-absolute">
               <div id="bag-empty" class="pt-3 text-center">
                 <h6 class="fw-semibold">سبد شما خالی است</h6>
                 <h6 class="mx-2">برو آن را با تمام امیدها و رویاهای مد خود پر کن.</h6>
@@ -115,12 +118,21 @@
                   <a href="#" class="btn box-shadow w-100 btn-outline-light rounded-0">جدیدترین ها را ببین</a>
                 </div>
               </div>
-                  <ol id="list-item-product">
-                  </ol>
-                  <div id="total-text">
-                    <span class="me-2">جمع کل:</span><p id="total-price"></p>
-                  </div>
+              <h5 id="cartTitle" class="text-center my-3 fw-semibold">سبد خرید شما</h5>
+              <ol id="list-item-product">
+              </ol>
+              <div id="total-text">
+                <div class="hstack align-items-start mb-2">
+                  <small>تحویل</small>
+                  <small class="ms-auto"><span id="delivery-price">125000</span> تومان</small>
                 </div>
+                <div class="hstack align-items-start">
+                  <h6>جمع <span class="font-x-s text-body-tertiary">(شامل مالیات بر ارزش افزوده)</span></h6>
+                  <h6 class="ms-auto fw-semibold"><span id="total-price"></span> تومان</h6>
+                </div>
+                <a href="#" class="btn btn-dark w-100 my-3">ورود به سبد خرید</a>
+              </div>
+                </div>                               
             </li>
           </ul>
         </div>
@@ -770,278 +782,1306 @@
           </div>
         </div>
       </div>
-<!-- start section -->
-<div class="container-md">
-    <div class="row">
-      <div class="col-12 col-md-5">
-        <h1 class="my-5 fw-semibold">برندها</h1>
-        <div class="input-group p-0 clearable">
-          <input type="text" id="brand_search" class="form-control border-dark rounded-0 border-end-0" placeholder="نام برند را بنویس" aria-label="Recipient's brand" aria-describedby="brand-addon1" onclick="brand_search()">
-          <button class="clearable__clear input-group-text border-dark rounded-0 border-start-0 bg-light-subtle" id="brand-addon1" style="display: none;"><i class="fa-regular fa-circle-xmark"></i></button>
-          <span class="input-group-text border-dark rounded-0 border-start-0 bg-light-subtle" id="brand-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+      <!-- start section -->
+      <div class="container-md">
+        <div class="row mt-4 product">
+          <!-- zoom product -->
+          <div class="col-12 col-md-6">
+            <div class="sticky-md-top">
+              <div class="position-relative z-1020">
+                <span class="position-absolute top-0 end-0 bg-white p-1 m-2 font-x-s">سایز بزرگ</span>
+              </div>
+            <ul id="glasscase" class="gc-start">
+              <li><img src="media/product/product-detail-1.webp" alt="Text"></li>
+              <li><img src="media/product/product-detail-3.webp" alt="Text"></li>
+              <li><img src="media/product/product-detail-4.webp" alt="Text"></li>
+              <li><img src="media/product/product-detail-5.webp" alt="Text"></li>
+              <li><img src="media/product/product-detail-6.webp" alt="Text"></li>
+              <li><img src="media/product/product-detail-7.webp" alt="Text"></li>
+              <li><img src="media/product/product-detail-8.webp" alt="Text"></li>
+          </ul>
         </div>
-           <div class="position-relative p-0">
-            <div id="brand_match_list" class=" position-absolute bg-light-subtle w-100 pe-4 overflow-y-scroll z-1 border-dark border border-top-0" style="max-height: 18rem;">
-            </div>
           </div>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-7 mt-5 mb-4">
-        <h2 class="fw-semibold">برندهایی را که دوست دارید دنبال کنید</h2>
-        <h4>ابتدا موارد بیشتری از آنها را به شما نشان خواهیم داد، از جمله موارد و مجموعه‌های جدید.</h4>
+          <!-- details product -->
+          <div class="col-12 col-md-5 offset-md-1 mt-4 mt-md-0">
+            <div class="item-detail-product">
+              <div class="b-animate b-dark">
+                <h3>
+                  <a href="#" class="text-decoration-none text-dark d-block product-brand">Nike Sportswear</a>
+                </h3>
+                <h3 class="fw-semibold product-title">STYLE CREW - سویشرت</h3>
+                <p class="font-x-s m-0">11% تخفیف</p>
+                <h4 class="d-inline-block me-2 text-danger prices"><span class="product-price">3400</span> تومان</h4><small class="text-body-secondary">شامل مالیات بر ارزش افزوده</small>
+                <del class="d-block">4500 تومان</del>
+              </div>
+            <!-- rate -->
+            <a href="#reviews" class="my-5 d-block text-decoration-none text-dark">
+            <div class="my-rating-readOnly d-inline-block" data-rating="4.5" style="direction: initial;"></div>
+              <span>2</span>
+            </a>
+            <!-- color box -->
+            <div class="my-4">
+              <span class="d-inline-block">رنگ: </span>
+            <h6 class="text-truncate product-detail d-inline fw-semibold">پسته ای</h6>
+            <div class="product-box">
+              <a href="" class="text-decoration-none p-1 d-inline-block box-shadow" data-img="media/product/product-detail-1.webp" data-detail="پسته ای">
+                <!-- first color image -->
+                <img id="firstColorImg" src='media/product/product-detail-color-box-1.webp' class="w-100" alt="">
+              </a>
+              <a href="" class="text-decoration-none p-1 d-inline-block" data-img="media/product/product-detail-color-2.webp" data-detail="بژ">
+                <img src='media/product/product-detail-color-box-2.webp' class="w-100" alt="">
+              </a>
+              <a href="" class="text-decoration-none p-1 d-inline-block" data-img="media/product/product-detail-color-3.webp" data-detail="مشکی">
+                <img src='media/product/product-detail-color-box-3.webp' class="w-100" alt="">
+              </a>
+              <a href="" class="text-decoration-none p-1 d-inline-block" data-img="media/product/product-detail-color-4.webp" data-detail="بنفش">
+                <img src='media/product/product-detail-color-box-4.webp' class="w-100" alt="">
+              </a>
+              <a href="" class="text-decoration-none p-1 d-inline-block" data-img="media/product/product-detail-color-5.webp" data-detail="سبز">
+                <img src='media/product/product-detail-color-box-5.webp' class="w-100" alt="">
+              </a>
+              <a href="" class="text-decoration-none p-1 d-inline-block" data-img="media/product/product-detail-color-6.webp" data-detail="نارنجی">
+                  <img src='media/product/product-detail-color-box-6.webp' class="w-100" alt="">
+                </a>
+              <div class="d-inline-block mt-1">
+                <button type="button" class="btn btn-outline-dark border-1 border-dark-subtle rounded-0 lh-lg product-color-btn" id="btn_showDiv" onclick="showDiv()">
+                    ۱ +
+                </button>
+              </div>
+              <div id="show_div">
+                <a href="" class="text-decoration-none p-1 d-inline-block" data-img="media/product/product-detail-color-7.webp" data-detail="صورتی">
+                  <img src='media/product/product-detail-color-box-7.webp' class="w-100" alt="">
+                </a>
+              </div>
+            </div>
+            </div>
+            <!-- sizing -->          
+            <div class="size-box position-relative">
+              <div class="d-grid">
+                <button id="btnSize" class="dropbtn form-select form-select-lg rounded-0 border-dark text-start" type="button" value="false" onclick="myDropdown()">
+                  انتخاب اندازه
+                </button>
+                </div>
+                <div id="myDropdown" class="mydropdown-content position-absolute box-shadow w-100 p-1 bg-white">
+                  <nav class="cat-offcanvas">
+                    <div class="nav nav-pills border-bottom" id="nav-tab" role="tablist">
+                      <button class="nav-link active text-black-50 rounded-0" id="nav-size1-tab" data-bs-toggle="tab" data-bs-target="#nav-size1-pane" type="button" role="tab" aria-controls="nav-women" aria-selected="true">سایز uk</button>
+                      <div class="vr"></div>
+                      <button class="nav-link text-black-50 rounded-0" id="nav-size2-tab" data-bs-toggle="tab" data-bs-target="#nav-size2-pane" type="button" role="tab" aria-controls="nav-men" aria-selected="false">سایز کارخانه</button>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="nav-size1-pane" role="tabpanel" aria-labelledby="nav-size1" tabindex="0">
+                      <!-- list size -->
+                      <div class="list-group list-group-flush list-size">
+                        <!-- not available size's product -->
+                        <button type="button" class="list-group-item list-group-item-action" aria-current="true" data-bs-toggle="modal" data-bs-target="#notifyMe1">
+                          <div class="d-flex w-100 justify-content-between text-body-tertiary">
+                            <h5 class="mb-1">۲۲/۲۴</h5>
+                            <small class="text-mediumpurple fw-semibold">خبرم کن</small>
+                          </div>
+                        </button>
+                        <!-- Modal -->
+                      <div class="modal fade" id="notifyMe1" tabindex="-1" aria-labelledby="notifyMe1Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content rounded-0">
+                            <div class="modal-header border-0">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-5">
+                              <h3 class="fw-semibold">تمام شده</h3>
+                              <h6>اگر این کالا در انبار بازگردد، ایمیلی دریافت خواهید کرد.</h6>
+                              <form class="formNotifyMe form-validation mt-4" role="form" method="POST" novalidate>
+                                <div>
+                                  <label for="validationEmail" class="form-label m-0 p-1 border border-bottom-0 border-dark">ایمیل شما:</label>
+                                  <div class="input-group">
+                                    <input type="email" class="form-control rounded-0 border-dark" placeholder="example@email.com" id="validationEmail" required>
+                                    <div class="invalid-feedback">
+                                      لطفا ایمیل خود را وارد نمایید
+                                    </div>
+                                  </div>
+                                </div>
+                                  <button class="btn btn-lg btn-dark w-100 my-3 rounded-0" type="submit" onclick="validateForm()">خبرم کن</button>
+                              </form>
+                      <div class="resultNotify">
+                        <div class="alert alert-secondary d-flex align-items-center rounded-0 border-0" role="alert">
+                          <i class="fa-solid fa-circle-check text-success me-2"></i>
+                        <div>
+                          ما درخواست شما را دریافت کردیم، به زودی با شما در تماس خواهیم بود!
+                          </div>
+                        </div>
+                        <button class="btn btn-lg w-100 my-3 btn-outline-dark rounded-0" type="button" data-bs-dismiss="modal" aria-label="Close">ادامه خرید</button>
+                      </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <!-- end not available -->
+                        <button type="button" class="list-group-item list-group-item-action">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 available">۲۵/۲۶</h5>
+                            <small class="text-muted"></small>
+                          </div>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 available">۲۷/۲۸</h5>
+                            <small class="text-muted">کالای راه دور 3.99 تومان</small>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-size2-pane" role="tabpanel" aria-labelledby="nav-size2" tabindex="0">
+                      <!-- list size -->
+                      <div class="list-group list-group-flush list-size">
+                        <!-- not available size's product -->
+                        <button type="button" class="list-group-item list-group-item-action" aria-current="true" data-bs-toggle="modal" data-bs-target="#notifyMe2">
+                          <div class="d-flex w-100 justify-content-between text-body-tertiary">
+                            <h5 class="mb-1">l</h5>
+                            <small class="text-mediumpurple fw-semibold">خبرم کن</small>
+                          </div>
+                        </button>
+                        <!-- Modal -->
+                      <div class="modal fade" id="notifyMe2" tabindex="-1" aria-labelledby="notifyMe2Label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content rounded-0">
+                            <div class="modal-header border-0">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-5">
+                              <h3 class="fw-semibold">تمام شده</h3>
+                              <h6>اگر این کالا در انبار بازگردد، ایمیلی دریافت خواهید کرد.</h6>
+                              <form class="formNotifyMe form-validation mt-4" role="form" method="POST" novalidate>
+                                <div>
+                                  <label for="validationEmail" class="form-label m-0 p-1 border border-bottom-0 border-dark">ایمیل شما:</label>
+                                  <div class="input-group">
+                                    <input type="email" class="form-control rounded-0 border-dark" placeholder="example@email.com" id="validationEmail" required>
+                                    <div class="invalid-feedback">
+                                      لطفا ایمیل خود را وارد نمایید
+                                    </div>
+                                  </div>
+                                </div>
+                                  <button class="btn btn-lg btn-dark w-100 my-3 rounded-0" type="submit" onclick="validateForm()">خبرم کن</button>
+                              </form>
+                      <div class="resultNotify">
+                        <div class="alert alert-secondary d-flex align-items-center rounded-0 border-0" role="alert">
+                          <i class="fa-solid fa-circle-check text-success me-2"></i>
+                        <div>
+                          ما درخواست شما را دریافت کردیم، به زودی با شما در تماس خواهیم بود!
+                          </div>
+                        </div>
+                        <button class="btn btn-lg w-100 my-3 btn-outline-dark rounded-0" type="button" data-bs-dismiss="modal" aria-label="Close">ادامه خرید</button>
+                      </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <!-- end not available -->
+                        <button type="button" class="list-group-item list-group-item-action">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 available">۲x</h5>
+                            <small class="text-muted"></small>
+                          </div>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 available">۳x</h5>
+                            <small class="text-muted">کالای راه دور 3.99 تومان</small>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <!-- cart & wishlist -->
+            <!-- cart show in small device -->
+            <div class="cartSm d-md-none position-fixed top-0 start-0 p-3 w-100 bg-white z-3 border-bottom">
+              <span class="items-basket position-absolute top-0 badge rounded-circle bg-orange p-1 font-x-s"></span>
+                <svg height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="your-bag-8883411" role="img" aria-hidden="false"><title id="your-bag-8883411">سبد خرید</title><path d="M20.677 13.654a5.23 5.23 0 0 0 1.073-3.194c-.01-2.632-1.968-4.78-4.5-5.137V5.25a5.25 5.25 0 0 0-10.5 0v.059a5.224 5.224 0 0 0-2.444 1.014 5.23 5.23 0 0 0-.983 7.33A5.623 5.623 0 0 0 6.375 24h11.25a5.623 5.623 0 0 0 3.052-10.346zM12 1.5a3.75 3.75 0 0 1 3.75 3.75h-7.5A3.75 3.75 0 0 1 12 1.5zm5.625 21H6.375a4.122 4.122 0 0 1-1.554-7.942.75.75 0 0 0 .214-1.256A3.697 3.697 0 0 1 3.75 10.5a3.755 3.755 0 0 1 3-3.674V9a.75.75 0 0 0 1.5 0V6.75h7.5V9a.75.75 0 1 0 1.5 0V6.826a3.755 3.755 0 0 1 3 3.674c0 1.076-.47 2.1-1.285 2.802a.75.75 0 0 0 .213 1.256 4.122 4.122 0 0 1-1.553 7.942z"></path></svg>
+             <div class="d-grid">
+              <a href="#" class="btn btn-dark my-3">ورود به سبد خرید</a>
+              </div>
+              </div> 
+              <!-- end cart small -->
+            <div class="d-flex">
+                <button id="addToCart" class="btn btn-lg btn-dark w-100 my-2 rounded-0 me-2">افزودن به سبد خرید</button>
+                <button id="btnWishlist" type="button" class="btn btn-outline-dark my-2 rounded-0 btn-heart dislike fs-4"><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+            </div>
+            <!-- delivery -->
+            <ul class="border border-1 rounded-0 p-0 my-4">
+              <li class="border-bottom d-flex justify-content-between align-items-start py-3">
+                <div class="ps-2 pe-auto">
+                  <h6 class="mt-2">فروخته و ارسال شده توسط تن جامه</h6>
+                </div>
+              </li>
+              <li class="border-bottom d-flex justify-content-between align-items-start py-3">
+                <div class="ms-2 me-auto">
+                  <i class="fa-solid fa-truck"></i>
+                  <div class="fw-bold">2-5 روز کاری</div>
+                  تحویل استاندارد
+                </div>
+                <span class="me-2">رایگان</span>
+              </li>
+              <li class="border-bottom d-flex justify-content-between align-items-start py-3">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ RkQYXx pVrzNP H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="box-transit-23640" role="img" aria-hidden="false"><title id="box-transit-23640">box-transit</title><path d="m16.5 14.5-4.2-1.9c-.2-.1-.4-.1-.6 0l-4.2 1.9V6.9l2-5.6h5l2 5.9v7.3zM9 7.3v4.9l2.1-.9c.6-.3 1.2-.3 1.8 0l2.1.9V7.3l-1.6-4.5h-2.9L9 7.3z"></path><path d="M20.5 22.8h-17c-1.2 0-2.2-1-2.2-2.2V19c0-.4.3-.8.8-.8s.8.3.8.8v1.5c0 .4.3.8.8.8h17c.4 0 .8-.3.8-.8V7.3c0-.1 0-.2-.1-.3l-1.5-3.8c-.1-.3-.4-.5-.7-.5H5c-.3 0-.6.2-.7.5L2.8 7c0 .1-.1.2-.1.3V10c0 .4-.3.8-.8.8s-.7-.4-.7-.8V7.3c0-.3.1-.6.2-.8l1.5-3.8c.4-.9 1.2-1.5 2.1-1.5h14c.9 0 1.7.6 2.1 1.4l1.5 3.8c.1.3.2.5.2.8v13.2c0 1.3-1.1 2.4-2.3 2.4z"></path><path d="M2 7h20v1.5H2zM4.8 13.8h-4c-.5 0-.8-.4-.8-.8s.3-.8.8-.8h4c.4 0 .8.3.8.8s-.4.8-.8.8zM4.8 16.8h-4c-.5 0-.8-.4-.8-.8s.3-.8.8-.8h4c.4 0 .8.3.8.8-.1.4-.4.8-.8.8z"></path></svg>
+                    <span class="ms-2">ارسال رایگان و مرجوعی رایگان</span>
+                  </div>
+                </div>
+              </li>
+              <li class="border-bottom d-flex justify-content-between align-items-start py-3">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ RkQYXx pVrzNP H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="returns-23641" role="img" aria-hidden="false"><title id="returns-23641">returns</title><path d="M14.25 4.33H1.939l3.056-3.055A.75.75 0 0 0 3.934.215L.658 3.49a2.252 2.252 0 0 0 0 3.182l3.276 3.275a.75.75 0 0 0 1.06-1.06L1.94 5.83h12.31c4.557 0 8.251 3.694 8.251 8.25S18.806 22.5 14.25 22.5h-12a.75.75 0 0 0 0 1.5h12c5.385 0 9.75-4.534 9.75-9.919s-4.365-9.75-9.75-9.75z"></path></svg>
+                    <span class="ms-2">سیاست بازگشت 100 روزه</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- accordion description -->
+            <div class="accordion accordion-flush" id="accordionDescription">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    مواد و مراقبت
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+                      <li><strong>مواد بالا: </strong>چرم بدلی/ منسوجات</li>
+                      <li><strong>پوشش: </strong>منسوجات</li>
+                      <li><strong>کفی: </strong>منسوجات</li>
+                     <li><strong>تنها: </strong>مصنوعی</li>
+                     <li><strong>پارچه: </strong>چرم مصنوعی</li>
+                     </ul>
+                </div>
+              </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    جزئیات
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+                      <li><strong>کفی: </strong>منسوجات</li>
+                     <li><strong>تنها: </strong>مصنوعی</li>
+                     <li><strong>پارچه: </strong>چرم مصنوعی</li>
+                     </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    اندازه و تناسب
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled">
+                     <li><strong>کفی: </strong>منسوجات</li>
+                    <li><strong>تنها: </strong>مصنوعی</li>
+                    <li><strong>پارچه: </strong>چرم مصنوعی</li>
+                    </ul>
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark rounded-0" data-bs-toggle="modal" data-bs-target="#sizeGuidModal">
+  راهنمای اندازه
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="sizeGuidModal" tabindex="-1" aria-labelledby="sizeGuidModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content rounded-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+        <h4 class="fw-semibold">راهنمای اندازه</h4>
+        <p>
+          با راهنمای تبدیل مفید ما، اندازه خود را در کشورهای مختلف بیابید. بهتر است از این به عنوان یک قاعده کلی استفاده کنید، زیرا اندازه ها و اندازه ها می تواند از برندی به برند دیگر متفاوت باشد.
+        </p>
+        <h6 class="fw-semibold mt-5 mb-3">تبدیل اندازه</h6>
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <td scope="col">UK</td>
+              <td scope="col">INT</td>
+              <td scope="col">EU</td>
+              <td scope="col">FR</td>
+              <td scope="col">IT</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4</td>
+              <td>XXS</td>
+              <td>32</td>
+              <td>34</td>
+              <td>38</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>XXS</td>
+              <td>32</td>
+              <td>34</td>
+              <td>38</td>
+            </tr>
+          </tbody>
+        </table>
+        <h6 class="fw-semibold mt-5 mb-3">اندازه بدن</h6>
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <td scope="col">UK</td>
+              <td scope="col">INT</td>
+              <td scope="col">نیم تنه</td>
+              <td scope="col">کمر</td>
+              <td scope="col">HIP</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4</td>
+              <td>XXS</td>
+              <td>76</td>
+              <td>63</td>
+              <td>85</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="fw-semibold mt-5">چگونه خود را اندازه گیری کنیم</p>
+        <h6 class="fw-semibold m-0">نیم تنه</h6>
+        <h6 class="mb-4">نوار اندازه گیری را زیر بغل خود بیاورید و کامل ترین قسمت سینه خود را اندازه بگیرید</h6>
+        <h6 class="fw-semibold m-0">کمر</h6>
+        <h6 class="mb-4">نوار اندازه گیری را دور کمر طبیعی خود بیاورید و بین بالاترین قسمت استخوان لگن و دنده های پایینی خود اندازه بگیرید.</h6>
+        <h6 class="fw-semibold m-0">Hip</h6>
+        <h6 class="mb-4">نوار اندازه گیری را دور باسن خود بیاورید و کامل ترین قسمت پایین بدن خود را اندازه بگیرید</h6>
       </div>
     </div>
+  </div>
 </div>
-<!-- carousel autowidth nonloop (Brand) -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- follow -->
+            <div class="hstack border border-start-0 border-end-0 p-3 mb-5">
+              <div class="bg-light">Nike Sportswear</div>
+              <div class="bg-light ms-auto">
+                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
+              </div>
+            </div>
+            <!-- reviews -->
+            <div id="reviews">
+              <h6 class="fw-semibold">نظرها (2)</h6>
+              <div class="hstack mb-3">
+                <h4 class="fw-semibold">4.5</h4>
+                <div class="ms-auto">
+                  <div class="my-rating-readOnly" data-rating="4.5" style="direction: initial;"></div>
+                </div>
+              </div>
+              <!-- progress -->
+              <ul class="list-unstyled d-flex flex-column justify-content-between">
+                <li class="d-flex align-items-center mb-1">
+                  <label class="font-x-s text-dark-emphasis me-3">5</label>
+                  <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                    <div class="progress-bar bg-dark" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center mb-1">
+                  <label class="font-x-s text-dark-emphasis me-3">2</label>
+                  <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                    <div class="progress-bar bg-dark" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center mb-1">
+                  <label class="font-x-s text-dark-emphasis me-3">3</label>
+                  <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                    <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center mb-1">
+                  <label class="font-x-s text-dark-emphasis me-3">4</label>
+                  <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center mb-1">
+                  <label class="font-x-s text-dark-emphasis me-3">1</label>
+                  <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </li>
+              </ul>
+              <!-- reviews's Button trigger modal -->
+              <button type="button" class="btn btn-lg w-100 btn-outline-dark rounded-0 mb-4 fs-6 fw-bold" data-bs-toggle="modal" data-bs-target="#reviewsModal">
+                خواندن همه نظرها
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="reviewsModal" tabindex="-1" aria-labelledby="reviewsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content rounded-0">
+                    <!-- <div class="modal-header"> -->
+                      <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- </div> -->
+                    <div class="modal-body">
+                      <h2 class="fw-semibold">نظرها (2)</h2>
+                      <div class="hstack mb-3">
+                        <h3 class="fw-semibold">4.5</h3>
+                        <div class="ms-auto">
+                          <div class="my-rating-readOnly" data-rating="4.5" style="direction: initial;"></div>
+                        </div>
+                      </div>
+                      <!-- progress -->
+                      <ul class="list-unstyled d-flex flex-column justify-content-between">
+                        <li class="d-flex align-items-center mb-1">
+                          <label class="font-x-s text-dark-emphasis me-3">5</label>
+                          <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-center mb-1">
+                          <label class="font-x-s text-dark-emphasis me-3">2</label>
+                          <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-center mb-1">
+                          <label class="font-x-s text-dark-emphasis me-3">3</label>
+                          <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-center mb-1">
+                          <label class="font-x-s text-dark-emphasis me-3">4</label>
+                          <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </li>
+                        <li class="d-flex align-items-center mb-1">
+                          <label class="font-x-s text-dark-emphasis me-3">1</label>
+                          <div class="progress rounded-0 flex-grow-1" style="height: 4px;">
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- reviews work -->
+                      <div class="b-animate b-purple my-4">
+                        <a class="text-mediumpurple d-inline-block text-decoration-none" data-bs-toggle="collapse" href="#reviewsWork" role="button" aria-expanded="false" aria-controls="reviewsWork">
+                          نظر ها چگونه کار می کنند?
+                        </a>
+                        <div class="collapse" id="reviewsWork">
+                          <div class="pt-2">
+                            فقط مشتریان ثبت‌شده تن جامه که این مورد را خریداری کرده‌اند می‌توانند رتبه‌بندی و نظرات خود را ارسال کنند. امتیاز ستاره (از 5) میانگین همه رتبه ها است. مشتریان همچنین می توانند نظرات خود را کتبی بگذارند. ما نظرات مثبت و منفی را پس از تعدیل آنها منتشر می کنیم.
+                          </div>
+                        </div>
+                      </div>
+                      <small class="d-block mb-4 fw-semibold">بر اساس مفید بودن و تاریخ مرتب شده است</small>
+                      <ul class="list-unstyled">
+                        <li class="border-top py-3">
+                          <div class="hstack">
+                            <div>
+                              <h6 class="fw-semibold">امین</h6>
+                            <h6 class="text-body-tertiary">خریداری شده: 1401-02-11</h6>
+                            <h6 class="text-body-tertiary">نظردهی شده: 1401-02-21</h6>
+                            <div class="my-rating-readOnly" data-rating="4.5" style="direction: initial;"></div>
+                            </div>
+                            <img src="media/product/review1.webp" class="ms-auto" width="84" alt="">
+                          </div>
+                          <h6 class="my-4">
+                            کاملا مناسب است و زیبا به نظر می رسد. اندازه درست است، نه خیلی کوچک و نه خیلی بزرگ. مواد عالی، شما را گرم نگه می دارد
+                          </h6>
+                          <button type="button" class="btn btn-outline-dark rounded-0 px-4 btn-helpfull nothelpfull" data-number="1">مفیده ؟</button>
+                        </li>
+                        <li class="border-top py-3">
+                          <div class="hstack">
+                            <div>
+                              <h6 class="fw-semibold">ساناز</h6>
+                            <h6 class="text-body-tertiary">خریداری شده: 1401-01-21</h6>
+                            <h6 class="text-body-tertiary">نظردهی شده: 1401-01-29</h6>
+                            <div class="my-rating-readOnly" data-rating="3" style="direction: initial;"></div>
+                            </div>
+                            <img src="media/product/review2.webp" class="ms-auto" width="84" alt="">
+                          </div>
+                          <h6 class="my-4">
+                            کاملا مناسب است و زیبا به نظر می رسد. اندازه درست است، نه خیلی کوچک و نه خیلی بزرگ. مواد عالی، شما را گرم نگه می دارد
+                          </h6>
+                          <button type="button" class="btn btn-outline-dark rounded-0 px-4 btn-helpfull nothelpfull" data-number="1">مفیده ؟</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Button trigger modal -->
+            <a type="button" class="text-decoration-none text-mediumpurple" data-bs-toggle="modal" data-bs-target="#howReviewsModal">
+              نظرها چگونه کار میکنند ؟
+            </a>
+            <!-- Modal -->
+            <div class="modal fade" id="howReviewsModal" tabindex="-1" aria-labelledby="howReviewsModal" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+                    <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-body">
+                    <h3 class="fw-semibold mb-4">نظرها چگونه کار میکنند ؟</h3>
+                    <p>
+                      فقط مشتریان ثبت‌شده تن جامه که این مورد را خریداری کرده‌اند می‌توانند رتبه‌بندی و نظرات خود را ارسال کنند. امتیاز ستاره (از 5) میانگین همه رتبه ها است.
+                    </p>
+                    <p>
+                      مشتریان همچنین می توانند نظرات خود را کتبی بگذارند. ما نظرات مثبت و منفی را پس از تعدیل آنها منتشر می کنیم.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+<!-- carousel look -->
 <div class="container-fluid py-5">
+  <div class="container-md">
+    <h3 class="fw-semibold">ظاهر را کامل کنید</h3>
+<h4>الهام بخش لباس</h4>
+  </div>
+<div class="row">
+<div class="col-0 col-md-1"></div>
+<div class="col-12 col-md-11 position-relative overflow-hidden">
+  <div class="container position-absolute bottom-50 z-2">
+    <div class="position-relative index-owl-nav"></div>
+  </div>
+    <div class="owl-autowidth owl-carousel">
+            <div class="item position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent">
+                <div class="position-relative">
+                  <img class="card-img rounded-0 owl-lazy" src='media/product/product-outfit-1.webp' width="390" height="562" alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2">
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">flix</a href="#">
+                  <h6 class="m-0 text-truncate">۴ محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="item position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent">
+                <div class="position-relative">
+                  <img class="card-img rounded-0 owl-lazy" src='media/product/product-outfit-2.webp' width="390" height="562" alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2">
+                  <div class="width-42">
+                    <img class="rounded-0 w-100 owl-lazy" src='media/product/product-outfit-2-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="item position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent">
+                <div class="position-relative">
+                  <img class="card-img rounded-0 owl-lazy" src='media/product/product-outfit-3.jpg' width="390" height="562" alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2">
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">flix</a href="#">
+                  <h6 class="m-0 text-truncate">۴ محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="item position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent">
+                <div class="position-relative">
+                  <img class="card-img rounded-0 owl-lazy" src='media/product/product-outfit-4.webp' width="390" height="562" alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2">
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">flix</a href="#">
+                  <h6 class="m-0 text-truncate">۴ محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="item position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent">
+                <div class="position-relative">
+                  <img class="card-img rounded-0 owl-lazy" src='media/product/product-outfit-2.webp' width="390" height="562" alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2">
+                  <div class="width-42">
+                    <img class="rounded-0 w-100 owl-lazy" src='media/product/product-outfit-2-box.webp' alt="">
+                  </div>
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">حنا</a href="#">
+                  <h6 class="m-0 text-truncate">10 محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+            <div class="item position-relative">
+              <div class="position-absolute top-0 z-1 mt-2">
+                <!-- add class like or dislike -->
+                <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+              </div>
+             <a href="#" class="text-decoration-none">
+              <div class="card text-dark rounded-0 border-0 bg-transparent">
+                <div class="position-relative">
+                  <img class="card-img rounded-0 owl-lazy" src='media/product/product-outfit-3.jpg' width="390" height="562" alt="">
+                </div>
+                <div class="card-body hstack gap-2 p-0 py-2">
+                  <div class="b-animate b-dark">
+                    <a href="#" class="m-0 text-truncate text-decoration-none text-dark d-block">flix</a href="#">
+                  <h6 class="m-0 text-truncate">۴ محصول</h6>
+                  </div>
+                </div>
+              </div>
+             </a>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- end carousel -->
+<!-- carousel center auto width -->
+<div class="container-fluid py-5">
+  <div class="container-md">
+    <h2 class="fw-semibold">موارد مشابه</h2>
+    <div class="hstack align-items-center mb-3">
+      <h3>اینا چطور؟</h3>
+      <a href="#" class="text-decoration-none text-mediumpurple ms-auto d-flex align-items-center fw-semibold">بیشتر ببین<i class="fa-solid fa-arrow-left-long ms-2"></i></a>
+    </div>
+  </div>
   <div class="row">
   <div class="col-0 col-md-1"></div>
-  <div class="col-12 col-md-11 position-relative overflow-hidden">
+  <div class="col-12 col-md-11 position-relative overflow-hidden">    
     <div class="container position-absolute bottom-50 z-2">
       <div class="position-relative index-owl-nav"></div>
     </div>
-      <div class="owl-autowidth owl-carousel">
-              <div class="item">
+      <div class="owl-center-nonloop owl-carousel">
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
                <a href="#" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="carousel-brand-item border border-1">
-                    <img data-src="media/brand/index/brand-b1.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b1.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                    <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
                   </div>
                   <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">Nike Performance</h6>
+                    <h6 class="m-0 text-truncate">KnowledgeCotton Apparel</h6>
+                    <h6 class="m-0 text-truncate">آستین بلند - بلوز دکمه دار - چند رنگ</h6>
                   </div>
+                  <section>
+                    <h6>۵،۴۰۰،۰۰۰ تومان</h6>
+                  </section>
                 </div>
                </a>
-               <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
               </div>
-              <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Carhartt WIP</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Levi's®</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">The North Face</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Jack & Jones</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Anna Field</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b7.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Mango</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b8.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Lacoste</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b9.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Tommy Hilfiger</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b10.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Pier One</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b2.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                    <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">YAS</h6>
+                    <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
+                  </div>
+                  <section>
+                    <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b3.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b4.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                  <section class="hstack gap-1">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
+                    <h6 class="m-0">تحویل از راه دور</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b5.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-6.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
       </div>
   </div>
   </div>
   </div>
+<!-- end carousel -->
+<!-- carousel center auto width -->
+<div class="container-fluid py-5">
+  <div class="container-md">
+    <div class="hstack align-items-center mb-3">
+      <h2 class="fw-semibold">مطالب بیشتر از nike</h2>
+      <a href="#" class="text-decoration-none text-mediumpurple ms-auto d-flex align-items-center fw-semibold">بیشتر ببین<i class="fa-solid fa-arrow-left-long ms-2"></i></a>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-0 col-md-1"></div>
+  <div class="col-12 col-md-11 position-relative overflow-hidden">    
+    <div class="container position-absolute bottom-50 z-2">
+      <div class="position-relative index-owl-nav"></div>
+    </div>
+      <div class="owl-center-nonloop owl-carousel">
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b1.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                    <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">KnowledgeCotton Apparel</h6>
+                    <h6 class="m-0 text-truncate">آستین بلند - بلوز دکمه دار - چند رنگ</h6>
+                  </div>
+                  <section>
+                    <h6>۵،۴۰۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b2.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                    <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">YAS</h6>
+                    <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
+                  </div>
+                  <section>
+                    <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b3.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b4.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                  <section class="hstack gap-1">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
+                    <h6 class="m-0">تحویل از راه دور</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b5.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-6.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+      </div>
+  </div>
+  </div>
+  </div>
+<!-- end carousel -->
+<!-- carousel center auto width -->
+<div class="container-fluid py-5">
+  <div class="container-md">
+    <h2 class="fw-semibold">با هم بهتره</h2>
+    <div class="hstack align-items-center mb-3">
+      <h3>اغلب با یکدیگر مشاهده می شوند</h3>
+      <a href="#" class="text-decoration-none text-mediumpurple ms-auto d-flex align-items-center fw-semibold">بیشتر ببین<i class="fa-solid fa-arrow-left-long ms-2"></i></a>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-0 col-md-1"></div>
+  <div class="col-12 col-md-11 position-relative overflow-hidden">    
+    <div class="container position-absolute bottom-50 z-2">
+      <div class="position-relative index-owl-nav"></div>
+    </div>
+      <div class="owl-center-nonloop owl-carousel">
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b1.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                    <div class="text-bg-danger p-1 mb-2 position-absolute bottom-0 end-0"><small>تا ۳۰٪ تخفیف</small></div>
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">KnowledgeCotton Apparel</h6>
+                    <h6 class="m-0 text-truncate">آستین بلند - بلوز دکمه دار - چند رنگ</h6>
+                  </div>
+                  <section>
+                    <h6>۵،۴۰۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b2.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                    <div class="text-bg-light p-1 mb-2 position-absolute bottom-0 end-0"><small>تک سایز</small></div>
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">YAS</h6>
+                    <h6 class="m-0 text-truncate">شلوار YASSAVANNA - شلوار - صورتی/صورتی فلوکس</h6>
+                  </div>
+                  <section>
+                    <div class="hstack gap-3"><h6 class="fw-semibold">۳،۴۰۰،۰۰۰ تومان</h6><h6><del>۵،۴۰۰،۰۰۰ تومان</del></h6></div>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b3.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b4.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                  <section class="hstack gap-1">
+                    <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ KJcyNx weHhRC H3jvU7" height="1.5em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="truck-long-distance-133" role="img" aria-hidden="false"><title id="truck-long-distance-133">truck-long-distance</title><path d="M20.395 7.738a.891.891 0 0 0-.661-.294h-3.212V4.58c0-.492-.4-.891-.891-.891H9.503a5.6 5.6 0 0 0 .407-2.114c0-.043-.017-.08-.025-.121h.236a.714.714 0 1 0 0-1.43H1.563a.714.714 0 1 0 0 1.43h.236c-.008.04-.025.078-.025.12 0 1.982.894 3.566 2.576 4.66-1.621 1.056-2.5 2.57-2.561 4.453h-.226a.714.714 0 1 0 0 1.429h.696v4.236c0 .49.4.891.892.891h1.288c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h6.006c.014 1.653 1.36 2.995 3.017 2.995s3.004-1.342 3.018-2.995h.606c.492 0 .892-.4.892-.891v-4.693l-3.618-3.92zM3.203 1.574c0-.043-.017-.08-.025-.121h5.328c-.008.04-.025.078-.025.12 0 1.732-.895 3.027-2.639 3.866-1.744-.839-2.64-2.134-2.64-3.865zm2.639 5.455c1.672.804 2.555 2.032 2.625 3.657h-5.25c.07-1.626.952-2.853 2.625-3.657zm1.614 11.708c-.838 0-1.52-.681-1.52-1.52 0-.838.682-1.52 1.52-1.52s1.52.682 1.52 1.52c0 .839-.681 1.52-1.52 1.52zm7.566-2.995h-4.947c-.519-.917-1.492-1.545-2.619-1.545s-2.1.628-2.619 1.545H3.76v-3.627h6.362a.714.714 0 1 0 0-1.429h-.226c-.06-1.882-.94-3.397-2.562-4.452.477-.31.891-.659 1.237-1.046h6.452v10.554zm4.475 2.995c-.838 0-1.52-.681-1.52-1.52a1.521 1.521 0 0 1 3.04 0c0 .839-.68 1.52-1.52 1.52zm3.016-2.995h-.396c-.52-.917-1.493-1.545-2.62-1.545s-2.1.628-2.618 1.545h-.357V8.944h2.944l3.047 3.3v3.498z"></path></svg>
+                    <h6 class="m-0">تحویل از راه دور</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-b5.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+              <div class="item position-relative">
+                <div class="position-absolute top-0 z-1 mt-2">
+                  <!-- add class like or dislike -->
+                  <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
+                </div>
+               <a href="#" class="text-decoration-none">
+                <div class="card text-dark rounded-0 border-0 bg-transparent">
+                  <div class="position-relative">
+                  <img data-src="media/women-carousel-6.webp" class="card-img rounded-0 owl-lazy" alt="...">
+                  </div>
+                  <div class="card-body p-0 py-2">
+                    <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                    <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                  </div>
+                  <section>
+                    <h6>۱،۳۵۰،۰۰۰ تومان</h6>
+                  </section>
+                </div>
+               </a>
+              </div>
+      </div>
+  </div>
+  </div>
+  </div>
+<!-- end carousel -->
+<!-- brand box -->
+<div class="container-md my-5">
+  <h4 class="h4 fw-semibold">برندهای برتر ما</h4>
+  <div class="row row-cols-md-4 row-cols-2 mt-4 lh-lg text-truncate b-animate b-dark">
+<div class="col">
+    <a class="nav-link" href="#">ادیداس</a>
+    <a class="nav-link" href="#">نایک</a>
+    <a class="nav-link" href="#">ریبوک</a>
+    <a class="nav-link" href="#">آندرآمور</a>
+</div>
+<div class="col">
+  <a class="nav-link" href="#">جیب</a>
+    <a class="nav-link" href="#">جین</a>
+    <a class="nav-link" href="#">کاترپیلار</a>
+    <a class="nav-link" href="#">وست</a>
+</div>
+<div class="col">
+  <a class="nav-link" href="#">بادی اسپینرز</a>
+    <a class="nav-link" href="#">پوما</a>
+    <a class="nav-link" href="#">۳۶۱درجه</a>
+    <a class="nav-link" href="#">کتان</a>
+</div>
+<div class="col">
+  <a class="nav-link" href="#">بادی اسپینرز</a>
+    <a class="nav-link" href="#">پوما</a>
+    <a class="nav-link" href="#">۳۶۱درجه</a>
+    <a class="nav-link" href="#">کتان</a>
+</div>
+  </div>
+</div>
+     <!-- trend categories box -->
+<div class="container-md my-5">
+  <h4 class="h4 fw-semibold">دسته بندی های پرطرفدار ما</h4>
+  <div class="row row-cols-md-4 row-cols-2 mt-4 lh-lg text-truncate b-animate b-dark">
+<div class="col">
+    <a class="nav-link" href="#">چکمه های مچ پا</a>
+    <a class="nav-link" href="#">روسری ترمه</a>
+    <a class="nav-link" href="#">چکمه های چلسی</a>
+    <a class="nav-link" href="#">جامپرهای کریسمس</a>
+</div>
+<div class="col">
+  <a class="nav-link" href="#">کت های خز مصنوعی</a>
+    <a class="nav-link" href="#">ورزشی</a>
+    <a class="nav-link" href="#">لباس خواب</a>
+    <a class="nav-link" href="#">کیف های دستی</a>
+</div>
+<div class="col">
+  <a class="nav-link" href="#">کت چرم</a>
+    <a class="nav-link" href="#">لباس زیر</a>
+    <a class="nav-link" href="#">شلوار چرمی</a>
+    <a class="nav-link" href="#">تیشرت</a>
+</div>
+<div class="col">
+  <a class="nav-link" href="#">گردنبند</a>
+    <a class="nav-link" href="#">کفش عروس صورتی</a>
+    <a class="nav-link" href="#">چکمه های بالای زانو</a>
+    <a class="nav-link" href="#">تاپ دخترانه</a>
+</div>
+  </div>
+</div>
+<!-- newsletter box -->
+<div class="bg-body-secondary pt-3">
 <div class="container-md">
-  <h3 class="fw-semibold my-3">همه برندها</h3>
-<!-- option menu -->
-    <div class="hstack gap-2 scroll-y-nowrap my-4">
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">زنانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none fw-bold shadow">مردانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">بچگانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">پسرانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">دخترانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">کفش</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">لباس</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">ورزشی</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">اکسسوری</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">طراح</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">حراجی</a>
-    </div>
-    <!-- alphabet -->
-    <div class="gap-4 mb-4 b-animate b-purple">
-      <a href="#A" class="d-inline-block me-2 text-mediumpurple text-decoration-none">A</a>
-      <a href="#B" class="d-inline-block me-2 text-mediumpurple text-decoration-none">B</a>
-      <a href="#C" class="d-inline-block me-2 text-mediumpurple text-decoration-none">C</a>
-      <a href="#D" class="d-inline-block me-2 text-mediumpurple text-decoration-none">D</a>
-      <a href="#E" class="d-inline-block me-2 text-mediumpurple text-decoration-none">E</a>
-      <a href="#F" class="d-inline-block me-2 text-mediumpurple text-decoration-none">F</a>
-      <a href="#G" class="d-inline-block me-2 text-mediumpurple text-decoration-none">G</a>
-      <a href="#H" class="d-inline-block me-2 text-mediumpurple text-decoration-none">I</a>
-      <a href="#I" class="d-inline-block me-2 text-mediumpurple text-decoration-none">J</a>
-      <a href="#J" class="d-inline-block me-2 text-mediumpurple text-decoration-none">K</a>
-      <a href="#K" class="d-inline-block me-2 text-mediumpurple text-decoration-none">L</a>
-      <a href="#M" class="d-inline-block me-2 text-mediumpurple text-decoration-none">M</a>
-      <a href="#N" class="d-inline-block me-2 text-mediumpurple text-decoration-none">N</a>
-      <a href="#O" class="d-inline-block me-2 text-mediumpurple text-decoration-none">O</a>
-      <a href="#P" class="d-inline-block me-2 text-mediumpurple text-decoration-none">P</a>
-      <a href="#Q" class="d-inline-block me-2 text-mediumpurple text-decoration-none">Q</a>
-      <a href="#R" class="d-inline-block me-2 text-mediumpurple text-decoration-none">R</a>
-    </div>
-    <!-- all brands -->
-    <h3 id="A" class="my-4">A</h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Abercrombie & Fitch</a>
-        <button class="btn border-1 rounded-0 ms-auto btn-outline-dark d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">adidas Golf</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Aigle</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Akuko</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">all in</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Altra</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-    </div>
-    <h3 id="B" class="my-4">B</h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Bally</a>
-        <button class="btn border-1 rounded-0 ms-auto btn-outline-dark d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Barbour</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Bianco</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Bergal</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">BOSS</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Brunotti</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
+  <div class="row">
+  <div class="col-12 col-md-5">
+<h5 class="fw-bold">اینباکس شما</h5>
+<h5 class="mb-3">خالی از مد هست</h5>
+<h6>برای دریافت آخرین استایل هایی که تن جامه میسازد، ایمیلتان را ثبت کنید</h6>
+  </div>
+  <div class="col-12 col-md-7">
+    <div class="card px-md-5 py-md-2 rounded-0 border-0">
+      <form class="form-validation card-body" role="form" data-toggle="validator" novalidate>
+        <div class="col">
+          <label for="validationEmail" class="form-label m-0 p-1 border border-bottom-0 border-dark">ایمیل شما:</label>
+          <div class="input-group">
+            <input type="email" class="form-control rounded-0 border-dark" placeholder="example@email.com" id="validationEmail" required>
+            <div class="invalid-feedback">
+              لطفا ایمیل خود را وارد نمایید
+            </div>
+          </div>
+        </div>
+        <fieldset class="row my-4">
+          <legend class="col-form-label col-md-6 pt-0">
+            <h6 class="fw-bold">ترجیحات خود را مدیریت کنید</h6>
+            <h6>بیشتر به چه چیزی علاقه دارید؟</h6>
+          </legend>
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" required>
+              <label class="form-check-label fs-5" for="gridRadios1">
+                مد زنانه
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" required>
+              <label class="form-check-label fs-5" for="gridRadios2">
+                مد مردانه
+              </label>
+              <div class="invalid-feedback">
+                لطفا ترجیهات خود را انتخاب نمایید
+              </div>
+            </div>
+          </div>
+        </fieldset>
+    <div class="accordion" id="accordionNewsletter">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            گزینه بیشتر
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionNewsletter">
+          <div class="accordion-body">
+            <div class="row row-cols-1 row-cols-md-2">
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                  <label class="form-check-label" for="flexCheckDefault">
+                    هشدارهای مورد شما
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label" for="flexCheckChecked">
+                    اصلاح مد شما
+                  </label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                  <label class="form-check-label" for="flexCheckDefault">
+                    برندهایی که دنبال می کنید
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label" for="flexCheckChecked">
+                    نظرسنجی ها
+                  </label>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="text-decoration-none font-x-s text-mediumpurple">مشاهده بیشتر (باید وارد سیستم شوید)</a>
+          </div>
+        </div>
       </div>
     </div>
-</div>
-<!-- toast follow brand -->
-<div  class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="brandFollowToast" class="toast text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body">
-        برند مورد نظر را دنبال نمودید
-      </div>
-      <i class="fa-regular fa-circle-check me-2 m-auto"></i>
+          <button class="btn w-100 my-3 text-bg-dark rounded-0" type="submit" onclick="validateForm()">Submit form</button>
+          <small class="text-muted">برای آشنایی با نحوه پردازش داده های شما، از اعلامیه <a href="#" class="text-dark text-decoration-none">حریم خصوصی</a> ما دیدن کنید. شما می توانید در هر زمان و بدون هزینه <a href="#" class="text-dark text-decoration-none">اشتراک</a> خود را لغو کنید.</small>
+      </form>
     </div>
   </div>
 </div>
-<!-- end section -->
+</div>
+</div>
 <!-- footer -->
-<div class="bg-mediumpurple footer-two py-1 py-md-5">
+<div class="bg-mediumpurple footer-two py-1 py-md-5 mt-5">
   <div class="container-md">
   <div class="row row-cols-1 row-cols-md-4">
     <div class="col mb-3">
@@ -1258,6 +2298,18 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="static/js/jquery.min.js"></script>
+<script src="static/star-rating-svg/jquery.star-rating-svg.js"></script>
+<script src="static/product-zoom/product.js"></script>
+<script>
+  // product zoom config
+$('#glasscase').glassCase();
+// rate for product config
+  $(".my-rating-readOnly").starRating({
+    useGradient: false,
+    minRating: 1,
+    readOnly: true
+  });
+</script>
 <script src="static/js/bootstrap.bundle.min.js"></script>
 <script src="static/owl/owl.carousel.js"></script>
 <script src="static/js/main.js"></script>
