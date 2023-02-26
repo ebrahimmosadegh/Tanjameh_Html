@@ -131,3 +131,46 @@ $('.promo-code-cta').click(function() {
 $("#promo-code").on("input", function() {
   $(this).next().toggle(this.value != "");
 });
+
+// validation form
+var spinner = $('#loader');
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+
+      }
+      // show spinner when validation form
+      if (form.checkValidity()) {
+      console.log("validation");
+      spinner.show();
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+// show choice address
+$(".show-choice-address").click(function(){
+  $(".delivery-address").toggle();
+$(".choice-address").toggle();
+});
+
+
+
+
+
+
+
+
+
+

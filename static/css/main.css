@@ -82,6 +82,7 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 .form-select:focus,
 .form-control:focus,
+.form-control:hover,
 .accordion-button:focus,
 .uneditable-input:focus {   
   border-color: transparent;
@@ -113,6 +114,10 @@ input[type="color"]:focus,
 }
 .text-orange{
   color: #D2451E;
+}
+.border-orange{
+  --bs-border-opacity: 1;
+  border-color: #e75915 !important;
 }
 
 .bg-zereshk{
