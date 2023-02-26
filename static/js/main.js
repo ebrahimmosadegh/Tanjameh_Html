@@ -122,13 +122,19 @@ $(document).ready(function() {
 
 // heart button like and dislike
 $(".btn-heart").click(function() {
+  var counter = parseFloat($(".heartCounter").text());
+  var heartCounter = $(".heartCounter");
   if ( $(this).hasClass( "dislike" ) ) {
     $(this).removeClass("dislike")
     $(this).html('<i class="fa-solid fa-heart text-orange" aria-hidden="true"></i>');
+    counter = counter + 1;
+    heartCounter.text(counter);
   }
   if ( $(this).hasClass( "like" ) ) {
     $(this).addClass("dislike")
     $(this).html('<i class="fa-regular fa-heart" aria-hidden="true"></i>');
+    counter = counter - 1;
+    heartCounter.text(counter);
   }
   $(this).toggleClass("like");
 });
@@ -421,7 +427,7 @@ $(function(){
       var wishList = "<a href='#' class='wishList text-decoration-none text-body-tertiary d-inline-block'>انتقال به علاقمندی</a>";
       var size = $(this).find("#btnSize").text();
       var cena = (parseFloat($(this).find(".prices").children(".product-price").text()));
-        $("#list-item-product").addClass("p-2")
+        $("#list-item-product").addClass("p-2 overflow-y-scroll");
       $("#list-item-product").append(`
       <li class="hstack gap-1 align-items-start mb-5 li-item">
       <img src='${firstColorImg}' class="width-42" alt=""> 

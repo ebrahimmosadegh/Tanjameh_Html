@@ -560,6 +560,10 @@ opacity: 1;
   display: none;
 }
 
+#list-item-product{
+max-height: 250px;
+}
+
 .accordion-button:not(.collapsed) {
   color: initial;
   background-color: #fff;
