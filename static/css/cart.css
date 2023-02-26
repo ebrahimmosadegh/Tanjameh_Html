@@ -10,18 +10,33 @@
     color: #ff4e00 !important;
   }
 
+  .bg-gainsboro-light{
+    background: rgb(239, 239, 240);
+  }
+  
   .btn-white{
   display: inline-block;
-  background: linear-gradient(to right, #ff4e00 50%, white 50%);
+  background: linear-gradient(to left, #ff4e00 50%, #fff 50%);
   background-size: 200% 100%;
-  background-position: right bottom;
+  background-position: left bottom;
   transition: all .3s ease-out;
   }
   .btn-white:hover{
-    background-position: left bottom;
+    background-position: right bottom;
     color: #fff !important;
   }
 
+  .btn-next{
+    display: inline-block;
+    background: linear-gradient(to left, #ea4600 50%, #ff4e00 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: all .3s ease-out;
+    }
+    .btn-next:hover{
+      background-position: right bottom;
+      color: #fff !important;
+    }
   .hide{
     display: none;
   }
