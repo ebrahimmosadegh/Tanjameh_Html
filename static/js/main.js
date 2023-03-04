@@ -494,12 +494,6 @@ $(function(){
   });
 })
 
-// rate for product
-  // $(".my-rating").starRating({
-  //   useGradient: false,
-  //   minRating: 1,
-  // });
-
 // effect megamenu
 $('.has-megamenu').on('show.bs.dropdown', function(e){
   $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
