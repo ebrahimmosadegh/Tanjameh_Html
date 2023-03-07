@@ -556,7 +556,7 @@ opacity: 1;
 }
 
 /* cart */
-#bag-empty , #total-text, #cartTitle , .cartSm , .pluse-form{
+#bag-empty , #total-text, #cartTitle , .cartSm , .pluse-form, .boxAnotherSize{
   display: none;
 }
 

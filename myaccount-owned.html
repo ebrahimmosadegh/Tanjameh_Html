@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- main & other CSS in local -->
     <link rel="stylesheet" href="static/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="static/owl/owl.carousel.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <title>تن جامه - برند</title>
+    <title>تن جامه</title>
   </head>
   <body>
 <!-- scroll back to top -->
@@ -771,274 +770,210 @@
         </div>
       </div>
 <!-- start section -->
-<div class="container-md">
-    <div class="row">
-      <div class="col-12 col-md-5">
-        <h1 class="my-5 fw-semibold">برندها</h1>
-        <div class="input-group p-0 clearable">
-          <input type="text" id="brand_search" class="form-control border-dark rounded-0 border-end-0" placeholder="نام برند را بنویس" aria-label="Recipient's brand" aria-describedby="brand-addon1" onclick="brand_search()">
-          <button class="clearable__clear input-group-text border-dark rounded-0 border-start-0 bg-light-subtle" id="brand-addon1" style="display: none;"><i class="fa-regular fa-circle-xmark"></i></button>
-          <span class="input-group-text border-dark rounded-0 border-start-0 bg-light-subtle" id="brand-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-        </div>
-           <div class="position-relative p-0">
-            <div id="brand_match_list" class=" position-absolute bg-light-subtle w-100 pe-4 overflow-y-scroll z-1 border-dark border border-top-0" style="max-height: 18rem;">
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-7 mt-5 mb-4">
-        <h2 class="fw-semibold">برندهایی را که دوست دارید دنبال کنید</h2>
-        <h4>ابتدا موارد بیشتری از آنها را به شما نشان خواهیم داد، از جمله موارد و مجموعه‌های جدید.</h4>
-      </div>
-    </div>
-</div>
-<!-- carousel autowidth nonloop (Brand) -->
-<div class="container-fluid py-5">
+<div class="container-lg pt-4">
   <div class="row">
-  <div class="col-0 col-md-1"></div>
-  <div class="col-12 col-md-11 position-relative overflow-hidden">
-    <div class="container position-absolute bottom-50 z-2">
-      <div class="position-relative index-owl-nav"></div>
-    </div>
-      <div class="owl-autowidth owl-carousel">
-              <div class="item">
-               <a href="#" class="text-decoration-none">
-                <div class="card text-dark rounded-0 border-0 bg-transparent">
-                  <div class="carousel-brand-item border border-1">
-                    <img data-src="media/brand/index/brand-b1.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                  </div>
-                  <div class="card-body p-0 py-2">
-                    <h6 class="m-0 text-truncate">Nike Performance</h6>
+    <!-- items -->
+      <div class="mb-3">
+        <div class="b-animate b-purple mb-3">
+          <a href="myaccount.html" class="text-decoration-none text-mediumpurple d-inline-block">
+            <i class="fa fa-arrow-right me-1"></i>
+            <span>برگشت</span>
+          </a>
+        </div>
+        <h3 class="fw-bold mb-5">اقلام متعلق به</h3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+          <div class="col item">
+              <div class="card text-dark rounded-0 border-0 bg-transparent placeholder-glow">
+                <div class="position-relative bg-secondary-subtle placeholder">
+                <img data-src="media/women-carousel-b3.webp" class="card-img rounded-0 lazy-image" alt="...">
+                <a href="#" class="stretched-link"></a>
+                <div class="d-flex flex-column-reverse position-absolute end-0 bottom-0 z-1 mb-2">
+                  <div class="bg-white p-1 font-x-s text-danger">فروخته شده</div>
+                </div>
+                <div class="d-flex flex-column-reverse position-absolute start-0 bottom-0 z-1 mb-2">
+                  <button type="button" class="btnNotification unNotify btn btn-lg rounded-0 btn-alarm fs-4" ><i class="fa-regular fa-bell" aria-hidden="true"></i></button>
+                  <!-- Button items modal -->
+                  <button class="btn btn-light btn-lg rounded-0" data-bs-toggle="modal" data-bs-target="#itemModal1"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+                  <!-- modal items -->
+                  <div class="modal fade" id="itemModal1" tabindex="-1" aria-labelledby="itemModal1Label" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content rounded-0">
+                        <div class="modal-header border-0">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row placeholder-glow">
+                            <div class="col-5 bg-secondary-subtle placeholder">
+                              <img class="lazy-image w-100" data-src="media/women-carousel-b3.webp" alt="">
+                            </div>
+                            <div class="col-7">
+                              <h4 class="fw-bold mb-4">سویشرت مشکی</h4>
+                              <hr class="mb-0 border-secondary">
+                              <div class="boxModalOwned d-flex flex-column flex-grow-1">
+                                <a href="review.html" class="btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center">
+                                  <span>نظردهی محصول</span>
+                                  <i class="fa fa-chevron-left"></i>
+                                </a>
+                                <button class="btnAnotherSize btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center">
+                                  <span>در سایز دیگر خرید کنید</span>
+                                  <i class="fa fa-chevron-left"></i>
+                                </button>
+                                <a href="myaccount-order-detail.html" class="btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center">
+                                  <span>مشاهده سفارش</span>
+                                  <i class="fa fa-chevron-left"></i>
+                                </a>
+                                <a href="#" class="btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center">
+                                  <span>مشاهده موارد مشابه</span>
+                                  <i class="fa fa-chevron-left"></i>
+                                </a>
+                                <button class="btnRemoveItem btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center text-danger" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                  <span>حذف</span>
+                                  <i class="fa fa-chevron-left"></i>
+                                </button>
+                              </div>
+                              <div class="boxAnotherSize">
+                                <button class="btnRequestSize btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                  <div><p class="fw-bold d-inline-block fs-5 m-0">xl</p><small class="text-danger ms-2">125040 تومان</small></div>
+                                  <span class="text-mediumpurple">درخواست اندازه</span>
+                                </button>
+                                <button class="btnRequestSize btn btn-lg nav-hover py-3 fs-6 rounded-0 border-bottom d-flex justify-content-between align-items-center" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                  <div><p class="fw-bold d-inline-block fs-5 m-0">xl</p><small class="text-body-tertiary ms-2">125040 تومان</small></div>
+                                  <span></span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-               </a>
-               <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
+                <div class="card-body p-0 py-2">
+                  <h6 class="m-0 text-truncate">HOSBJERG</h6>
+                  <h6 class="m-0 text-truncate">شلوار ALEXA CUFF - شلوار - آبی</h6>
+                </div>
+                <section>
+                  <article class="d-flex small gap-2">
+                    <h6 class="text-danger">۱،۳۵۰،۰۰۰ تومان</h6>
+                    <del>۱،۵۵۰،۰۰۰</del>
+                  </article>
+                </section>
+                <div class="text-body-tertiary small">اندازه: xl</div>
+                <div class="text-body-tertiary">4 ماه پیش خریدم</div>
               </div>
-              <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b2.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Carhartt WIP</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b3.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Levi's®</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b4.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">The North Face</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b5.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Jack & Jones</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b6.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Anna Field</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b7.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Mango</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b8.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Lacoste</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b9.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Tommy Hilfiger</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
-               <div class="item">
-                <a href="#" class="text-decoration-none">
-                 <div class="card text-dark rounded-0 border-0 bg-transparent">
-                   <div class="carousel-brand-item border border-1">
-                     <img data-src="media/brand/index/brand-b10.webp" class="card-img rounded-0 owl-lazy" alt="...">
-                   </div>
-                   <div class="card-body p-0 py-2">
-                     <h6 class="m-0 text-truncate">Pier One</h6>
-                   </div>
-                 </div>
-                </a>
-                <button class="btn border-1 rounded-0 btn-outline-dark m-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-               </div>
+          </div>
+        </div>
       </div>
-  </div>
-  </div>
-  </div>
-<div class="container-md">
-  <h3 class="fw-semibold my-3">همه برندها</h3>
-<!-- option menu -->
-    <div class="hstack gap-2 scroll-y-nowrap my-4">
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">زنانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none fw-bold shadow">مردانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">بچگانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">پسرانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">دخترانه</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">کفش</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">لباس</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">ورزشی</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">اکسسوری</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">طراح</a>
-      <a href="#" class="btn btn-outline-dark rounded-0 text-decoration-none">حراجی</a>
-    </div>
-    <!-- alphabet -->
-    <div class="gap-4 mb-4 b-animate b-purple">
-      <a href="#A" class="d-inline-block me-2 text-mediumpurple text-decoration-none">A</a>
-      <a href="#B" class="d-inline-block me-2 text-mediumpurple text-decoration-none">B</a>
-      <a href="#C" class="d-inline-block me-2 text-mediumpurple text-decoration-none">C</a>
-      <a href="#D" class="d-inline-block me-2 text-mediumpurple text-decoration-none">D</a>
-      <a href="#E" class="d-inline-block me-2 text-mediumpurple text-decoration-none">E</a>
-      <a href="#F" class="d-inline-block me-2 text-mediumpurple text-decoration-none">F</a>
-      <a href="#G" class="d-inline-block me-2 text-mediumpurple text-decoration-none">G</a>
-      <a href="#H" class="d-inline-block me-2 text-mediumpurple text-decoration-none">I</a>
-      <a href="#I" class="d-inline-block me-2 text-mediumpurple text-decoration-none">J</a>
-      <a href="#J" class="d-inline-block me-2 text-mediumpurple text-decoration-none">K</a>
-      <a href="#K" class="d-inline-block me-2 text-mediumpurple text-decoration-none">L</a>
-      <a href="#M" class="d-inline-block me-2 text-mediumpurple text-decoration-none">M</a>
-      <a href="#N" class="d-inline-block me-2 text-mediumpurple text-decoration-none">N</a>
-      <a href="#O" class="d-inline-block me-2 text-mediumpurple text-decoration-none">O</a>
-      <a href="#P" class="d-inline-block me-2 text-mediumpurple text-decoration-none">P</a>
-      <a href="#Q" class="d-inline-block me-2 text-mediumpurple text-decoration-none">Q</a>
-      <a href="#R" class="d-inline-block me-2 text-mediumpurple text-decoration-none">R</a>
-    </div>
-    <!-- all brands -->
-    <h3 id="A" class="my-4">A</h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Abercrombie & Fitch</a>
-        <button class="btn border-1 rounded-0 ms-auto btn-outline-dark d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">adidas Golf</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Aigle</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Akuko</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">all in</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Altra</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-    </div>
-    <h3 id="B" class="my-4">B</h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Bally</a>
-        <button class="btn border-1 rounded-0 ms-auto btn-outline-dark d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Barbour</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Bianco</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Bergal</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">BOSS</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-      <div class="col hstack align-items-center b-animate b-dark mb-4  pe-2 pe-md-5">
-        <a href="#" class="text-dark text-decoration-none">Brunotti</a>
-        <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow notfollow"><i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span></button>
-      </div>
-    </div>
+</div>
 </div>
 <!-- toast follow brand -->
 <div  class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="brandFollowToast" class="toast text-bg-success border-0 rounded-0" role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="boxRequestSize" class="toast text-bg-success border-0 rounded-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">
-        برند مورد نظر را دنبال نمودید
+        درخواست داده شد
       </div>
       <i class="fa-regular fa-circle-check me-2 m-auto"></i>
     </div>
   </div>
 </div>
+<!-- newsletter box -->
+<div class="bg-body-secondary pt-3">
+  <div class="container-md">
+    <div class="row">
+    <div class="col-12 col-md-5">
+  <h5 class="fw-bold">اینباکس شما</h5>
+  <h5 class="mb-3">خالی از مد هست</h5>
+  <h6>برای دریافت آخرین استایل هایی که تن جامه میسازد، ایمیلتان را ثبت کنید</h6>
+    </div>
+    <div class="col-12 col-md-7">
+      <div class="card px-md-5 py-md-2 rounded-0 border-0">
+        <form class="form-validation card-body" role="form" data-toggle="validator" novalidate>
+          <div class="col">
+            <label for="validationEmail" class="form-label m-0 p-1 border border-bottom-0 border-dark">ایمیل شما:</label>
+            <div class="input-group has-validation">
+              <input type="email" class="form-control rounded-0 border-dark" placeholder="example@email.com" id="validationEmail" required>
+              <div class="invalid-feedback">
+                لطفا ایمیل خود را وارد نمایید
+              </div>
+            </div>
+          </div>
+          <fieldset class="row my-4">
+            <legend class="col-form-label col-md-6 pt-0">
+              <h6 class="fw-bold">ترجیحات خود را مدیریت کنید</h6>
+              <h6>بیشتر به چه چیزی علاقه دارید؟</h6>
+            </legend>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" required>
+                <label class="form-check-label fs-5" for="gridRadios1">
+                  مد زنانه
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" required>
+                <label class="form-check-label fs-5" for="gridRadios2">
+                  مد مردانه
+                </label>
+                <div class="invalid-feedback">
+                  لطفا ترجیهات خود را انتخاب نمایید
+                </div>
+              </div>
+            </div>
+          </fieldset>
+      <div class="accordion" id="accordionNewsletter">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              گزینه بیشتر
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionNewsletter">
+            <div class="accordion-body">
+              <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      هشدارهای مورد شما
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      اصلاح مد شما
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      برندهایی که دنبال می کنید
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      نظرسنجی ها
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="text-decoration-none font-x-s text-mediumpurple">مشاهده بیشتر (باید وارد سیستم شوید)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+            <button class="btn w-100 my-3 text-bg-dark rounded-0" type="submit" onclick="validateForm()">Submit form</button>
+            <small class="text-muted">برای آشنایی با نحوه پردازش داده های شما، از اعلامیه <a href="#" class="text-dark text-decoration-none">حریم خصوصی</a> ما دیدن کنید. شما می توانید در هر زمان و بدون هزینه <a href="#" class="text-dark text-decoration-none">اشتراک</a> خود را لغو کنید.</small>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
 <!-- end section -->
 <!-- footer -->
 <div class="bg-mediumpurple footer-two py-1 py-md-5">
@@ -1259,7 +1194,7 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="static/js/jquery.min.js"></script>
 <script src="static/js/bootstrap.bundle.min.js"></script>
-<script src="static/owl/owl.carousel.js"></script>
+<script src="static/js/myaccount.js"></script>
 <script src="static/js/main.js"></script>
-  </body>
+</body>
 </html>
