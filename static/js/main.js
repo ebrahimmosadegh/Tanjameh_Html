@@ -141,16 +141,36 @@ $(".btn-heart").click(function() {
 
 // change button click brand follow
 $(document).on('click', '.clike-follow', function() {
+
+  var brandName = $(this).parent().find(".brandName");
+
   if ( $(this).hasClass( "notfollow" ) ) {
-    $(this).removeClass("notfollow")
+    $(this).removeClass("notfollow");
     $(this).html('<i class="fa-solid fa-check me-2"></i><span>دنبال شده</span>');
-    const toastLiveExample = document.getElementById('brandFollowToast')
-    const toast = new bootstrap.Toast(toastLiveExample)
+    const toastLiveExample = document.getElementById('brandFollowToast');
+    const toast = new bootstrap.Toast(toastLiveExample);
     toast.show()
+
+    if($("#boxBrandSelected")){
+      $("#boxBrandSelected").append(
+        `
+        <li class="brandItem col nav-hover">
+          <div class="border-bottom px-1 py-2 d-flex align-items-center">
+            <a href="${brandName.attr("data-url")}" class="text-decoration-none text-dark">${brandName.text()}</a>
+            <button class="btn border-1 rounded-0 btn-outline-dark ms-auto d-flex align-items-center clike-follow follow"><i class="fa-solid fa-check me-2"></i><span>دنبال شده</span></button>
+        </div>
+        </li>
+        `
+      )
+    }
   }
   if ( $(this).hasClass( "follow" ) ) {
-    $(this).addClass("notfollow")
+    $(this).addClass("notfollow");
     $(this).html('<i class="fa-solid fa-plus me-2"></i><span>دنبال کنید</span>');
+    
+    if($("#boxBrandSelected")){
+      $(this).closest(".brandItem").remove();
+    }
   }
   $(this).toggleClass("follow");
 });
@@ -221,7 +241,7 @@ function eventCheckBox() {
 
   for (i = 0; i < li.length; i++) {
     label = li[i].getElementsByTagName("label")[0];
-    console.log(label.textContent)
+    // console.log(label.textContent)
     txtValue = label.textContent || label.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
