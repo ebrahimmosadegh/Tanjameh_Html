@@ -602,3 +602,36 @@ const outputHtml = matchs => {
 search.addEventListener('input', () => allSearch(search.value))
 }
 
+// feedback helpful
+$('.btnPositive').click(function() {
+  if($('.btnPositive').html('<i class="fa-regular fa-thumbs-up"></i>')) {
+      $('.btnPositive').html('<i class="fa-solid fa-thumbs-up"></i>');
+      $('.btnNegative').html('<i class="fa-regular fa-thumbs-down"></i>');
+  }
+  else {
+      $('.btnPositive').html('<i class="fa-regular fa-thumbs-up"></i>');
+  }
+  });
+  
+  $('.btnNegative').click(function() {
+  if($('.btnNegative').html('<i class="fa-regular fa-thumbs-down"></i>')) {
+      $('.btnNegative').html('<i class="fa-solid fa-thumbs-down"></i>');
+      $('.btnPositive').html('<i class="fa-regular fa-thumbs-up"></i>');
+  }
+  else {
+      $('.btnNegative').html('<i class="fa-regular fa-thumbs-down"></i>');
+  }
+  });
+
+  // contact radio order
+  $('.radioOrder input[type="radio"]').click(function(){
+    var inputValue = $(this).attr("value");
+    if(inputValue == 'yes'){
+      $(".boxOrder").show();
+      $(".orderNumber").show();
+    }
+    if(inputValue == 'no'){
+      $(".boxOrder").show();
+      $(".orderNumber").hide();
+    }
+  });
