@@ -85,6 +85,14 @@ $('.owl-autowidth').owlCarousel({
 });
   });
 
+// click login & register link  
+  function goLogin() {
+    localStorage.setItem("login", "true");
+  }
+  function goRegister() {
+    localStorage.setItem("register", "true");
+  }
+  
 // validate for disabling form submissions if there are invalid fields
 function validateForm() {
   'use strict'
@@ -635,3 +643,5 @@ $('.btnPositive').click(function() {
       $(".orderNumber").hide();
     }
   });
+
+

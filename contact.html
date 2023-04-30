@@ -801,23 +801,22 @@
         </div>
       </div>
     </div>
-    <div class="hstack gap-1">
     <div class="mb-4 w-100">
       <label for="personalNumber" class="form-label m-0 p-1 border border-bottom-0 border-dark">
         <span>شماره موبایل</span>
         <span class="text-body-tertiary ms-1 font-x-s">(انتخابی)</span>
       </label>
-      <div class="input-group">
+      <div class="input-group position-relative">
         <input type="text" class="form-control form-control-lg rounded-0 border-dark" id="personalNumber">
         <div class="invalid-feedback">
           لطفا شماره موبایل را وارد نمایید
         </div>
+        <!-- Button Mobile number modal -->
+        <button type="button" class="btn p-0 d-inline-block position-absolute end-0 top-0 m-2 mt-3" data-bs-toggle="modal" data-bs-target="#MobileNumberModal">
+          <i class="fa fa-info-circle fs-5"></i>
+        </button>
       </div>
     </div>
-      <!-- Button Mobile number modal -->
-      <button type="button" class="btn p-0 d-inline-block" data-bs-toggle="modal" data-bs-target="#MobileNumberModal">
-        <i class="fa fa-info-circle fs-5"></i>
-      </button>
       <!-- Modal Mobile number -->
       <div class="modal fade" id="MobileNumberModal" tabindex="-1" aria-labelledby="MobileNumberModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered">
@@ -831,7 +830,6 @@
           </div>
         </div>
       </div>
-     </div>
     </div>
   </div>
      <hr>
@@ -839,15 +837,15 @@
       <div class="my-5 col-12 col-sm-10 col-md-8 col-lg-6 m-auto">
         <h6>آیا سوال شما مربوط به یک سفارش موجود است؟</h6>
         <div class="radioOrder mb-4">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radioOrder" id="radioOrder1" value="yes">
-              <label class="form-check-label fs-5" for="radioOrder1">
+            <div class="form-check mb-1">
+              <input class="form-check-input" type="radio" name="radioOrder" id="radioOrder1" value="yes" style="width: 1.2em; height: 1.2em;">
+              <label class="form-check-label" for="radioOrder1">
                 بلی
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="radioOrder" id="radioOrder2" value="no">
-              <label class="form-check-label fs-5" for="radioOrder2">
+              <input class="form-check-input" type="radio" name="radioOrder" id="radioOrder2" value="no" style="width: 1.2em; height: 1.2em;">
+              <label class="form-check-label" for="radioOrder2">
                 خیر 
               </label>
             </div>

@@ -642,6 +642,7 @@ background-repeat: no-repeat;
 .icon-search{
   position: relative;
   cursor: text;
+  width: 288px;
 }
 .icon-search i{
   transition: all ease 0.5s;

@@ -3,7 +3,6 @@ var btnRegister = $("#btnRegister");
 
 btnLogin.click(function(){
 if(!($(this).hasClass("collapsed"))){
-    console.log("show")
     $(this).hide()
     btnRegister.show()
 }
@@ -16,6 +15,19 @@ if(!($(this).hasClass("collapsed"))){
 }
 });
 
+// show login when another link's page
+var login = localStorage.getItem("login");
+if (login == "true") {
+  btnLogin.click();
+  localStorage.removeItem("login");
+}
+
+// show register when another link's page
+var register = localStorage.getItem("register");
+if (register == "true") {
+  btnRegister.click();
+  localStorage.removeItem("register");
+}
 
 // password show hide eye
 $(".togglePassword").on('click', function() {

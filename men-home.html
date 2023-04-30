@@ -18,14 +18,14 @@
     <a id="back-to-top" href="#" class="btn btn-dark btn-sm rounded-0 back-to-top" role="button"><i class="fa-solid fa-chevron-up"></i><span class="d-none d-md-block"> برو بالا</span></a>
     <!-- top bar -->
     <div class="bg-body-secondary d-none d-lg-flex position-relative">
-      <div class="container d-flex font-x-s">
-        <a href="#" class="p-1 flex-fill text-muted text-decoration-none fw-semibold">سیاست بازگشت 100 روزه</a>
+      <div class="container d-flex font-x-s px-0">
+        <a href="#" class="p-1 ps-2 flex-fill text-muted text-decoration-none fw-semibold">سیاست بازگشت 100 روزه</a>
       <a href="#" class="p-1 text-center flex-fill text-muted text-decoration-none fw-semibold">ارسال و مرجوعی رایگان*</a>
-      <a href="#" class="p-1 text-end flex-fill text-muted text-decoration-none fw-semibold">راهنما و تماس</a>
+      <a href="faq.html" class="p-1 text-end flex-fill text-muted text-decoration-none fw-semibold">راهنما و تماس</a>
       </div>
     </div>
     <!-- alert top web view -->
-    <div class="alert fade show rounded-0 position-absolute top-0 w-100 p-0 bg-orange d-none d-md-block" role="alert">
+    <div class="alert fade show rounded-0 position-absolute top-0 w-100 p-0 bg-orange d-none d-md-block z-1" role="alert">
       <div class="container text-center text-truncate">
         <a href="#" class="text-decoration-none text-white font-x-s">
           تا 50% تخفیف! در فروش زمستانی ما، بیشتر کاوش کنید...
@@ -72,17 +72,17 @@
               </a>
                 <ul id="accountDrop" class="dropdown-menu b-animate b-dark border-0 rounded-0 position-absolute">
                   <!-- show li when user is not login -->
-                  <li class="px-3 mt-2"><a class="btn btn-dark w-100 rounded-0" href="#">ورود</a></li>
+                  <li class="px-3 mt-2"><a class="btn btn-dark w-100 rounded-0" href="authenticate.html" onclick="goLogin()">ورود</a></li>
                   <li class="b-animate b-purple px-3 pt-2">
-                    <a class="text-decoration-none text-mediumpurple d-inline-block" href="#">ثبت نام</a>
+                    <a class="text-decoration-none text-mediumpurple d-inline-block" href="authenticate.html" onclick="goRegister()">ثبت نام</a>
                     <span class="font-x-s">- تنها یک دقیقه طول می کشد.</span>
                   </li>
                   <li><hr class="dropdown-divider"></li>
                   <!-- end show -->
                   <!-- show li when user is login -->
-                  <li><a class="dropdown-item" href="#">پروفایلم</a></li>
-                  <li><a class="dropdown-item" href="#">سفارشاتم</a></li>
-                  <li><a class="dropdown-item" href="#">تماس و راهنما</a></li>
+                  <li><a class="dropdown-item" href="myaccount.html">پروفایلم</a></li>
+                  <li><a class="dropdown-item" href="myaccount-orders.html">سفارشاتم</a></li>
+                  <li><a class="dropdown-item" href="contact.html">تماس و راهنما</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">
                     <div class="row fs-6">
@@ -96,14 +96,14 @@
             <!-- wishlist -->
             <li class="nav-item b-drop position-relative">
               <span class="heartCounter position-absolute top-0 end-0 badge rounded-circle bg-orange p-1 font-x-s">2</span>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="wish-list.html">
                 <svg height="1.3em" width="1.5em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="wish-list-8883410" role="img" aria-hidden="false"><title id="wish-list-8883410">علاقمندی</title><path d="M17.488 1.11h-.146a6.552 6.552 0 0 0-5.35 2.81A6.57 6.57 0 0 0 6.62 1.116 6.406 6.406 0 0 0 .09 7.428c0 7.672 11.028 15.028 11.497 15.338a.745.745 0 0 0 .826 0c.47-.31 11.496-7.666 11.496-15.351a6.432 6.432 0 0 0-6.42-6.306zM12 21.228C10.018 19.83 1.59 13.525 1.59 7.442c.05-2.68 2.246-4.826 4.934-4.826h.088c2.058-.005 3.93 1.251 4.684 3.155.226.572 1.168.572 1.394 0 .755-1.907 2.677-3.17 4.69-3.16h.02c2.7-.069 4.96 2.118 5.01 4.817 0 6.089-8.429 12.401-10.41 13.8z"></path></svg>
               </a>
             </li>
             <!-- cart -->
             <li class="cart nav-item b-drop position-relative">
               <span class="items-basket position-absolute top-0 end-0 badge rounded-circle bg-orange p-1 font-x-s"></span>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="cart.html">
                 <svg height="1.3em" width="1.3em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="your-bag-8883411" role="img" aria-hidden="false"><title id="your-bag-8883411">سبد خرید</title><path d="M20.677 13.654a5.23 5.23 0 0 0 1.073-3.194c-.01-2.632-1.968-4.78-4.5-5.137V5.25a5.25 5.25 0 0 0-10.5 0v.059a5.224 5.224 0 0 0-2.444 1.014 5.23 5.23 0 0 0-.983 7.33A5.623 5.623 0 0 0 6.375 24h11.25a5.623 5.623 0 0 0 3.052-10.346zM12 1.5a3.75 3.75 0 0 1 3.75 3.75h-7.5A3.75 3.75 0 0 1 12 1.5zm5.625 21H6.375a4.122 4.122 0 0 1-1.554-7.942.75.75 0 0 0 .214-1.256A3.697 3.697 0 0 1 3.75 10.5a3.755 3.755 0 0 1 3-3.674V9a.75.75 0 0 0 1.5 0V6.75h7.5V9a.75.75 0 1 0 1.5 0V6.826a3.755 3.755 0 0 1 3 3.674c0 1.076-.47 2.1-1.285 2.802a.75.75 0 0 0 .213 1.256 4.122 4.122 0 0 1-1.553 7.942z"></path></svg>
               </a>
               <div id="cart-items" class="position-absolute z-3">
@@ -128,7 +128,7 @@
     </nav>
    <!-- menu bar -->
    <nav class="navbar navbar-expand-lg menu p-0 border-bottom">
-    <div class="container-lg">
+    <div class="container-lg px-0">
       <a class="btn border-dark-subtle d-lg-none" data-bs-toggle="offcanvas" href="#offcanvasHome" role="button" aria-controls="offcanvasHome">
         <svg class="zds-icon RC794g X9n9TI DlJ4rT _5Yd-hZ pVrzNP H3jvU7" height="1em" width="1em" focusable="false" fill="currentColor" viewBox="0 0 24 24" aria-labelledby="menu-6594495" role="img" aria-hidden="false"><title id="menu-6594495">Menu</title><path d="M.75 2.25h22.5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5zM23.25 21.75H.75a.75.75 0 0 0 0 1.5h22.5a.75.75 0 0 0 0-1.5zM.75 12.75h12a.75.75 0 0 0 0-1.5h-12a.75.75 0 0 0 0 1.5z"></path></svg>
       </a>
@@ -142,11 +142,11 @@
                       <div class="col">
                         <h5 class="text-black-50 mt-5">زنانه</h5>
                         <div class="d-grid cat">
-                            <a href="#"><i class="fa-solid fa-shirt"></i> همه لباس</a>
-                            <a href="#"><i class="fa-sharp fa-solid fa-vest-patches"></i> کت</a>
-                            <a href="#"><i class="fa-solid fa-shirt"></i> تاپ</a>
-                            <a href="#"><i class="fa-solid fa-shirt"></i> ژاکت</a>
-                            <a href="#"><i class="fa-solid fa-shirt"></i> جین</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> همه لباس</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> کت</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> تاپ</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> ژاکت</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> جین</a>
                           </div>
                           <h5 class="text-black-50 mt-5">برند</h5>
                         <div class="d-grid cat">
@@ -157,11 +157,11 @@
                   <div class="col">
                     <h5 class="text-black-50 mt-5">مردانه</h5>
                         <div class="d-grid cat">
-                            <a href="#"><i class="fa-solid fa-shirt"></i> همه لباس</a>
-                            <a href="#"><i class="fa-sharp fa-solid fa-vest-patches"></i> کت</a>
-                            <a href="#"><i class="fa-solid fa-shirt"></i> تاپ</a>
-                            <a href="#"><i class="fa-solid fa-shirt"></i> ژاکت</a>
-                            <a href="#"><i class="fa-solid fa-shirt"></i> جین</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> همه لباس</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> کت</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> تاپ</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> ژاکت</a>
+                            <a href="#"><img src="media/icon/icons8-shirt-20.png" alt=""> جین</a>
                           </div>
                           <h5 class="text-black-50 mt-5">برند</h5>
                         <div class="d-grid cat">
@@ -596,20 +596,21 @@
       </div>
       <!-- search all website -->
       <div>
-        <div class="icon-search bg-gainsboro-light d-flex align-items-center justify-content-between p-1" style="width: 288px;">
+        <div class="icon-search bg-gainsboro-light d-flex align-items-center justify-content-between p-1">
           <span class="fs-6 text-dark-emphasis">جستجو</span>
           <i class="fa fa-search p-2" aria-hidden="trues"></i>
         </div>
-    <div class="search-form">
+        <div class="search-form">
         <input type="text" id="all_search" class="" placeholder="جستجو را اینجا بنویس" onfocus="all_search()">
          <div class="result-search position-relative p-0">
           <div id="all_match_list" class="position-absolute bg-light-subtle w-100 overflow-y-scroll border-dark border border-top-0" style="max-height: 18rem;">
           </div>
         </div>
-      </div>
-      </div>
-    </div>
-    </nav>
+        </div>
+
+</div>
+</div>
+</nav>
 <!-- offcanvas mobile view  -->
       <div class="offcanvas offcanvas-start cat-offcanvas" tabindex="-1" id="offcanvasHome" aria-labelledby="offcanvasHomeLabel">
         <div class="offcanvas-header">
@@ -771,13 +772,13 @@
         </div>
       </div>
 <!-- baner -->
-<div class="bg-aqua text-dark">
+<div class="text-dark" style="background-color: #39A597;">
     <div class="container-md">
       <div class="row pt-5 ps-4 ps-md-0 position-relative placeholder-glow">
         <div class="col-12 col-md-6 py-3">
                             <h3 class="fw-semibold">کمد لباس زمستانی</h3>
                             <h4 class="mb-4">برای همه شکل ها و اندازه ها</h4>
-                <a href="#" class="text-decoration-none text-dark fw-semibold stretched-link">اکنون کشف کنید <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="products.html" class="text-decoration-none text-dark fw-semibold stretched-link">اکنون کشف کنید <i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <div class="col-12 col-md-6 card p-0 rounded-0 border-0">
            <div class="position-relative pt-48 bg-dark-subtle placeholder">   
@@ -788,7 +789,7 @@
     </div>
   </div>
   <!-- carousel center nonloop -->
-  <div class="container-fluid py-5 bg-aqua-light">
+  <div class="container-fluid py-5" style="background-color: hsl(172,48.6%,60.900000000000006%);">
   <div class="row">
   <div class="col-0 col-md-1"></div>
   <div class="col-12 col-md-11 position-relative overflow-hidden">
@@ -801,7 +802,7 @@
                   <!-- add class like or dislike -->
                   <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
                 </div>
-               <a href="#" class="text-decoration-none">
+               <a href="product-detail.html" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
                   <div class="position-relative">
                   <img data-src="media/men/men-a1.webp" class="card-img rounded-0 owl-lazy" alt="...">
@@ -825,7 +826,7 @@
                   <!-- add class like or dislike -->
                   <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
                 </div>
-               <a href="#" class="text-decoration-none">
+               <a href="product-detail.html" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
                   <div class="position-relative">
                   <img data-src="media/men/men-a2.webp" class="card-img rounded-0 owl-lazy" alt="...">
@@ -846,7 +847,7 @@
                   <!-- add class like or dislike -->
                   <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
                 </div>
-               <a href="#" class="text-decoration-none">
+               <a href="product-detail.html" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
                   <div class="position-relative">
                   <img data-src="media/men/men-a3.webp" class="card-img rounded-0 owl-lazy" alt="...">
@@ -866,7 +867,7 @@
                   <!-- add class like or dislike -->
                   <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
                 </div>
-               <a href="#" class="text-decoration-none">
+               <a href="product-detail.html" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
                   <div class="position-relative">
                   <img data-src="media/men/men-a4.webp" class="card-img rounded-0 owl-lazy" alt="...">
@@ -890,7 +891,7 @@
                   <!-- add class like or dislike -->
                   <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
                 </div>
-               <a href="#" class="text-decoration-none">
+               <a href="product-detail.html" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
                   <div class="position-relative">
                   <img data-src="media/men/men-a5.webp" class="card-img rounded-0 owl-lazy" alt="...">
@@ -910,7 +911,7 @@
                   <!-- add class like or dislike -->
                   <button type="button" class="btn btn-light rounded-0 btn-heart dislike lh-1 p-2 fs-5" ><i class="fa-regular fa-heart" aria-hidden="true"></i></button>
                 </div>
-               <a href="#" class="text-decoration-none">
+               <a href="product-detail.html" class="text-decoration-none">
                 <div class="card text-dark rounded-0 border-0 bg-transparent">
                   <div class="position-relative">
                   <img data-src="media/men/men-a6.webp" class="card-img rounded-0 owl-lazy" alt="...">
@@ -3277,25 +3278,66 @@
           <a href="#" class=" text-white text-decoration-none">اطلاعیه حفظ حریم خصوصی</a><div class="vr"></div>
           <a href="#" class=" text-white text-decoration-none">ترجیحات داده</a>
         </div>
+        <div class="my-3">
+          <!-- Button trigger modal change language -->
+        <a type="button" class="fs-5 text-white-50" data-bs-toggle="modal" data-bs-target="#languageModal">
+          <i class="fa fa-earth"></i>
+        </a>
+        <!-- Modal change language -->
+        <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content px-4  rounded-0">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="languageModalLabel">ترجیحات</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal-body">
+          <h6 class="fw-bold my-3">
+            خرید از :
+          </h6>
+          <select class="form-select form-select-lg rounded-0" aria-label=".form-select-lg choiceLanguage">
+            <option selected>فارسی</option>
+            <option value="1">العربیه</option>
+            <option value="2">English</option>
+            <option value="3">Deutsch</option>
+            <option value="4">France</option>
+          </select>
+          <div class="bg-gainsboro-light p-2">sd</div>
+        </div>
+        
+
+        </div>
       </div>
       <div class="col-12 col-md-4 my-4 mt-md-0">
         <p>اپلیکیشن تن جامه:</p>
-        <div class="hstack gap-1">
-          <a href="#">
+        <div>
+          <a href="#" class="mb-2 d-inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="119.664" height="40" aria-hidden="true"><path fill="#a6a6a6" d="M110.135 0H9.535c-.367 0-.73 0-1.095.002-.306.002-.61.008-.919.013A13.215 13.215 0 0 0 5.517.19a6.665 6.665 0 0 0-1.9.627 6.438 6.438 0 0 0-1.62 1.18A6.258 6.258 0 0 0 .82 3.617 6.601 6.601 0 0 0 .195 5.52a12.993 12.993 0 0 0-.179 2.002c-.01.307-.01.615-.015.921V31.56c.005.31.006.61.015.921a12.992 12.992 0 0 0 .18 2.002 6.588 6.588 0 0 0 .624 1.905A6.208 6.208 0 0 0 1.998 38a6.274 6.274 0 0 0 1.618 1.179 6.7 6.7 0 0 0 1.901.63 13.455 13.455 0 0 0 2.004.177c.31.007.613.011.919.011.366.002.728.002 1.095.002h100.6c.36 0 .724 0 1.084-.002.304 0 .617-.004.922-.01a13.279 13.279 0 0 0 2-.178 6.804 6.804 0 0 0 1.908-.63A6.277 6.277 0 0 0 117.666 38a6.395 6.395 0 0 0 1.182-1.614 6.604 6.604 0 0 0 .619-1.905 13.506 13.506 0 0 0 .185-2.002c.004-.31.004-.61.004-.921.008-.364.008-.725.008-1.094V9.536c0-.366 0-.73-.008-1.092 0-.306 0-.614-.004-.92a13.507 13.507 0 0 0-.185-2.003 6.618 6.618 0 0 0-.62-1.903 6.466 6.466 0 0 0-2.798-2.8 6.768 6.768 0 0 0-1.908-.627 13.044 13.044 0 0 0-2-.176c-.305-.005-.618-.011-.922-.013-.36-.002-.725-.002-1.084-.002z"></path><path d="M8.445 39.125c-.305 0-.602-.004-.904-.01a12.687 12.687 0 0 1-1.87-.164 5.884 5.884 0 0 1-1.656-.548 5.406 5.406 0 0 1-1.397-1.016 5.32 5.32 0 0 1-1.02-1.397 5.722 5.722 0 0 1-.544-1.657 12.414 12.414 0 0 1-.166-1.875c-.007-.21-.015-.913-.015-.913v-23.1s.009-.692.015-.895a12.37 12.37 0 0 1 .165-1.872 5.755 5.755 0 0 1 .544-1.662 5.373 5.373 0 0 1 1.015-1.398 5.565 5.565 0 0 1 1.402-1.023 5.823 5.823 0 0 1 1.653-.544A12.586 12.586 0 0 1 7.543.887l.902-.012h102.769l.913.013a12.385 12.385 0 0 1 1.858.162 5.938 5.938 0 0 1 1.671.548 5.594 5.594 0 0 1 2.415 2.42 5.763 5.763 0 0 1 .535 1.649 12.995 12.995 0 0 1 .174 1.887c.003.283.003.588.003.89.008.375.008.732.008 1.092v20.929c0 .363 0 .718-.008 1.075 0 .325 0 .623-.004.93a12.731 12.731 0 0 1-.17 1.853 5.739 5.739 0 0 1-.54 1.67 5.48 5.48 0 0 1-1.016 1.386 5.413 5.413 0 0 1-1.4 1.022 5.862 5.862 0 0 1-1.668.55 12.542 12.542 0 0 1-1.869.163c-.293.007-.6.011-.897.011l-1.084.002z"></path><g fill="#fff"><g><path d="M24.769 20.3a4.949 4.949 0 0 1 2.356-4.151 5.066 5.066 0 0 0-3.99-2.158c-1.68-.176-3.308 1.005-4.164 1.005-.872 0-2.19-.988-3.608-.958a5.315 5.315 0 0 0-4.473 2.728c-1.934 3.348-.491 8.269 1.361 10.976.927 1.325 2.01 2.805 3.428 2.753 1.387-.058 1.905-.885 3.58-.885 1.658 0 2.144.885 3.59.852 1.489-.025 2.426-1.332 3.32-2.67a10.962 10.962 0 0 0 1.52-3.092 4.782 4.782 0 0 1-2.92-4.4zm-2.732-8.09a4.872 4.872 0 0 0 1.115-3.49 4.957 4.957 0 0 0-3.208 1.66 4.636 4.636 0 0 0-1.144 3.36 4.1 4.1 0 0 0 3.237-1.53z"></path></g><path d="M42.302 27.14H37.57l-1.137 3.356h-2.005l4.484-12.418h2.083l4.483 12.418h-2.039zm-4.243-1.55h3.752l-1.85-5.446h-.051zm17.101.38c0 2.813-1.506 4.62-3.779 4.62a3.07 3.07 0 0 1-2.848-1.583h-.043v4.484h-1.86V21.442h1.8v1.506h.033a3.212 3.212 0 0 1 2.883-1.6c2.298 0 3.813 1.816 3.813 4.622zm-1.91 0c0-1.833-.948-3.038-2.393-3.038-1.42 0-2.375 1.23-2.375 3.038 0 1.824.955 3.046 2.375 3.046 1.445 0 2.393-1.197 2.393-3.046zm11.875 0c0 2.813-1.506 4.62-3.779 4.62a3.07 3.07 0 0 1-2.848-1.583h-.043v4.484h-1.859V21.442h1.799v1.506h.034a3.212 3.212 0 0 1 2.883-1.6c2.298 0 3.813 1.816 3.813 4.622zm-1.91 0c0-1.833-.948-3.038-2.393-3.038-1.42 0-2.375 1.23-2.375 3.038 0 1.824.955 3.046 2.375 3.046 1.445 0 2.392-1.197 2.392-3.046zm8.495 1.066c.138 1.232 1.334 2.04 2.97 2.04 1.566 0 2.693-.808 2.693-1.919 0-.964-.68-1.54-2.29-1.936l-1.609-.388c-2.28-.55-3.339-1.617-3.339-3.348 0-2.142 1.867-3.614 4.519-3.614 2.624 0 4.423 1.472 4.483 3.614h-1.876c-.112-1.239-1.136-1.987-2.634-1.987s-2.521.757-2.521 1.858c0 .878.654 1.395 2.255 1.79l1.368.336c2.548.603 3.606 1.626 3.606 3.443 0 2.323-1.85 3.778-4.793 3.778-2.754 0-4.614-1.42-4.734-3.667zM83.346 19.3v2.142h1.722v1.472h-1.722v4.991c0 .776.345 1.137 1.102 1.137a5.808 5.808 0 0 0 .611-.043v1.463a5.104 5.104 0 0 1-1.032.086c-1.833 0-2.548-.689-2.548-2.445v-5.189h-1.316v-1.472h1.316V19.3zm2.719 6.67c0-2.849 1.678-4.639 4.294-4.639 2.625 0 4.295 1.79 4.295 4.639 0 2.856-1.661 4.638-4.295 4.638-2.633 0-4.294-1.782-4.294-4.638zm6.695 0c0-1.954-.895-3.108-2.401-3.108s-2.4 1.162-2.4 3.108c0 1.962.894 3.106 2.4 3.106s2.401-1.144 2.401-3.106zm3.426-4.528h1.773v1.541h.043a2.16 2.16 0 0 1 2.177-1.635 2.866 2.866 0 0 1 .637.069v1.738a2.598 2.598 0 0 0-.835-.112 1.873 1.873 0 0 0-1.937 2.083v5.37h-1.858zm13.198 6.395c-.25 1.643-1.85 2.771-3.898 2.771-2.634 0-4.269-1.764-4.269-4.595 0-2.84 1.644-4.682 4.19-4.682 2.506 0 4.08 1.72 4.08 4.466v.637h-6.394v.112a2.358 2.358 0 0 0 2.436 2.564 2.048 2.048 0 0 0 2.09-1.273zm-6.282-2.702h4.526a2.177 2.177 0 0 0-2.22-2.298 2.292 2.292 0 0 0-2.306 2.298z"></path></g><path fill="#fff" d="M37.826 8.731a2.64 2.64 0 0 1 2.808 2.965c0 1.906-1.03 3.002-2.808 3.002h-2.155V8.73zm-1.228 5.123h1.125a1.876 1.876 0 0 0 1.967-2.146 1.881 1.881 0 0 0-1.967-2.134h-1.125zm5.082-1.41a2.133 2.133 0 1 1 4.248 0 2.134 2.134 0 1 1-4.247 0zm3.334 0c0-.976-.439-1.547-1.208-1.547-.773 0-1.207.571-1.207 1.547 0 .984.434 1.55 1.207 1.55.77 0 1.208-.57 1.208-1.55zm6.559 2.254h-.922l-.93-3.317h-.07l-.927 3.317h-.913l-1.242-4.503h.902l.806 3.436h.067l.926-3.436h.852l.926 3.436h.07l.803-3.436h.889zm2.281-4.503h.855v.715h.066a1.348 1.348 0 0 1 1.344-.802 1.465 1.465 0 0 1 1.559 1.675v2.915h-.889v-2.692c0-.724-.314-1.084-.972-1.084a1.033 1.033 0 0 0-1.075 1.141v2.635h-.888zm5.24-1.758h.888v6.26h-.888zm2.124 4.007a2.133 2.133 0 1 1 4.247 0 2.134 2.134 0 1 1-4.247 0zm3.333 0c0-.976-.439-1.547-1.208-1.547-.773 0-1.207.571-1.207 1.547 0 .984.434 1.55 1.207 1.55.77 0 1.208-.57 1.208-1.55zm1.849.98c0-.81.604-1.278 1.676-1.344l1.22-.07v-.389c0-.475-.315-.744-.922-.744-.497 0-.84.182-.939.5h-.86c.09-.773.818-1.27 1.84-1.27 1.128 0 1.765.563 1.765 1.514v3.077h-.855v-.633h-.07a1.515 1.515 0 0 1-1.353.707 1.36 1.36 0 0 1-1.501-1.348zm2.895-.384v-.377l-1.1.07c-.62.042-.9.253-.9.65 0 .405.351.64.834.64a1.062 1.062 0 0 0 1.166-.983zm2.053-.596c0-1.423.732-2.324 1.87-2.324a1.484 1.484 0 0 1 1.38.79h.067V8.437h.888v6.26h-.851v-.71h-.07a1.563 1.563 0 0 1-1.415.785c-1.145 0-1.869-.901-1.869-2.328zm.918 0c0 .955.45 1.53 1.203 1.53.75 0 1.212-.583 1.212-1.526 0-.938-.468-1.53-1.212-1.53-.748 0-1.203.58-1.203 1.526zm6.964 0a2.133 2.133 0 1 1 4.247 0 2.134 2.134 0 1 1-4.247 0zm3.333 0c0-.976-.438-1.547-1.208-1.547-.772 0-1.207.571-1.207 1.547 0 .984.435 1.55 1.207 1.55.77 0 1.208-.57 1.208-1.55zm2.107-2.249h.855v.715h.066a1.348 1.348 0 0 1 1.344-.802 1.465 1.465 0 0 1 1.559 1.675v2.915h-.889v-2.692c0-.724-.314-1.084-.972-1.084a1.033 1.033 0 0 0-1.075 1.141v2.635h-.889zm8.845-1.121v1.141h.976v.749h-.976v2.315c0 .472.194.679.637.679a2.967 2.967 0 0 0 .339-.021v.74a2.916 2.916 0 0 1-.484.046c-.988 0-1.381-.348-1.381-1.216v-2.543h-.715v-.749h.715V9.074zm2.19-.637h.88v2.481h.07a1.386 1.386 0 0 1 1.374-.806 1.483 1.483 0 0 1 1.55 1.679v2.907h-.889V12.01c0-.72-.335-1.084-.963-1.084a1.052 1.052 0 0 0-1.134 1.142v2.63h-.888zm9.056 5.045a1.828 1.828 0 0 1-1.95 1.303 2.045 2.045 0 0 1-2.081-2.325 2.077 2.077 0 0 1 2.076-2.352c1.253 0 2.009.856 2.009 2.27v.31h-3.18v.05a1.19 1.19 0 0 0 1.2 1.29 1.08 1.08 0 0 0 1.07-.546zm-3.126-1.451h2.275a1.086 1.086 0 0 0-1.109-1.167 1.152 1.152 0 0 0-1.166 1.167z"></path></svg>
           </a>
-          <a href="#">
+          <a href="#" class="mb-2 d-inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="135" height="40" fill="none" aria-hidden="true"><path fill="#000" d="M130 0H5a5 5 0 0 0-5 5v30a5 5 0 0 0 5 5h125a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5z"></path><path fill="#A6A6A6" d="M130 .8a4.2 4.2 0 0 1 4.2 4.2v30a4.198 4.198 0 0 1-4.2 4.2H5A4.2 4.2 0 0 1 .8 35V5A4.2 4.2 0 0 1 5 .8h125zm0-.8H5a5 5 0 0 0-5 5v30a5 5 0 0 0 5 5h125a5.002 5.002 0 0 0 5-5V5a5.002 5.002 0 0 0-5-5z"></path><path fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.2" d="M47.42 10.24a2.71 2.71 0 0 1-.75 2 2.911 2.911 0 0 1-2.2.89 3.151 3.151 0 0 1-2.21-5.37 3 3 0 0 1 2.21-.9 3.1 3.1 0 0 1 1.23.25c.362.146.684.376.94.67l-.53.53a2 2 0 0 0-1.64-.71 2.32 2.32 0 0 0-2.33 2.4 2.36 2.36 0 0 0 4 1.73 1.89 1.89 0 0 0 .5-1.22h-2.17v-.72h2.91c.027.149.04.3.04.45zM52 7.74h-2.7v1.9h2.46v.72H49.3v1.9H52V13h-3.5V7H52v.74zM55.28 13h-.77V7.74h-1.68V7H57v.74h-1.72V13zm4.66 0V7h.77v6h-.77zm4.19 0h-.77V7.74h-1.68V7h4.12v.74h-1.67V13zm9.48-.78a3.12 3.12 0 0 1-4.4 0 3.24 3.24 0 0 1 0-4.45 3.1 3.1 0 0 1 4.4 0 3.23 3.23 0 0 1 0 4.45zm-3.83-.5a2.31 2.31 0 0 0 3.26 0 2.56 2.56 0 0 0 0-3.44 2.31 2.31 0 0 0-3.26 0 2.56 2.56 0 0 0 0 3.44zm5.8 1.28V7h.94l2.92 4.67V7h.77v6h-.8l-3.05-4.89V13h-.78z"></path><path fill="#fff" d="M68.14 21.75A4.25 4.25 0 1 0 72.41 26a4.19 4.19 0 0 0-4.27-4.25zm0 6.83a2.58 2.58 0 1 1 2.4-2.58 2.46 2.46 0 0 1-2.4 2.58zm-9.31-6.83A4.25 4.25 0 1 0 63.09 26a4.19 4.19 0 0 0-4.27-4.25h.01zm0 6.83A2.58 2.58 0 1 1 61.22 26a2.46 2.46 0 0 1-2.4 2.58h.01zm-11.09-5.52v1.8h4.32a3.77 3.77 0 0 1-1 2.27 4.422 4.422 0 0 1-3.33 1.32 4.8 4.8 0 0 1 0-9.6A4.6 4.6 0 0 1 51 20.14l1.27-1.27A6.288 6.288 0 0 0 47.74 17a6.61 6.61 0 1 0 0 13.21 6 6 0 0 0 4.61-1.85 6 6 0 0 0 1.56-4.22 5.875 5.875 0 0 0-.1-1.13l-6.07.05zm45.31 1.4a4 4 0 0 0-3.64-2.71 4.001 4.001 0 0 0-4 4.25 4.161 4.161 0 0 0 4.22 4.25 4.23 4.23 0 0 0 3.54-1.88l-1.45-1a2.43 2.43 0 0 1-2.09 1.18 2.16 2.16 0 0 1-2.06-1.29l5.69-2.35-.21-.45zm-5.8 1.42a2.33 2.33 0 0 1 2.22-2.48 1.65 1.65 0 0 1 1.58.9l-3.8 1.58zM82.63 30h1.87V17.5h-1.87V30zm-3.06-7.3h-.07a3 3 0 0 0-2.24-1 4.26 4.26 0 0 0 0 8.51 2.9 2.9 0 0 0 2.24-1h.06v.61c0 1.63-.87 2.5-2.27 2.5a2.35 2.35 0 0 1-2.14-1.51l-1.63.68A4.05 4.05 0 0 0 77.29 34c2.19 0 4-1.29 4-4.43V22h-1.72v.7zm-2.14 5.88a2.59 2.59 0 0 1 0-5.16A2.402 2.402 0 0 1 79.7 26a2.38 2.38 0 0 1-2.28 2.58h.01zm24.38-11.08h-4.47V30h1.87v-4.74h2.61a3.889 3.889 0 1 0 0-7.76h-.01zm0 6H99.2v-4.26h2.65a2.147 2.147 0 0 1 1.517 3.662 2.147 2.147 0 0 1-1.517.628l-.04-.03zm11.53-1.8a3.498 3.498 0 0 0-3.33 1.91l1.66.69a1.777 1.777 0 0 1 1.7-.92 1.804 1.804 0 0 1 1.792.931c.114.21.184.441.208.679v.13a4.13 4.13 0 0 0-1.95-.48c-1.79 0-3.6 1-3.6 2.81a2.904 2.904 0 0 0 .969 2.03 2.892 2.892 0 0 0 2.131.72 2.634 2.634 0 0 0 2.4-1.2h.06v1h1.8v-4.81c0-2.19-1.66-3.46-3.79-3.46l-.05-.03zm-.23 6.85c-.61 0-1.46-.31-1.46-1.06 0-1 1.06-1.33 2-1.33a3.32 3.32 0 0 1 1.7.42 2.264 2.264 0 0 1-2.19 2l-.05-.03zM123.74 22l-2.14 5.42h-.06L119.32 22h-2l3.33 7.58-1.9 4.21h1.95L125.82 22h-2.08zm-16.81 8h1.87V17.5h-1.87V30z"></path><path fill="url(#paint0_linear)" d="M10.44 7.54a2 2 0 0 0-.46 1.4v22.12a2 2 0 0 0 .46 1.4l.07.07L22.9 20.15v-.29L10.51 7.47l-.07.07z"></path><path fill="url(#paint1_linear)" d="m27 24.28-4.1-4.13v-.29l4.1-4.14.09.05L32 18.56c1.4.79 1.4 2.09 0 2.89l-4.89 2.78-.11.05z"></path><path fill="url(#paint2_linear)" d="M27.12 24.22 22.9 20 10.44 32.46a1.63 1.63 0 0 0 2.08.06l14.61-8.3"></path><path fill="url(#paint3_linear)" d="m27.12 15.78-14.61-8.3a1.63 1.63 0 0 0-2.08.06L22.9 20l4.22-4.22z"></path><path fill="#000" d="m27 24.13-14.49 8.25a1.67 1.67 0 0 1-2 0l-.07.07.07.07a1.66 1.66 0 0 0 2 0l14.61-8.3-.12-.09z" opacity="0.2"></path><path fill="#000" d="M10.44 32.32a2 2 0 0 1-.46-1.4v.15a2 2 0 0 0 .46 1.4l.07-.07-.07-.08zM32 21.3l-5 2.83.09.09L32 21.44A1.75 1.75 0 0 0 33 20a1.86 1.86 0 0 1-1 1.3z" opacity="0.12"></path><path fill="#fff" d="M12.51 7.62 32 18.7a1.86 1.86 0 0 1 1 1.3 1.75 1.75 0 0 0-1-1.44L12.51 7.48c-1.4-.79-2.54-.13-2.54 1.47v.15c.03-1.61 1.15-2.27 2.54-1.48z" opacity="0.25"></path><defs><linearGradient id="paint0_linear" x1="21.8" x2="5.02" y1="8.71" y2="25.49" gradientUnits="userSpaceOnUse"><stop stop-color="#00A0FF"></stop><stop offset="0.01" stop-color="#00A1FF"></stop><stop offset="0.26" stop-color="#00BEFF"></stop><stop offset="0.51" stop-color="#00D2FF"></stop><stop offset="0.76" stop-color="#00DFFF"></stop><stop offset="1" stop-color="#00E3FF"></stop></linearGradient><linearGradient id="paint1_linear" x1="33.83" x2="9.64" y1="20" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE000"></stop><stop offset="0.41" stop-color="#FFBD00"></stop><stop offset="0.78" stop-color="orange"></stop><stop offset="1" stop-color="#FF9C00"></stop></linearGradient><linearGradient id="paint2_linear" x1="24.83" x2="2.07" y1="22.3" y2="45.05" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3A44"></stop><stop offset="1" stop-color="#C31162"></stop></linearGradient><linearGradient id="paint3_linear" x1="7.3" x2="17.46" y1="0.18" y2="10.34" gradientUnits="userSpaceOnUse"><stop stop-color="#32A071"></stop><stop offset="0.07" stop-color="#2DA771"></stop><stop offset="0.48" stop-color="#15CF74"></stop><stop offset="0.8" stop-color="#06E775"></stop><stop offset="1" stop-color="#00F076"></stop></linearGradient></defs></svg>
           </a>
         </div>
       </div>
       <div class="col-12 col-md-2">
         <p>شبکه مجازی ما</p>
-        <div class="hstack gap-1">
-          <a href="#" class="btn btn-light rounded-0 btn-sm">
+        <div>
+          <a href="#" class="btn btn-light rounded-0 btn-sm mb-1 d-inline-block">
             <i class="fa-brands fa-square-instagram fs-3"></i>
           </a>
-          <a href="#" class="btn btn-light rounded-0 btn-sm">
+          <a href="#" class="btn btn-light rounded-0 btn-sm mb-1 d-inline-block">
             <i class="fa-brands fa-facebook fs-3"></i>
           </a>
         </div>
