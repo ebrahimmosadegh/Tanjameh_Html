@@ -350,6 +350,47 @@ $("#feedback_form").submit(function(e) {
   });
 });
 
+// newsletter submit
+$('#newsletter').submit(function (e) {
+  e.preventDefault();
+  'use strict'
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.form-validation')
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      if (form.checkValidity()) {
+        $form = $(this)
+        var formData = new FormData(this);
+  $.ajax({
+      url: window.location.pathname,
+      type: 'POST',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (response) {
+        $('#newsletter').toggle(300);
+        $('#newsletterResult').append(`
+        <i class="fa fa-message fs-1"></i>
+        <div>
+          <h6 class="fw-bold">Welcome aboard!</h6>
+          <h6>we sent you a welcome email</h6>
+          <small class="my-3 d-block">amir@hotmail.com</small>
+          <h6>you'r subscribe</h6>
+        </div>
+        `);
+      }
+    });
+        }
+
+  form.classList.add('was-validated')
+  })
+  });
+
 // dropdown size box in product page
 function myDropdown() {
   document.getElementById("myDropdown").classList.toggle("show"); //adding a class show
