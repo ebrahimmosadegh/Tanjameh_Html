@@ -261,8 +261,8 @@ input[type="color"]:focus,
   display: block;
   margin: auto;
   height: 2px;
-    content: "";
-    transition: border .15s ease-in-out; 
+  content: "";
+  transition: border .15s ease-in-out; 
 }
 .b-animate a{
   width: fit-content;
