@@ -842,14 +842,14 @@
         <button type="button" class="btn btn-outline-dark border-2 rounded-0 dropdown-toggle fw-bold lh-lg" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
           <span>برند</span><span class="p-1 text-bg-dark font-x-s ms-1">1</span>
         </button>
-        <form class="dropdown-menu p-0 rounded-0 b-animate b-purple">
+        <form class="dropdown-menu p-0 rounded-0 b-animate b-purple" id="choiceAll">
           <div class="input-group p-3 border-bottom">
             <input type="search" id="search_filter" class="form-control border-dark rounded-0 border-end-0" placeholder="جستجوی برند" aria-label="Recipient's brand" aria-describedby="brand-addon1" onkeyup="searchFilter()">
             <span class="input-group-text border-dark rounded-0 border-start-0 bg-light-subtle" id="brand-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
           </div>
           <div class="content-filter overflow-y-scroll overflow-x-hidden">
             <h6 class="fw-semibold m-3">تمام برندها</h6>
-          <a class="btn ms-3 p-0 text-mediumpurple text-decoration-none d-block" onclick="eventCheckBox()">انتخاب همه</a>
+          <a class="btn ms-3 p-0 text-mediumpurple text-decoration-none d-block" id="checkall">انتخاب همه</a>
           <ul id="ul_search_filter" class="list-unstyled">
             <li class="border-bottom">
               <div class="form-check form-check-inline d-flex align-items-center">
