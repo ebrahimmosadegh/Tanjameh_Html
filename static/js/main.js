@@ -39,7 +39,7 @@ $(".owl-item-2").owlCarousel({
   lazyLoad:true,
   dots:false,
   navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
-  margin: 10,
+  margin: 17,
 });
 $('.owl-center-nonloop').owlCarousel({
   loop: false,
@@ -48,7 +48,7 @@ $('.owl-center-nonloop').owlCarousel({
   lazyLoad:true,
   dots:false,
   navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
-  margin: 10,
+  margin: 17,
             responsive:{
     0:{
         items:2,
@@ -70,7 +70,7 @@ $('.owl-autowidth').owlCarousel({
   lazyLoad:true,
   dots:false,
   navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
-  margin: 10,
+  margin: 17,
             responsive:{
     0:{
         items:2,
@@ -614,12 +614,34 @@ $(this).parents().find(".pluse-form").addClass("d-inline-block");
 });
 
 // search all website
-$(".icon-search").on("click", function(){
-    $(".search-form").fadeToggle();
-    $(".search-form input").focus();
-    $(".fa-search").toggleClass("fa-times").css("transform", "rotate(0deg)");
-  $(".fa-times").css("transform", "rotate(180deg)");
+$(".icon-search").click(function(){
+  $(".search-box").toggleClass("is-active");
+  $(".icon-search").toggleClass("not-active");
+  $(".search-form input").focus();
 });
+$("#searchClose").click(function() {
+  $(".search-box").removeClass("is-active");
+  $(".icon-search").removeClass("not-active");
+  $(".search-box input").val("");
+});
+
+$(document).click(function() {
+  $(".search-box").removeClass("is-active");
+  $(".icon-search").removeClass("not-active");
+  $(".search-box input").val("");
+});
+$(".search-box, .search-form").click(function(e) {
+    e.stopPropagation();
+});
+
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    $(".search-box, .search-form").removeClass("is-active");
+  $(".icon-search").removeClass("not-active");
+    $(".search-box input").val("");
+  }
+});
+
 // search autocomplete
 function all_search(){
   const search = document.getElementById('all_search')
