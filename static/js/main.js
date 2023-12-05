@@ -272,7 +272,11 @@ function getVals(){
   if( slide1 > slide2 ){ let tmp = slide2; slide2 = slide1; slide1 = tmp; }
   
   let displayElement = parent.getElementsByClassName("rangeValues")[0];
-      displayElement.innerHTML = slide1 + " تومان  -- " + slide2 + " تومان ";
+  let rangeMin = document.getElementById("rangeMin");
+  let rangeMax = document.getElementById("rangeMax");
+  displayElement.innerHTML = slide1 + " تومان  -- " + slide2 + " تومان ";
+  rangeMin.setAttribute('data-value', slide1);
+  rangeMax.setAttribute('data-value', slide2);
 }
 window.onload = function(){
   // Initialize Sliders
@@ -710,3 +714,38 @@ $('.btnPositive').click(function() {
   });
 
 
+// filter products
+$(".form-filter").submit(function (e) {
+  e.preventDefault(); // avoid to execute the actual submit of the form.
+  var form = $(this);
+  var actionUrl = form.attr('action');
+ var uri = new URI();
+ var input= form.find('input');
+ input.map(function(){
+    if ($(this).is(':checked') || $(this).attr('type') == 'range'){
+      var data_info= $(this).attr('data-info');
+      var data_value= $(this).attr('data-value');
+      uri.addQuery(data_info, data_value);
+      if((uri.hasQuery("price-min") === true) || (uri.hasQuery("price-max")  === true)){
+        uri.setSearch("price-min", $('#rangeMin').attr('data-value'));
+        uri.setSearch("price-max", $('#rangeMax').attr('data-value'));
+      }
+      return false; 
+    }
+    else{
+      var data_info= $(this).attr('data-info');
+      var data_value= $(this).attr('data-value');
+          uri.removeQuery(data_info, data_value)
+          return false; 
+    }
+  });
+  $.ajax({
+    type: "POST",
+    url: actionUrl,
+    data: form.serialize(), // serializes the form's elements.
+    success: function (data) {
+    //   console.log('submit');
+    window.history.pushState({}, null, uri);
+    }
+  });
+});
