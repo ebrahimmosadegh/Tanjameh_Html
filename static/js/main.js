@@ -1,3 +1,21 @@
+// callback for ltr or rtl direction
+function callbackOwlCarousel() {
+  var mydir = $("html").attr("dir");
+  if (mydir == 'rtl') {
+      var rtl = true;
+      navText = ['<i class="fa-solid fa-arrow-right"></i>', '<i class="fa-solid fa-arrow-left"></i>'];
+  }
+  else{
+      var rtl = false
+      var navText = ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'];
+      }
+  
+  return {rtl , navText};
+}
+const values = callbackOwlCarousel()
+const rtlVal = values.rtl
+const navTextVal = values.navText
+
 // carousel index page
 jQuery(document).ready(function($) {
     var owl_animIndex = $('.animIndex');
@@ -5,7 +23,7 @@ jQuery(document).ready(function($) {
       items: 1,
       loop: false,
       nav:true,
-      rtl:true,
+      rtl: rtlVal,
       dots:false,
       animateOut: 'fadeOut',
       lazyLoad:true,
@@ -15,7 +33,7 @@ jQuery(document).ready(function($) {
       autoplayTimeout:4000,
       autoplayHoverPause:true,
       margin: 10,
-      navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+      navText : navTextVal,
       navContainer: '.index-owl-nav',
     });
 var btn_play=$('.btn-play')
@@ -35,19 +53,19 @@ $(".owl-item-2").owlCarousel({
   loop: false,
   items:2,
   nav:true,
-  rtl:true,
+  rtl: rtlVal,
   lazyLoad:true,
   dots:false,
-  navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+  navText : navTextVal,
   margin: 17,
 });
 $('.owl-center-nonloop').owlCarousel({
   loop: false,
   nav:true,
-  rtl:true,
+  rtl: rtlVal,
   lazyLoad:true,
   dots:false,
-  navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+  navText : navTextVal,
   margin: 17,
             responsive:{
     0:{
@@ -66,10 +84,10 @@ $('.owl-autowidth').owlCarousel({
   autoWidth:true,
   loop: false,
   nav:true,
-  rtl:true,
+  rtl: rtlVal,
   lazyLoad:true,
   dots:false,
-  navText : ['<i class="fa-solid fa-arrow-right"></i>','<i class="fa-solid fa-arrow-left"></i>'],
+  navText : navTextVal,
   margin: 17,
             responsive:{
     0:{
@@ -737,15 +755,16 @@ $(".form-filter").submit(function (e) {
       var data_value= $(this).attr('data-value');
           uri.removeQuery(data_info, data_value)
           return false; 
-    }
-  });
+        }
+      });
+      $(this).closest(".dropdown-menu").prev().dropdown("toggle");
   $.ajax({
     type: "POST",
     url: actionUrl,
     data: form.serialize(), // serializes the form's elements.
     success: function (data) {
-    //   console.log('submit');
-    window.history.pushState({}, null, uri);
+      window.history.pushState({}, null, uri);
     }
   });
 });
+

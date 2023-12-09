@@ -4,7 +4,9 @@
 
 .index-owl-nav button.owl-next, .owl-nav button.owl-next{
     right: 0 !important;
+    left: inherit !important;
   }
   .index-owl-nav button.owl-prev, .owl-nav button.owl-prev{
     left: 0 !important;
+    right: inherit !important;
   }

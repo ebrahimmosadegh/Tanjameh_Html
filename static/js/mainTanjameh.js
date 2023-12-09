@@ -1,3 +1,21 @@
+// callback for ltr or rtl direction
+function callbackOwlCarousel() {
+  var mydir = $("html").attr("dir");
+  if (mydir == 'rtl') {
+      var rtl = true;
+      navText = ['<i class="fa-solid fa-arrow-right"></i>', '<i class="fa-solid fa-arrow-left"></i>'];
+  }
+  else{
+      var rtl = false
+      var navText = ['<i class="fa-solid fa-arrow-left"></i>','<i class="fa-solid fa-arrow-right"></i>'];
+      }
+  
+  return {rtl , navText};
+}
+const values = callbackOwlCarousel()
+const rtlVal = values.rtl
+const navTextVal = values.navText
+
 // carousel index page
 jQuery(document).ready(function ($) {
     var owl_animIndex = $('.animIndex');
@@ -5,7 +23,7 @@ jQuery(document).ready(function ($) {
       items: 1,
       loop: false,
       nav: true,
-      rtl: true,
+      rtl: rtlVal,
       dots: false,
       animateOut: 'fadeOut',
       lazyLoad: true,
@@ -15,7 +33,7 @@ jQuery(document).ready(function ($) {
       autoplayTimeout: 4000,
       autoplayHoverPause: true,
       margin: 10,
-      navText: ['<i class="fa-solid fa-arrow-right"></i>', '<i class="fa-solid fa-arrow-left"></i>'],
+      navText : navTextVal,
       navContainer: '.index-owl-nav',
     });
     var btn_play = $('.btn-play')
@@ -35,19 +53,19 @@ jQuery(document).ready(function ($) {
       loop: false,
       items: 2,
       nav: true,
-      rtl: true,
+      rtl: rtlVal,
       lazyLoad: true,
       dots: false,
-      navText: ['<i class="fa-solid fa-arrow-right"></i>', '<i class="fa-solid fa-arrow-left"></i>'],
+      navText : navTextVal,
       margin: 10,
     });
     $('.owl-center-nonloop').owlCarousel({
       loop: false,
       nav: true,
-      rtl: true,
+      rtl: rtlVal,
       lazyLoad: true,
       dots: false,
-      navText: ['<i class="fa-solid fa-arrow-right"></i>', '<i class="fa-solid fa-arrow-left"></i>'],
+      navText : navTextVal,
       margin: 10,
       responsive: {
         0: {
@@ -66,10 +84,10 @@ jQuery(document).ready(function ($) {
       autoWidth: true,
       loop: false,
       nav: true,
-      rtl: true,
+      rtl: rtlVal,
       lazyLoad: true,
       dots: false,
-      navText: ['<i class="fa-solid fa-arrow-right"></i>', '<i class="fa-solid fa-arrow-left"></i>'],
+      navText : navTextVal,
       margin: 10,
       responsive: {
         0: {
@@ -85,6 +103,8 @@ jQuery(document).ready(function ($) {
     });
   });
   
+
+
   // click login & register link  
   function goLogin() {
     localStorage.setItem("login", "true");
@@ -458,7 +478,7 @@ jQuery(document).ready(function ($) {
       $("#cart-items").slideUp(500);
     });
   
-    $(".items-basket2").text(($("#list-item-product").children().length));
+    $(".items-basket").text(($("#list-item-product").children().length));
   
     $("#addToCart").on("click", function () {
       if ($(".dropbtn").val() == 'true') {
@@ -471,7 +491,7 @@ jQuery(document).ready(function ($) {
         addToCart.attr('disabled', true);
         addToCart.html(`
         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-        Ø§ÙØ²ÙˆØ¯Ù† Ø¨Ù‡ Ø³Ø¨Ø¯ ...
+        افزودن به سبد ...
         `);
         setTimeout(function () {
           addToCart.removeClass('btn-dark');
@@ -482,7 +502,7 @@ jQuery(document).ready(function ($) {
           addToCart.prop('disabled', false);
           addToCart.removeClass('btn-success');
           addToCart.addClass('btn-dark');
-          addToCart.text('Ø§ÙØ²ÙˆØ¯Ù† Ø¨Ù‡ Ø³Ø¨Ø¯ Ø®Ø±ÛŒØ¯');
+          addToCart.text('افزودن به سبد خرید');
         }, 3000)
   
         $("#cart-items").slideDown();
@@ -514,19 +534,13 @@ jQuery(document).ready(function ($) {
         <h6 class="fw-semibold ms-auto"><span class='eachPrice'>${cena}</span></h6>
         </div>
         <a class="d-block text-decoration-none text-dark fs-6">${name}</a>
-        <p class="text-body-secondary m-0">Ø§Ù†Ø¯Ø§Ø²Ù‡: <span class="sizeItem">${size}</span></p>
-      
-    
+        <p class="text-body-secondary m-0">اندازه: <span class="sizeItem">${size}</span></p>
       </div>
     </li>
       `);
-  
           //number of items in basket
-  
-           $(".items-basket2").text(($("#list-item-product").children().length));
-     
-  
-          
+           $(".items-basket").text(($("#list-item-product").children().length));
+           $(".items-basket").text();
   
           //calculate total price
           var totalPrice = 0;
@@ -545,7 +559,7 @@ jQuery(document).ready(function ($) {
             totalPrice += cenaEach;
           });
           $("#total-price").text(totalPrice + deliveryPrice);
-          $(".items-basket2").text(($("#list-item-product").children().length));
+          $(".items-basket").text(($("#list-item-product").children().length));
   
           if (totalPrice == 0) {
             bag_empty.addClass("d-block");
@@ -662,6 +676,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
+
 // filter products
 $(".form-filter").submit(function (e) {
   e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -685,15 +700,15 @@ $(".form-filter").submit(function (e) {
       var data_value= $(this).attr('data-value');
           uri.removeQuery(data_info, data_value)
           return false; 
-    }
-  });
+        }
+      });
+      $(this).closest(".dropdown-menu").prev().dropdown("toggle");
   $.ajax({
     type: "POST",
     url: actionUrl,
     data: form.serialize(), // serializes the form's elements.
     success: function (data) {
-    //   console.log('submit');
-    window.history.pushState({}, null, uri);
+      window.history.pushState({}, null, uri);
     }
   });
 });
