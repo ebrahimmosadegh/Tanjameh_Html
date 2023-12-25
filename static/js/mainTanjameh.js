@@ -634,13 +634,67 @@ jQuery(document).ready(function ($) {
     $(this).parents().find(".pluse-form").addClass("d-inline-block");
   });
   
-  // search all website
-  $(".icon-search").on("click", function () {
-    $(".search-form").fadeToggle();
-    $(".search-form input").focus();
-    $(".fa-search").toggleClass("fa-times").css("transform", "rotate(0deg)");
-    $(".fa-times").css("transform", "rotate(180deg)");
-  });
+// search all website
+$(".icon-search").click(function(){
+  $(".search-box").toggleClass("is-active");
+  $(".icon-search").toggleClass("not-active");
+  $(".search-form input").focus();
+});
+$("#searchClose").click(function() {
+  $(".search-box").removeClass("is-active");
+  $(".icon-search").removeClass("not-active");
+  $(".search-box input").val("");
+});
+
+$(document).click(function() {
+  $(".search-box").removeClass("is-active");
+  $(".icon-search").removeClass("not-active");
+  $(".search-box input").val("");
+});
+$(".search-box, .search-form").click(function(e) {
+    e.stopPropagation();
+});
+
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    $(".search-box, .search-form").removeClass("is-active");
+  $(".icon-search").removeClass("not-active");
+    $(".search-box input").val("");
+  }
+});
+
+// search autocomplete
+function all_search(){
+  const search = document.getElementById('all_search')
+const matchList = document.getElementById('all_match_list')
+// Search and filter
+const allSearch = async searchText => {
+    const items = ["adidas","puma","nike","boss","jean","ALDO","ASICS"];
+    // Get matches to current text input
+    let matchs = items.filter(user => {
+        const regex = new RegExp(`^${searchText}`, 'gi')
+        return user.match(regex)
+    })
+    if (searchText.length === 0) {
+        matchs = []
+        matchList.innerHTML = ''
+    }
+    // Output
+    outputHtml(matchs);
+}
+const outputHtml = matchs => {
+    if (matchs.length > 0) {
+        const html = matchs.map(match => `
+            <a href="#" class="nav-link nav-hover py-2 px-4 d-flex border-bottom align-items-center">
+              <span class="">${match}</span>
+              <i class="fa fa-search ms-auto" aria-hidden="trues"></i>
+          </a>
+        `).join('')
+        matchList.innerHTML = html
+    }
+}
+search.addEventListener('input', () => allSearch(search.value))
+}
   
   // feedback helpful
   $('.btnPositive').click(function () {
