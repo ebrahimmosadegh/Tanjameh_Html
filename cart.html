@@ -587,18 +587,26 @@
         </ul>
       </div>
       <!-- search all website -->
-      <div>
-        <div class="icon-search bg-gainsboro-light d-flex align-items-center justify-content-between p-1" style="width: 288px;">
+      <div class="search-form">
+        <div class="icon-search bg-gainsboro-light d-flex align-items-center justify-content-between p-1">
           <span class="fs-6 text-dark-emphasis">جستجو</span>
           <i class="fa fa-search p-2" aria-hidden="trues"></i>
         </div>
-    <div class="search-form">
-        <input type="text" id="all_search" class="" placeholder="جستجو را اینجا بنویس" onfocus="all_search()">
-         <div class="result-search position-relative p-0">
-          <div id="all_match_list" class="position-absolute bg-light-subtle w-100 overflow-y-scroll border-dark border border-top-0" style="max-height: 18rem;">
+        <div class="search-box">
+          <div class="input-group search-input">
+            <span class="input-group-text border-0 bg-white">
+              <i class="fa-solid fa-search"></i>
+            </span>
+            <input type="text" id="all_search" class="form-control rounded-0 border-0" placeholder="جستجو را اینجا بنویس" onfocus="all_search()">
+            <button class="btn btn-outline-dark rounded-0 border-0 d-flex align-self-center" id="searchClose" type="button">
+              <i class="fa fa-close fs-5"></i>
+            </button>
+          </div>
+          <div class="result-search position-relative p-0">
+            <div id="all_match_list" class="position-absolute bg-light-subtle w-100 overflow-y-scroll border-dark border border-top-0" style="max-height: 18rem;">
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
     </nav>
